@@ -2,6 +2,17 @@
 
 A simple collection of useful steering documents for Kiro. Copy what you need, modify as needed.
 
+## Available Documents
+
+### Code Formatting
+
+- **[CSS/SCSS](code-formatting/css-formatting.md)** - Property ordering, naming conventions, consistent spacing
+- **[JavaScript](code-formatting/javascript-formatting.md)** - Semicolons, quotes, indentation, import organization
+- **[JSON](code-formatting/json-formatting.md)** - Consistent indentation, key ordering, proper formatting
+- **[Markdown](code-formatting/markdown-formatting.md)** - Formatting standards, heading hierarchy, list formatting
+- **[Python](code-formatting/python-formatting.md)** - PEP 8 compliance, import organization, naming conventions
+- **[TypeScript](code-formatting/typescript-formatting.md)** - Type annotations, interfaces, import organization
+
 ## How to Use
 
 1. Browse the folders in this repo

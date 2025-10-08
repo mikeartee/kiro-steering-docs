@@ -7,4 +7,7 @@ Thumbs.db
 *.swp
 *~
 
+# Draft/experimental files
+_drafts/
+
 # Add more as needed for tooling

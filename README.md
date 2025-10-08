@@ -13,6 +13,39 @@ A simple collection of useful steering documents for Kiro. Copy what you need, m
 - **[Python](code-formatting/python-formatting.md)** - PEP 8 compliance, import organization, naming conventions
 - **[TypeScript](code-formatting/typescript-formatting.md)** - Type annotations, interfaces, import organization
 
+### Infrastructure as Code *(Coming Soon)*
+
+- **Terraform** - Resource organization, naming conventions, variable structure
+- **Pulumi** - Resource patterns, stack organization, configuration management
+- **CloudFormation** - Template structure, parameter organization, output formatting
+- **Ansible** - Playbook structure, task organization, variable management
+
+### Shell & Scripting *(Coming Soon)*
+
+- **Bash** - Function structure, error handling, variable naming, best practices
+- **PowerShell** - Cmdlet patterns, parameter organization, pipeline usage
+- **Zsh** - Modern shell scripting patterns, function organization
+
+### Configuration Files *(Coming Soon)*
+
+- **YAML** - Indentation standards, key ordering, comment formatting
+- **TOML** - Section organization, key formatting, value structure
+- **Docker** - Dockerfile best practices, layer optimization, security patterns
+- **Docker Compose** - Service organization, network patterns, volume management
+
+### Database & Query Languages *(Coming Soon)*
+
+- **SQL** - Query formatting, capitalization standards, indentation patterns
+- **GraphQL** - Schema organization, query structure, resolver patterns
+- **MongoDB** - Query patterns, aggregation pipelines, index optimization
+
+### Framework-Specific *(Coming Soon)*
+
+- **React** - Component structure, prop ordering, hook patterns, JSX formatting
+- **Vue** - Template organization, composition API patterns, component structure
+- **Express** - Route organization, middleware patterns, error handling
+- **FastAPI** - Endpoint structure, dependency injection, response formatting
+
 ## How to Use
 
 1. Browse the folders in this repo

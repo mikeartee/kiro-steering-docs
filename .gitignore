@@ -1,0 +1,10 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.tmp
+*.swp
+*~
+
+# Add more as needed for tooling

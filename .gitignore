@@ -10,4 +10,7 @@ Thumbs.db
 # Draft/experimental files
 _drafts/
 
+# Kiro workspace files (local development only)
+.kiro/
+
 # Add more as needed for tooling

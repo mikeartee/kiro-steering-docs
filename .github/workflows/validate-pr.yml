@@ -1,0 +1,207 @@
+name: Validate Pull Request
+
+on:
+  pull_request:
+    branches: [main, develop]
+    paths:
+      - '**.md'
+      - 'code-formatting/**'
+      - '_drafts/**'
+      - 'templates/**'
+      - '.github/workflows/**'
+      - 'tools/**'
+
+jobs:
+  markdown-lint:
+    name: Markdown Linting
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run markdownlint
+        uses: DavidAnson/markdownlint-cli2-action@v15
+        with:
+          globs: |
+            **/*.md
+            !node_modules/**
+
+  validate-steering-docs:
+    name: Validate Steering Documents
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r tools/requirements.txt
+
+      - name: Run validation script
+        run: python tools/validate-steering.py
+
+  format-check:
+    name: Format Checking
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check file endings
+        run: |
+          echo "Checking for proper file endings..."
+          failed=0
+          while IFS= read -r file; do
+            if [ -f "$file" ]; then
+              if [ -n "$(tail -c 1 "$file")" ]; then
+                echo "ERROR: $file does not end with a newline"
+                failed=1
+              fi
+            fi
+          done < <(find . -name "*.md" -not -path "./node_modules/*" -not -path "./.git/*")
+          
+          if [ $failed -eq 1 ]; then
+            echo "Some files do not end with proper newlines"
+            exit 1
+          fi
+          echo "All markdown files have proper endings"
+
+      - name: Check for trailing whitespace
+        run: |
+          echo "Checking for trailing whitespace..."
+          if grep -r --include="*.md" --exclude-dir=node_modules --exclude-dir=.git " $" .; then
+            echo "ERROR: Found trailing whitespace in markdown files"
+            exit 1
+          fi
+          echo "No trailing whitespace found"
+
+  validate-frontmatter:
+    name: Validate Frontmatter
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install PyYAML
+        run: pip install pyyaml
+
+      - name: Validate frontmatter in steering docs
+        run: |
+          python - <<'EOF'
+          import os
+          import re
+          import yaml
+          from pathlib import Path
+
+          def validate_frontmatter(file_path):
+              with open(file_path, 'r', encoding='utf-8') as f:
+                  content = f.read()
+              
+              # Check for frontmatter
+              if not content.startswith('---'):
+                  return True  # No frontmatter required for all files
+              
+              # Extract frontmatter
+              match = re.match(r'^---\n(.*?)\n---', content, re.DOTALL)
+              if not match:
+                  print(f"ERROR: Invalid frontmatter format in {file_path}")
+                  return False
+              
+              try:
+                  frontmatter = yaml.safe_load(match.group(1))
+                  
+                  # Check required fields for steering documents
+                  if 'code-formatting' in str(file_path):
+                      required_fields = ['title', 'description', 'tags']
+                      for field in required_fields:
+                          if field not in frontmatter:
+                              print(f"ERROR: Missing required field '{field}' in {file_path}")
+                              return False
+                  
+                  return True
+              except yaml.YAMLError as e:
+                  print(f"ERROR: Invalid YAML in {file_path}: {e}")
+                  return False
+
+          # Find all markdown files in code-formatting directory
+          all_valid = True
+          for md_file in Path('code-formatting').glob('*.md'):
+              if md_file.name != 'README.md':
+                  if not validate_frontmatter(md_file):
+                      all_valid = False
+
+          if not all_valid:
+              exit(1)
+          print("All frontmatter validation passed")
+          EOF
+
+  check-links:
+    name: Check Links
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check internal links
+        run: |
+          echo "Checking for broken internal links..."
+          failed=0
+          
+          # Find all markdown files
+          while IFS= read -r file; do
+            # Extract markdown links
+            while IFS= read -r link; do
+              # Skip external links
+              if [[ "$link" =~ ^https?:// ]]; then
+                continue
+              fi
+              
+              # Get directory of current file
+              dir=$(dirname "$file")
+              
+              # Resolve relative path
+              target="$dir/$link"
+              
+              # Check if file exists
+              if [ ! -f "$target" ] && [ ! -d "$target" ]; then
+                echo "ERROR: Broken link in $file -> $link"
+                failed=1
+              fi
+            done < <(grep -oP '\[.*?\]\(\K[^)]+' "$file" 2>/dev/null || true)
+          done < <(find . -name "*.md" -not -path "./node_modules/*" -not -path "./.git/*")
+          
+          if [ $failed -eq 1 ]; then
+            echo "Found broken internal links"
+            exit 1
+          fi
+          echo "All internal links are valid"
+
+  summary:
+    name: Validation Summary
+    runs-on: ubuntu-latest
+    needs: [markdown-lint, validate-steering-docs, format-check, validate-frontmatter, check-links]
+    if: always()
+    steps:
+      - name: Check all jobs
+        run: |
+          if [ "${{ needs.markdown-lint.result }}" != "success" ] || \
+             [ "${{ needs.validate-steering-docs.result }}" != "success" ] || \
+             [ "${{ needs.format-check.result }}" != "success" ] || \
+             [ "${{ needs.validate-frontmatter.result }}" != "success" ] || \
+             [ "${{ needs.check-links.result }}" != "success" ]; then
+            echo "One or more validation checks failed"
+            exit 1
+          fi
+          echo "All validation checks passed!"
+

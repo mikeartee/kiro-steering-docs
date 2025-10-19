@@ -1,0 +1,173 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  validate-all:
+    name: Validate Repository
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r tools/requirements.txt
+
+      - name: Run validation script
+        run: python tools/validate-steering.py
+
+      - name: Run markdownlint
+        uses: DavidAnson/markdownlint-cli2-action@v15
+        with:
+          globs: |
+            **/*.md
+            !node_modules/**
+
+  test-examples:
+    name: Test Example Code
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        language: [javascript, python]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        if: matrix.language == 'javascript'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Set up Python
+        if: matrix.language == 'python'
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Test JavaScript examples
+        if: matrix.language == 'javascript'
+        run: |
+          echo "Testing JavaScript code examples..."
+          # Extract and test JavaScript code blocks from markdown files
+          python - <<'EOF'
+          import re
+          import subprocess
+          import tempfile
+          from pathlib import Path
+
+          def extract_js_examples(file_path):
+              with open(file_path, 'r', encoding='utf-8') as f:
+                  content = f.read()
+              
+              # Find JavaScript code blocks
+              pattern = r'```(?:javascript|js)\n(.*?)```'
+              examples = re.findall(pattern, content, re.DOTALL)
+              return examples
+
+          # Find all markdown files with JavaScript examples
+          js_files = []
+          for md_file in Path('.').rglob('*.md'):
+              if 'node_modules' in str(md_file) or '.git' in str(md_file):
+                  continue
+              if 'javascript' in md_file.name.lower() or 'js' in md_file.name.lower():
+                  js_files.append(md_file)
+
+          print(f"Found {len(js_files)} files with potential JavaScript examples")
+
+          # Extract examples and validate syntax
+          for js_file in js_files:
+              examples = extract_js_examples(js_file)
+              if examples:
+                  print(f"Validating {len(examples)} examples from {js_file}")
+                  for i, example in enumerate(examples):
+                      # Skip comment-only examples
+                      if example.strip().startswith('//') and '\n' not in example.strip():
+                          continue
+                      
+                      # Create temporary file
+                      with tempfile.NamedTemporaryFile(mode='w', suffix='.js', delete=False) as f:
+                          f.write(example)
+                          temp_file = f.name
+                      
+                      try:
+                          # Check syntax with Node.js
+                          result = subprocess.run(
+                              ['node', '--check', temp_file],
+                              capture_output=True,
+                              text=True
+                          )
+                          if result.returncode != 0:
+                              print(f"Syntax error in {js_file} example {i+1}:")
+                              print(result.stderr)
+                      finally:
+                          Path(temp_file).unlink()
+
+          print("JavaScript example validation complete")
+          EOF
+
+      - name: Test Python examples
+        if: matrix.language == 'python'
+        run: |
+          echo "Testing Python code examples..."
+          python - <<'EOF'
+          import re
+          import ast
+          import tempfile
+          from pathlib import Path
+
+          def extract_python_examples(file_path):
+              with open(file_path, 'r', encoding='utf-8') as f:
+                  content = f.read()
+              
+              # Find Python code blocks
+              pattern = r'```python\n(.*?)```'
+              examples = re.findall(pattern, content, re.DOTALL)
+              return examples
+
+          # Find all markdown files with Python examples
+          py_files = []
+          for md_file in Path('.').rglob('*.md'):
+              if 'node_modules' in str(md_file) or '.git' in str(md_file):
+                  continue
+              if 'python' in md_file.name.lower():
+                  py_files.append(md_file)
+
+          print(f"Found {len(py_files)} files with potential Python examples")
+
+          # Extract examples and validate syntax
+          errors = []
+          for py_file in py_files:
+              examples = extract_python_examples(py_file)
+              if examples:
+                  print(f"Validating {len(examples)} examples from {py_file}")
+                  for i, example in enumerate(examples):
+                      # Skip comment-only examples
+                      if example.strip().startswith('#') and '\n' not in example.strip():
+                          continue
+                      
+                      try:
+                          # Check syntax with AST
+                          ast.parse(example)
+                      except SyntaxError as e:
+                          error_msg = f"Syntax error in {py_file} example {i+1}: {e}"
+                          print(error_msg)
+                          errors.append(error_msg)
+
+          if errors:
+              print(f"\nFound {len(errors)} syntax errors in Python examples")
+              exit(1)
+          
+          print("Python example validation complete")
+          EOF
+

@@ -37,6 +37,7 @@ When creating or editing any .md files, follow this exact sequence:
 - **Blank lines around headings**: Add blank lines before and after all headings
 - **Blank lines around lists**: Required for MD032 compliance
 - **Consistent paragraph spacing**: Single blank line between paragraphs
+- **No multiple consecutive blank lines**: Never use multiple blank lines in a row (causes MD012 errors)
 
 ### Content Standards
 
@@ -77,14 +78,15 @@ Final content.
 
 ### For fsWrite
 
-Always include an empty line at the end of your content:
+Always include exactly one empty line at the end of your content:
 
 ```python
 WRONG: fsWrite(path="file.md", text="Final sentence.")
+WRONG: fsWrite(path="file.md", text="Final sentence.\n\n\n")  # Multiple blank lines
 RIGHT: fsWrite(path="file.md", text="Final sentence.\n\n")
 ```
 
-The text should end with your content, then an empty line.
+The text should end with your content, then exactly one empty line (`\n\n`). Do not add extra spaces, newlines, or blank lines after `\n\n` as this creates multiple consecutive blank lines and triggers MD012 errors.
 
 ### For MD047 Errors (Reliable Method)
 
@@ -98,6 +100,8 @@ strReplace(path="file.md", oldStr="last line content", newStr="last line content
 
 The newStr must end with an actual empty line (line break in the string), not `\n`.
 
-## 🚨 FINAL REMINDER: Empty line in fsWrite text parameter or you WILL get MD047 errors 🚨
+## 🚨 FINAL REMINDERS 🚨
 
-If you forget the empty line, you will fail and waste time fixing MD047 errors.
+- **MD047 Prevention**: Always end fsWrite text with `\n\n` (one empty line) or you WILL get MD047 errors
+- **MD012 Prevention**: Never add extra blank lines after `\n\n` or you WILL get MD012 errors (multiple consecutive blank lines)
+- **The pattern**: `text="Your last line of content.\n\n"` - nothing after the second `\n`

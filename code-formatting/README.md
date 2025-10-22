@@ -1,27 +1,72 @@
 # Code Formatting Steering Documents
 
-This folder contains steering documents focused on code formatting standards and quality enforcement.
+Steering documents focused on code formatting standards and quality enforcement. Part of the [Code Quality](../categories/code-quality/) category.
+
+## Quick Navigation
+
+- [Browse All Categories](../categories/)
+- [Search by Tag](../#search-by-tag)
+- [Main README](../)
 
 ## Available Documents
 
-- **[css-formatting.md](css-formatting.md)** - CSS/SCSS code quality standards with property ordering, naming conventions, and consistent formatting
-- **[javascript-formatting.md](javascript-formatting.md)** - JavaScript code quality standards
-- **[json-formatting.md](json-formatting.md)** - JSON code quality standards with consistent indentation, key ordering, and proper formatting
-- **[markdown-formatting.md](markdown-formatting.md)** - Markdown formatting and quality standards
-- **[python-formatting.md](python-formatting.md)** - Python code quality standards
-- **[typescript-formatting.md](typescript-formatting.md)** - TypeScript code quality standards with type annotations, interfaces, and import organization
+| Document | Description | Tags |
+|----------|-------------|------|
+| [CSS Formatting](css-formatting.md) | Property ordering, naming conventions, consistent spacing | `css`, `scss`, `formatting`, `styles` |
+| [JavaScript Formatting](javascript-formatting.md) | Semicolons, quotes, indentation, import organization | `javascript`, `formatting`, `eslint`, `code-generation` |
+| [JSON Formatting](json-formatting.md) | Consistent indentation, key ordering, proper formatting | `json`, `formatting`, `config` |
+| [Markdown Formatting](markdown-formatting.md) | Formatting standards, heading hierarchy, list formatting | `markdown`, `documentation`, `formatting` |
+| [Python Formatting](python-formatting.md) | PEP 8 compliance, import organization, naming conventions | `python`, `formatting`, `pep8`, `code-generation` |
+| [TypeScript Formatting](typescript-formatting.md) | Type annotations, interfaces, import organization | `typescript`, `formatting`, `types`, `code-generation` |
 
-## What You'll Find Here
+## Usage
 
-- **CSS/SCSS** - Property ordering, naming conventions, consistent spacing
-- **JavaScript** - Semicolons, quotes, indentation, import organization
-- **JSON** - Consistent indentation, key ordering, quote consistency, array formatting
-- **Markdown** - Formatting standards, heading hierarchy, list formatting
-- **Python** - PEP 8 compliance, import organization, naming conventions
-- **TypeScript** - Type annotations, interface definitions, import organization, generic types
-- Code style enforcement configurations
-- Linting and formatting automation rules
+### Quick Start
+
+Copy any document to your `.kiro/steering/` directory:
+
+```bash
+# Copy a single document
+cp code-formatting/javascript-formatting.md .kiro/steering/
+
+# Copy all formatting documents
+cp code-formatting/*.md .kiro/steering/
+```
+
+### Combining Documents
+
+These documents work well together. A typical setup:
+
+```bash
+.kiro/steering/
+├── javascript-formatting.md    # For .js files
+├── typescript-formatting.md    # For .ts/.tsx files
+├── json-formatting.md          # For config files
+└── markdown-formatting.md      # For documentation
+```
+
+## Related Documents
+
+### By Language
+
+- **JavaScript**: [JavaScript Formatting](javascript-formatting.md)
+- **TypeScript**: [TypeScript Formatting](typescript-formatting.md)
+- **Python**: [Python Formatting](python-formatting.md)
+- **CSS/SCSS**: [CSS Formatting](css-formatting.md)
+
+### By Purpose
+
+- **Code Generation**: [JavaScript](javascript-formatting.md), [TypeScript](typescript-formatting.md), [Python](python-formatting.md)
+- **Configuration**: [JSON Formatting](json-formatting.md)
+- **Documentation**: [Markdown Formatting](markdown-formatting.md)
+
+### Other Categories
+
+- [Testing](../categories/testing/) - Test quality and coverage
+- [Security](../categories/security/) - Security best practices
+- [Frameworks](../categories/frameworks/) - Framework-specific patterns
+- [Workflows](../categories/workflows/) - CI/CD and automation
 
 ## Contributing
 
-See the main [CONTRIBUTING.md](../CONTRIBUTING.md) for guidelines on adding new code formatting steering documents.
+Have a code formatting steering document to share? See our [contribution guidelines](../CONTRIBUTING.md) for how to submit new documents or improvements.

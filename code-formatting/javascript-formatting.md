@@ -5,8 +5,6 @@ tags: ["javascript", "formatting", "code-generation"]
 inclusion: always
 ---
 
-# JavaScript Code Quality Standards
-
 ## Core Principle: Consistent, Clean JavaScript
 
 **This steering document guides Kiro to write JavaScript code that follows consistent patterns and avoids common syntax errors.** When Kiro generates or edits JavaScript files, it will automatically apply these standards.

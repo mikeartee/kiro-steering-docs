@@ -3,6 +3,7 @@ title: "Error Handling Standards"
 description: "Guides Kiro to implement robust error handling patterns across different languages"
 category: "code-quality"
 tags: ["error-handling", "exceptions", "debugging", "best-practices"]
+inclusion: always
 version: "1.0.0"
 ---
 
@@ -10,7 +11,7 @@ version: "1.0.0"
 
 **Kiro implements comprehensive error handling that catches issues early, provides clear feedback, and maintains application stability.** This steering document ensures errors are handled gracefully across all languages and frameworks.
 
-## How Kiro Will Handle Errors
+## How Kiro Will Write Error Handling
 
 ### Try-Catch Blocks
 

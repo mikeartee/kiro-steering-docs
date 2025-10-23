@@ -1,6 +1,7 @@
 ---
 title: "Environment Variables and Configuration Management"
 description: "Guides Kiro to write secure, maintainable configuration code with proper environment variable handling"
+category: "workflows"
 tags: ["configuration", "environment-variables", "secrets", "config-management"]
 inclusion: always
 ---

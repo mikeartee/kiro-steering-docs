@@ -1,6 +1,7 @@
 ---
 title: "Logging Standards"
 description: "Guides Kiro to write consistent, informative logging code that aids debugging without exposing sensitive data"
+category: "code-quality"
 tags: ["logging", "debugging", "monitoring", "security"]
 inclusion: always
 ---
@@ -312,4 +313,3 @@ pip install structlog python-json-logger
 ```
 
 **Note**: These tools provide advanced logging features, but aren't required for the steering document to work.
-

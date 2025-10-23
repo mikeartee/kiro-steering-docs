@@ -3,6 +3,7 @@ title: "FastAPI Patterns"
 description: "Guides Kiro to write FastAPI applications following best practices and modern async patterns"
 category: "frameworks"
 tags: ["fastapi", "python", "api", "async", "pydantic"]
+inclusion: always
 version: "1.0.0"
 ---
 

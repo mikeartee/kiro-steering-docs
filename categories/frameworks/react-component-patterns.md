@@ -3,6 +3,7 @@ title: "React Component Patterns"
 description: "Guides Kiro to write React components following modern best practices and patterns"
 category: "frameworks"
 tags: ["react", "components", "hooks", "typescript", "patterns"]
+inclusion: always
 version: "1.0.0"
 ---
 

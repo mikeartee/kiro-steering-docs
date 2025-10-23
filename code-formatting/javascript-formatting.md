@@ -1,6 +1,7 @@
 ---
 title: "JavaScript Code Quality Standards"
 description: "Guides Kiro to write consistent, error-free JavaScript code"
+category: "code-quality"
 tags: ["javascript", "formatting", "code-generation"]
 inclusion: always
 ---

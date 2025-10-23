@@ -227,7 +227,7 @@ class SteeringValidator:
             
         for root, dirs, files in os.walk(directory):
             for file in files:
-                if file.endswith('.md'):
+                if file.endswith('.md') and file.upper() != 'README.MD':
                     file_path = os.path.join(root, file)
                     results[file_path] = self.validate_file(file_path)
                     

@@ -44,7 +44,9 @@ jobs:
           pip install -r tools/requirements.txt
 
       - name: Run validation script
-        run: python tools/validate-steering.py
+        run: |
+          python tools/validate-steering.py .kiro/steering
+          python tools/validate-steering.py code-formatting
 
   format-check:
     name: Format Checking

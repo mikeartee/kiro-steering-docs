@@ -1,19 +1,18 @@
 ---
 title: "Markdown Quality Standards"
 description: "Prevents markdown formatting issues and MD047 errors automatically"
+category: "code-quality"
 tags: ["markdown", "quality", "linting", "formatting"]
 inclusion: always
 ---
-
-## Markdown Quality Standards
-
-## 🚨 CRITICAL: fsWrite text MUST end with empty line 🚨
 
 ## Core Principle: Get It Right the First Time
 
 **Never create markdown files with formatting issues.** Always produce clean, properly formatted markdown that passes all linting checks on the first attempt. This prevents wasted time, backtracking, and credit consumption from fixing avoidable issues.
 
-## Mandatory Workflow
+## How Kiro Will Write Markdown
+
+### Mandatory Workflow
 
 When creating or editing any .md files, follow this exact sequence:
 
@@ -22,7 +21,7 @@ When creating or editing any .md files, follow this exact sequence:
 3. **Run getDiagnostics immediately** after creating/editing
 4. **Fix any remaining issues in the same operation** - never proceed with linting errors
 
-## Formatting Requirements
+### Formatting Requirements
 
 ### File Structure
 
@@ -45,7 +44,7 @@ When creating or editing any .md files, follow this exact sequence:
 - **Proper list formatting**: Use consistent bullet/number styles
 - **Code block formatting**: Use proper fencing with language tags
 
-## Standard Template
+### Standard Template
 
 ```markdown
 # Document Title
@@ -65,6 +64,15 @@ More content here.
 
 Final content.
 ```
+
+## What This Prevents
+
+- **MD047 errors** from missing trailing newlines
+- **MD012 errors** from multiple consecutive blank lines
+- **MD032 errors** from improper spacing around lists
+- **MD025 errors** from multiple H1 headings
+- **Linting failures** that waste time and credits
+- **Rework cycles** from formatting issues caught in CI/CD
 
 ## Efficiency Rules
 

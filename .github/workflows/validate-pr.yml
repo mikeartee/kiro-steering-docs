@@ -45,7 +45,7 @@ jobs:
 
       - name: Run validation script
         run: |
-          python tools/validate-steering.py .kiro/steering
+          python tools/validate-steering.py categories
           python tools/validate-steering.py code-formatting
 
   format-check:

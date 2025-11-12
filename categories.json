@@ -1,0 +1,29 @@
+{
+  "categories": [
+    {
+      "id": "code-quality",
+      "name": "Code Quality",
+      "description": "Maintain consistent code standards, formatting, and linting rules across your projects"
+    },
+    {
+      "id": "testing",
+      "name": "Testing",
+      "description": "Guide test creation, coverage standards, and testing best practices"
+    },
+    {
+      "id": "security",
+      "name": "Security",
+      "description": "Enforce security best practices and prevent common vulnerabilities"
+    },
+    {
+      "id": "frameworks",
+      "name": "Frameworks",
+      "description": "Framework-specific development patterns and conventions"
+    },
+    {
+      "id": "workflows",
+      "name": "Workflows",
+      "description": "Development workflow automation and CI/CD integration"
+    }
+  ]
+}

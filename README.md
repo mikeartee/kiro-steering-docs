@@ -35,20 +35,56 @@ Find documents by technology, purpose, or use case. See [TAGS.md](TAGS.md) for t
 
 ### Tools & Frameworks
 
-- [React](#react) | [ESLint](#eslint) | [Prettier](#prettier) | [Git](#git)
+- [React](#react) | [Vue](#vue) | [Django](#django) | [FastAPI](#fastapi) | [Express](#express) | [Git](#git) | [API Development](#api-development)
 
 ## All Documents
 
 Comprehensive searchable index of all available steering documents:
 
-| Document | Category | Description | Tags |
-|----------|----------|-------------|------|
-| [CSS Formatting](code-formatting/css-formatting.md) | Code Quality | Property ordering, naming conventions, consistent spacing | `css`, `scss`, `formatting`, `styles` |
-| [JavaScript Formatting](code-formatting/javascript-formatting.md) | Code Quality | Semicolons, quotes, indentation, import organization | `javascript`, `formatting`, `eslint`, `code-generation` |
-| [JSON Formatting](code-formatting/json-formatting.md) | Code Quality | Consistent indentation, key ordering, proper formatting | `json`, `formatting`, `config` |
-| [Markdown Formatting](code-formatting/markdown-formatting.md) | Code Quality | Formatting standards, heading hierarchy, list formatting | `markdown`, `documentation`, `formatting` |
-| [Python Formatting](code-formatting/python-formatting.md) | Code Quality | PEP 8 compliance, import organization, naming conventions | `python`, `formatting`, `pep8`, `code-generation` |
-| [TypeScript Formatting](code-formatting/typescript-formatting.md) | Code Quality | Type annotations, interfaces, import organization | `typescript`, `formatting`, `types`, `code-generation` |
+### Code Formatting
+
+| Document | Description | Tags |
+|----------|-------------|------|
+| [CSS Formatting](code-formatting/css-formatting.md) | Property ordering, naming conventions, consistent spacing | `css`, `scss`, `formatting`, `styles` |
+| [JavaScript Formatting](code-formatting/javascript-formatting.md) | Semicolons, quotes, indentation, import organization | `javascript`, `formatting`, `eslint`, `code-generation` |
+| [JSON Formatting](code-formatting/json-formatting.md) | Consistent indentation, key ordering, proper formatting | `json`, `formatting`, `config` |
+| [Markdown Formatting](code-formatting/markdown-formatting.md) | Formatting standards, heading hierarchy, list formatting | `markdown`, `documentation`, `formatting` |
+| [Python Formatting](code-formatting/python-formatting.md) | PEP 8 compliance, import organization, naming conventions | `python`, `formatting`, `pep8`, `code-generation` |
+| [TypeScript Formatting](code-formatting/typescript-formatting.md) | Type annotations, interfaces, import organization | `typescript`, `formatting`, `types`, `code-generation` |
+
+### Code Quality
+
+| Document | Description | Tags |
+|----------|-------------|------|
+| [Code Review Standards](categories/code-quality/code-review-standards.md) | Code review best practices and standards | `code-review`, `quality`, `best-practices` |
+| [Database Query Patterns](categories/code-quality/database-query-patterns.md) | Database query organization and optimization | `database`, `sql`, `query-patterns` |
+| [Error Handling Standards](categories/code-quality/error-handling-standards.md) | Error handling patterns and best practices | `error-handling`, `exceptions`, `quality` |
+| [Logging Standards](categories/code-quality/logging-standards.md) | Logging patterns and best practices | `logging`, `debugging`, `observability` |
+
+### Frameworks
+
+| Document | Description | Tags |
+|----------|-------------|------|
+| [Django Patterns](categories/frameworks/django-patterns.md) | Django project structure and patterns | `django`, `python`, `framework`, `web` |
+| [FastAPI Patterns](categories/frameworks/fastapi-patterns.md) | FastAPI endpoint structure and patterns | `fastapi`, `python`, `api`, `framework` |
+| [Node.js/Express Patterns](categories/frameworks/nodejs-express-patterns.md) | Express route organization and middleware | `nodejs`, `express`, `javascript`, `api` |
+| [React Component Patterns](categories/frameworks/react-component-patterns.md) | React component structure and hooks | `react`, `javascript`, `components`, `frontend` |
+| [Vue Component Patterns](categories/frameworks/vue-component-patterns.md) | Vue composition API and component patterns | `vue`, `javascript`, `components`, `frontend` |
+
+### Testing
+
+| Document | Description | Tags |
+|----------|-------------|------|
+| [Testing Best Practices](categories/testing/testing-best-practices.md) | Test coverage and quality standards | `testing`, `quality`, `best-practices` |
+
+### Workflows
+
+| Document | Description | Tags |
+|----------|-------------|------|
+| [API Development Patterns](categories/workflows/api-development-patterns.md) | API design and development patterns | `api`, `rest`, `development`, `patterns` |
+| [Environment Config](categories/workflows/environment-config.md) | Environment configuration management | `config`, `environment`, `deployment` |
+| [Git Commit Standards](categories/workflows/git-commit-standards.md) | Git commit message conventions | `git`, `version-control`, `commits` |
+| [Logging Standards](categories/workflows/logging-standards.md) | Application logging patterns | `logging`, `debugging`, `observability` |
 
 ### Tag Reference
 
@@ -123,66 +159,94 @@ Documents tagged with `eslint`:
 
 Documents tagged with `testing`:
 
-- *Coming soon* - Test coverage and quality standards
-
-#### Security
-
-Documents tagged with `security`:
-
-- *Coming soon* - Security best practices and patterns
+- [Testing Best Practices](categories/testing/testing-best-practices.md)
 
 #### React
 
 Documents tagged with `react`:
 
-- *Coming soon* - React component patterns and conventions
+- [React Component Patterns](categories/frameworks/react-component-patterns.md)
+
+#### Vue
+
+Documents tagged with `vue`:
+
+- [Vue Component Patterns](categories/frameworks/vue-component-patterns.md)
+
+#### Django
+
+Documents tagged with `django`:
+
+- [Django Patterns](categories/frameworks/django-patterns.md)
+
+#### FastAPI
+
+Documents tagged with `fastapi`:
+
+- [FastAPI Patterns](categories/frameworks/fastapi-patterns.md)
+
+#### Express
+
+Documents tagged with `express`:
+
+- [Node.js/Express Patterns](categories/frameworks/nodejs-express-patterns.md)
 
 #### Git
 
 Documents tagged with `git`:
 
-- *Coming soon* - Git workflow and commit standards
+- [Git Commit Standards](categories/workflows/git-commit-standards.md)
 
-#### Prettier
+#### API Development
 
-Documents tagged with `prettier`:
+Documents tagged with `api`:
 
-- *Coming soon* - Prettier configuration patterns
+- [API Development Patterns](categories/workflows/api-development-patterns.md)
+- [FastAPI Patterns](categories/frameworks/fastapi-patterns.md)
+- [Node.js/Express Patterns](categories/frameworks/nodejs-express-patterns.md)
 
-### Coming Soon
+## Coming Soon
 
-### Infrastructure as Code *(Coming Soon)*
+We're actively expanding the repository. Here are some areas we're planning to cover:
+
+### Infrastructure as Code
 
 - **Terraform** - Resource organization, naming conventions, variable structure
 - **Pulumi** - Resource patterns, stack organization, configuration management
 - **CloudFormation** - Template structure, parameter organization, output formatting
 - **Ansible** - Playbook structure, task organization, variable management
 
-### Shell & Scripting *(Coming Soon)*
+### Shell & Scripting
 
 - **Bash** - Function structure, error handling, variable naming, best practices
 - **PowerShell** - Cmdlet patterns, parameter organization, pipeline usage
 - **Zsh** - Modern shell scripting patterns, function organization
 
-### Configuration Files *(Coming Soon)*
+### Configuration Files
 
 - **YAML** - Indentation standards, key ordering, comment formatting
 - **TOML** - Section organization, key formatting, value structure
 - **Docker** - Dockerfile best practices, layer optimization, security patterns
 - **Docker Compose** - Service organization, network patterns, volume management
 
-### Database & Query Languages *(Coming Soon)*
+### Database & Query Languages
 
 - **SQL** - Query formatting, capitalization standards, indentation patterns
 - **GraphQL** - Schema organization, query structure, resolver patterns
 - **MongoDB** - Query patterns, aggregation pipelines, index optimization
 
-### Framework-Specific *(Coming Soon)*
+### Security
 
-- **React** - Component structure, prop ordering, hook patterns, JSX formatting
-- **Vue** - Template organization, composition API patterns, component structure
-- **Express** - Route organization, middleware patterns, error handling
-- **FastAPI** - Endpoint structure, dependency injection, response formatting
+- **Security Best Practices** - Common security patterns and vulnerability prevention
+- **Authentication Patterns** - OAuth, JWT, session management
+- **Input Validation** - Sanitization and validation patterns
+
+### Additional Tools
+
+- **Prettier** - Prettier configuration patterns
+- **ESLint** - Advanced ESLint configurations
+
+Want to contribute one of these? Check out our [contribution guidelines](CONTRIBUTING.md)!
 
 ## How to Use
 

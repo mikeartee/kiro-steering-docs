@@ -2,57 +2,68 @@
 
 This roadmap outlines the planned development and expansion of the Kiro Steering Documents repository.
 
-## Current Status: Initial Release (v1.0)
+## Current Status: v1.1 - Expanded Collection
 
-The repository is ready for public use with core infrastructure and initial document collection.
+The repository has grown significantly with 27 production-ready steering documents and comprehensive contribution infrastructure.
 
 ### What's Available Now
 
 - ✅ Repository structure with category organization
 - ✅ Comprehensive documentation (README, CONTRIBUTING, templates)
 - ✅ Validation tools and GitHub Actions workflow
-- ✅ Tag taxonomy and search system
-- ✅ Initial code quality steering documents (JavaScript, TypeScript, Python, CSS, JSON, Markdown)
-- ✅ Code review standards document
-- ✅ Community contribution guidelines
+- ✅ Tag taxonomy and search system (66+ tags)
+- ✅ **27 steering documents** across all categories:
+  - **12 Code Formatting**: Bash, CSS, Docker, GraphQL, JavaScript, JSON, Markdown, Python, SQL, Terraform, TypeScript, YAML
+  - **4 Code Quality**: Code Review, Database Queries, Error Handling, Logging
+  - **5 Frameworks**: Django, FastAPI, Node.js/Express, React, Vue
+  - **1 Security**: Security Best Practices
+  - **1 Testing**: Testing Best Practices
+  - **4 Workflows**: API Development, Environment Config, Git Commits, Logging
+- ✅ Community contribution guidelines and reviewer documentation
+- ✅ Quality checklist and validation system
+- ✅ Complete documentation guides (Creating Documents, Examples, Syntax Reference)
 
-## Phase 1: Expand Document Collection (Q1 2025)
+## Phase 1: Continue Document Expansion (Q1 2025)
 
-Focus on adding more steering documents across all categories.
+Focus on filling remaining gaps in document coverage.
 
-### Testing Category
+### High Priority
+
+- [ ] **Docker Compose** - Service organization, network patterns, volume management
+- [ ] **PowerShell** - Cmdlet patterns, parameter organization, pipeline usage
+- [ ] **Authentication Patterns** - OAuth, JWT, session management
+- [ ] **API Security** - Rate limiting, CORS, API key management
+- [ ] **GitHub Actions** - CI/CD workflow patterns
+
+### Infrastructure as Code
+
+- [ ] **Pulumi** - Resource patterns, stack organization
+- [ ] **CloudFormation** - Template structure, parameter organization
+- [ ] **Ansible** - Playbook structure, task organization
+
+### Database & Query Languages
+
+- [ ] **MongoDB** - Query patterns, aggregation pipelines
+- [ ] **PostgreSQL-specific** - Advanced PostgreSQL patterns
+- [ ] **MySQL-specific** - MySQL optimization
+
+### Configuration Files
+
+- [ ] **TOML** - Section organization, key formatting
+- [ ] **Environment files** - .env best practices
+
+### Testing Expansion
 
 - [ ] Test coverage standards
-- [ ] Unit testing best practices
 - [ ] Integration testing patterns
-- [ ] Test-driven development (TDD) guidance
-- [ ] Framework-specific testing (Jest, Pytest, etc.)
+- [ ] Framework-specific testing (Jest, Pytest, Vitest)
+- [ ] E2E testing patterns
 
-### Security Category
+### Additional Frameworks
 
-- [ ] Input validation and sanitization
-- [ ] Authentication and authorization patterns
-- [ ] Secure API development
-- [ ] Dependency security scanning
-- [ ] OWASP Top 10 prevention
-
-### Frameworks Category
-
-- [ ] React development patterns
-- [ ] Vue.js best practices
-- [ ] Angular conventions
-- [ ] Express.js API development
-- [ ] Django project structure
-- [ ] FastAPI patterns
-- [ ] Next.js and Nuxt.js patterns
-
-### Workflows Category
-
-- [ ] Git commit message standards
-- [ ] Pre-commit hooks setup
-- [ ] GitHub Actions CI/CD patterns
-- [ ] Code review automation
-- [ ] Release management
+- [ ] **Angular** - Component patterns and conventions
+- [ ] **Next.js** - App router and server components
+- [ ] **Nuxt.js** - Vue meta-framework patterns
 
 ## Phase 2: Enhanced Discovery (Q2 2025)
 
@@ -125,9 +136,10 @@ Have an idea not on this roadmap? We want to hear it!
 
 We aim for quarterly releases with new features and documents:
 
-- **v1.0** - Initial release (Current)
-- **v1.1** - Q1 2025 - Expanded document collection
-- **v1.2** - Q2 2025 - Enhanced discovery features
+- **v1.0** - ✅ Initial release (January 2025)
+- **v1.1** - ✅ Expanded document collection (January 2025) - **Current**
+- **v1.2** - Q1 2025 - Complete core technology coverage
+- **v1.3** - Q2 2025 - Enhanced discovery features
 - **v2.0** - Q3 2025 - Advanced features
 - **v2.1** - Q4 2025 - Community growth initiatives
 
@@ -151,6 +163,6 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 
 ---
 
-**Last updated**: January 2025
+**Last updated**: January 2025 (v1.1 release)
 
 This roadmap is a living document and may change based on community needs and feedback.

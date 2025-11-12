@@ -1,7 +1,7 @@
 ---
 title: "Bash Scripting Standards"
 description: "Guides Kiro to write safe, readable Bash scripts with proper error handling"
-category: "code-formatting"
+category: "code-quality"
 tags: ["bash", "shell", "scripting", "linux"]
 inclusion: always
 ---

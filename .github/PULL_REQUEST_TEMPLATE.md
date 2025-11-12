@@ -2,6 +2,8 @@
 
 Please provide a clear description of your changes.
 
+> **For Reviewers**: See [Reviewer Guidelines](REVIEWER_GUIDELINES.md) for detailed review process and quality standards.
+
 ## Type of Change
 
 - [ ] New steering document

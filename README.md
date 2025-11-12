@@ -9,6 +9,7 @@ A community-driven collection of reusable steering documents for Kiro. Discover,
 - [All Documents](#all-documents)
 - [How to Use](#how-to-use)
 - [Contributing](#contributing)
+- [Documentation](#documentation)
 
 ## Browse by Category
 
@@ -251,6 +252,27 @@ When contributing, include relevant tags:
 - **Purpose tags**: `formatting`, `testing`, `security`, etc.
 - **Tool tags**: `eslint`, `prettier`, `git`, etc.
 - **Framework tags**: `react`, `vue`, `django`, etc.
+
+## Documentation
+
+Comprehensive guides for creating and contributing steering documents:
+
+### For Contributors
+
+- **[Creating Steering Documents](docs/CREATING_STEERING_DOCUMENTS.md)** - Complete guide to creating effective steering documents
+- **[Examples: Good and Bad](docs/EXAMPLES_GOOD_AND_BAD.md)** - Learn from real examples of well-crafted and problematic documents
+- **[Syntax Reference](docs/SYNTAX_REFERENCE.md)** - Complete reference for frontmatter, markdown, and formatting
+- **[Quality Checklist](.github/QUALITY_CHECKLIST.md)** - Pre-submission checklist for contributors
+
+### For Reviewers
+
+- **[Reviewer Guidelines](.github/REVIEWER_GUIDELINES.md)** - Comprehensive review process and quality standards
+- **[Quality Checklist](.github/QUALITY_CHECKLIST.md)** - Quick reference for reviewing contributions
+
+### Templates and Tools
+
+- **[Steering Document Template](templates/steering-document-template.md)** - Template for creating new documents
+- **[Validation Tools](tools/)** - Scripts for validating steering documents
 
 ## Related Resources
 

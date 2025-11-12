@@ -20,7 +20,14 @@ Thanks for wanting to share your steering documents!
 2. Add your steering document to the right folder (create it if needed)
 3. Make sure it has frontmatter with title and description
 4. Test it in a real project first
-5. Submit a pull request with a brief description
+5. Review the [Quality Checklist](.github/QUALITY_CHECKLIST.md) before submitting
+6. Submit a pull request with a brief description
+
+**Quick Links**:
+
+- [Quality Checklist](.github/QUALITY_CHECKLIST.md) - Pre-submission checklist
+- [Steering Document Template](templates/steering-document-template.md) - Template to follow
+- [Reviewer Guidelines](.github/REVIEWER_GUIDELINES.md) - How PRs are reviewed
 
 ## Format
 

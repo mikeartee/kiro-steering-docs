@@ -45,12 +45,18 @@ Comprehensive searchable index of all available steering documents:
 
 | Document | Description | Tags |
 |----------|-------------|------|
+| [Bash Scripting](code-formatting/bash-formatting.md) | Safe Bash scripts with error handling and quoting | `bash`, `shell`, `scripting`, `linux` |
 | [CSS Formatting](code-formatting/css-formatting.md) | Property ordering, naming conventions, consistent spacing | `css`, `scss`, `formatting`, `styles` |
+| [Dockerfile](code-formatting/docker-formatting.md) | Optimized Dockerfiles with layer caching and security | `docker`, `dockerfile`, `containers`, `devops` |
+| [GraphQL Schema](code-formatting/graphql-formatting.md) | Well-structured GraphQL schemas with consistent naming | `graphql`, `api`, `schema`, `formatting` |
 | [JavaScript Formatting](code-formatting/javascript-formatting.md) | Semicolons, quotes, indentation, import organization | `javascript`, `formatting`, `eslint`, `code-generation` |
 | [JSON Formatting](code-formatting/json-formatting.md) | Consistent indentation, key ordering, proper formatting | `json`, `formatting`, `config` |
 | [Markdown Formatting](code-formatting/markdown-formatting.md) | Formatting standards, heading hierarchy, list formatting | `markdown`, `documentation`, `formatting` |
 | [Python Formatting](code-formatting/python-formatting.md) | PEP 8 compliance, import organization, naming conventions | `python`, `formatting`, `pep8`, `code-generation` |
+| [SQL Formatting](code-formatting/sql-formatting.md) | Readable SQL queries with proper structure | `sql`, `database`, `formatting`, `queries` |
+| [Terraform Configuration](code-formatting/terraform-formatting.md) | Well-organized Terraform with proper resource naming | `terraform`, `iac`, `infrastructure`, `devops` |
 | [TypeScript Formatting](code-formatting/typescript-formatting.md) | Type annotations, interfaces, import organization | `typescript`, `formatting`, `types`, `code-generation` |
+| [YAML Formatting](code-formatting/yaml-formatting.md) | Clean YAML with proper indentation | `yaml`, `formatting`, `config`, `devops` |
 
 ### Code Quality
 
@@ -70,6 +76,12 @@ Comprehensive searchable index of all available steering documents:
 | [Node.js/Express Patterns](categories/frameworks/nodejs-express-patterns.md) | Express route organization and middleware | `nodejs`, `express`, `javascript`, `api` |
 | [React Component Patterns](categories/frameworks/react-component-patterns.md) | React component structure and hooks | `react`, `javascript`, `components`, `frontend` |
 | [Vue Component Patterns](categories/frameworks/vue-component-patterns.md) | Vue composition API and component patterns | `vue`, `javascript`, `components`, `frontend` |
+
+### Security
+
+| Document | Description | Tags |
+|----------|-------------|------|
+| [Security Best Practices](categories/security/security-best-practices.md) | Secure code with input validation and vulnerability prevention | `security`, `validation`, `best-practices`, `vulnerabilities` |
 
 ### Testing
 
@@ -211,40 +223,38 @@ We're actively expanding the repository. Here are some areas we're planning to c
 
 ### Infrastructure as Code
 
-- **Terraform** - Resource organization, naming conventions, variable structure
 - **Pulumi** - Resource patterns, stack organization, configuration management
 - **CloudFormation** - Template structure, parameter organization, output formatting
 - **Ansible** - Playbook structure, task organization, variable management
 
 ### Shell & Scripting
 
-- **Bash** - Function structure, error handling, variable naming, best practices
 - **PowerShell** - Cmdlet patterns, parameter organization, pipeline usage
 - **Zsh** - Modern shell scripting patterns, function organization
 
 ### Configuration Files
 
-- **YAML** - Indentation standards, key ordering, comment formatting
 - **TOML** - Section organization, key formatting, value structure
-- **Docker** - Dockerfile best practices, layer optimization, security patterns
 - **Docker Compose** - Service organization, network patterns, volume management
 
 ### Database & Query Languages
 
-- **SQL** - Query formatting, capitalization standards, indentation patterns
-- **GraphQL** - Schema organization, query structure, resolver patterns
 - **MongoDB** - Query patterns, aggregation pipelines, index optimization
+- **PostgreSQL-specific** - Advanced PostgreSQL patterns and features
+- **MySQL-specific** - MySQL optimization and best practices
 
 ### Security
 
-- **Security Best Practices** - Common security patterns and vulnerability prevention
 - **Authentication Patterns** - OAuth, JWT, session management
-- **Input Validation** - Sanitization and validation patterns
+- **API Security** - Rate limiting, CORS, API key management
+- **Secrets Management** - Environment variables, vault integration
 
 ### Additional Tools
 
 - **Prettier** - Prettier configuration patterns
 - **ESLint** - Advanced ESLint configurations
+- **GitHub Actions** - CI/CD workflow patterns
+- **Jenkins** - Pipeline configuration standards
 
 Want to contribute one of these? Check out our [contribution guidelines](CONTRIBUTING.md)!
 

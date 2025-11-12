@@ -1,6 +1,7 @@
 ---
 title: "GraphQL Schema Standards"
 description: "Guides Kiro to write well-structured GraphQL schemas with consistent naming and organization"
+category: "code-formatting"
 tags: ["graphql", "api", "schema", "formatting"]
 inclusion: always
 ---

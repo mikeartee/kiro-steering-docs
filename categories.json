@@ -1,29 +1,29 @@
 {
   "categories": [
     {
-      "id": "code-quality",
-      "name": "Code Quality",
-      "description": "Maintain consistent code standards, formatting, and linting rules across your projects"
+      "id": "code-formatting",
+      "name": "Code Formatting",
+      "description": "Code formatting standards and quality enforcement for multiple languages"
     },
     {
-      "id": "testing",
-      "name": "Testing",
-      "description": "Guide test creation, coverage standards, and testing best practices"
+      "id": "categories",
+      "name": "Categories",
+      "description": "Category documentation and organization guides"
     },
     {
-      "id": "security",
-      "name": "Security",
-      "description": "Enforce security best practices and prevent common vulnerabilities"
+      "id": "docs",
+      "name": "Documentation",
+      "description": "Documentation standards, guides, and best practices"
     },
     {
-      "id": "frameworks",
-      "name": "Frameworks",
-      "description": "Framework-specific development patterns and conventions"
+      "id": "templates",
+      "name": "Templates",
+      "description": "Project templates and boilerplates for steering documents"
     },
     {
-      "id": "workflows",
-      "name": "Workflows",
-      "description": "Development workflow automation and CI/CD integration"
+      "id": "tools",
+      "name": "Tools",
+      "description": "Development tools and utilities for validation"
     }
   ]
 }

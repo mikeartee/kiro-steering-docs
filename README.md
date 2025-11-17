@@ -219,42 +219,7 @@ Documents tagged with `api`:
 
 ## Coming Soon
 
-We're actively expanding the repository. Here are some areas we're planning to cover:
-
-### Infrastructure as Code
-
-- **Pulumi** - Resource patterns, stack organization, configuration management
-- **CloudFormation** - Template structure, parameter organization, output formatting
-- **Ansible** - Playbook structure, task organization, variable management
-
-### Shell & Scripting
-
-- **PowerShell** - Cmdlet patterns, parameter organization, pipeline usage
-- **Zsh** - Modern shell scripting patterns, function organization
-
-### Configuration Files
-
-- **TOML** - Section organization, key formatting, value structure
-- **Docker Compose** - Service organization, network patterns, volume management
-
-### Database & Query Languages
-
-- **MongoDB** - Query patterns, aggregation pipelines, index optimization
-- **PostgreSQL-specific** - Advanced PostgreSQL patterns and features
-- **MySQL-specific** - MySQL optimization and best practices
-
-### Security
-
-- **Authentication Patterns** - OAuth, JWT, session management
-- **API Security** - Rate limiting, CORS, API key management
-- **Secrets Management** - Environment variables, vault integration
-
-### Additional Tools
-
-- **Prettier** - Prettier configuration patterns
-- **ESLint** - Advanced ESLint configurations
-- **GitHub Actions** - CI/CD workflow patterns
-- **Jenkins** - Pipeline configuration standards
+We're actively expanding the repository based on community feedback. Have a suggestion? Open an issue!
 
 Want to contribute one of these? Check out our [contribution guidelines](CONTRIBUTING.md)!
 

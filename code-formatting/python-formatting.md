@@ -10,6 +10,16 @@ inclusion: always
 
 **This steering document guides Kiro to write Python code that follows basic standards and avoids common syntax errors.** When Kiro generates or edits Python files, it will automatically apply these standards.
 
+## RULES
+
+You MUST follow these rules when creating or editing Python files:
+
+1. You MUST use 4-space indentation (never tabs or mixed spacing)
+2. You MUST organize imports (standard library, third-party, local)
+3. You MUST use snake_case for functions/variables and PascalCase for classes
+4. You MUST catch specific exceptions (not bare `except:`)
+5. You MUST NOT mix tabs and spaces (this breaks Python)
+
 ## How Kiro Will Write Python
 
 ### Indentation

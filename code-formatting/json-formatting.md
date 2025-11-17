@@ -10,6 +10,16 @@ inclusion: always
 
 **Kiro writes clean, consistently formatted JSON that prevents parsing errors and maintains readable structure.**
 
+## RULES
+
+You MUST follow these rules when creating or editing JSON files:
+
+1. You MUST use 2-space indentation consistently
+2. You MUST use double quotes for all keys and string values
+3. You MUST organize keys logically (important fields first)
+4. You MUST ensure valid JSON syntax (no trailing commas, proper brackets)
+5. You MUST NOT use single quotes or unquoted keys
+
 ## How Kiro Will Write JSON
 
 ### Consistent Indentation

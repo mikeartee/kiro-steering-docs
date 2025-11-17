@@ -21,11 +21,12 @@ Every steering document should follow this structure:
 
 1. **Frontmatter** - Metadata about the document
 2. **Core Principle** - One sentence explaining the purpose
-3. **How Kiro Will Write [Language]** - Specific behavior guidance
-4. **What This Prevents** - Problems solved
-5. **Simple Examples** - Before/after code samples
-6. **Customization** - Note about adaptability
-7. **Optional Tools** - External validation (clearly optional)
+3. **RULES** - Non-negotiable requirements using MUST/MUST NOT language
+4. **How Kiro Will Write [Language]** - Specific behavior guidance
+5. **What This Prevents** - Problems solved
+6. **Simple Examples** - Before/after code samples
+7. **Customization** - Note about adaptability
+8. **Optional Tools** - External validation (clearly optional)
 
 ### Why This Pattern Works
 
@@ -53,16 +54,62 @@ Start by identifying a specific problem you want to solve:
 - "JavaScript needs better quality" (too vague)
 - "We need comprehensive TypeScript coverage" (too broad)
 
-### Step 2: Choose 3-4 Core Rules
+### Step 2: Write Strong RULES Section
 
-Pick the 3-4 most important rules that solve your problem:
+Create a RULES section with 5 non-negotiable requirements using MUST/MUST NOT language:
+
+**Why "RULES" works better than "Instructions"**:
+
+- Non-negotiable, must be followed
+- Implies authority and consequences
+- Binary: follow or don't
+- Triggers stronger compliance response in LLMs
+
+**RULES format**:
+
+```markdown
+## RULES
+
+You MUST follow these rules when creating or editing [language] files:
+
+1. You MUST [specific requirement]
+2. You MUST [another requirement]
+3. You MUST [verification step]
+4. You MUST NOT [specific prohibition]
+5. You MUST NOT [another prohibition]
+```
 
 **Example for JavaScript**:
 
-1. Always use semicolons
-2. Use single quotes for strings
-3. Use 2-space indentation
-4. Organize imports logically
+```markdown
+## RULES
+
+You MUST follow these rules when creating or editing JavaScript files:
+
+1. You MUST include semicolons at the end of all statements
+2. You MUST use single quotes for strings (unless escaping is needed)
+3. You MUST use 2-space indentation consistently
+4. You MUST organize imports with external packages first, then local imports
+5. You MUST use const/let instead of var
+```
+
+**Strong vs Weak language**:
+
+- WEAK: "Try to include semicolons for consistency"
+- STRONG: "You MUST include semicolons at the end of all statements"
+- WEAK: "When creating markdown files, follow this workflow..."
+- STRONG: "You MUST run getDiagnostics after creating any markdown file"
+
+### Step 3: Choose 3-4 Core Patterns
+
+Pick the 3-4 most important patterns to demonstrate in "How Kiro Will Write" section:
+
+**Example for JavaScript**:
+
+1. Semicolons and quotes
+2. Indentation
+3. Import organization
+4. Variable declarations
 
 **Don't try to cover**:
 
@@ -71,7 +118,7 @@ Pick the 3-4 most important rules that solve your problem:
 - Advanced optimization techniques
 - Controversial or opinionated patterns
 
-### Step 3: Write Clear Examples
+### Step 4: Write Clear Examples
 
 For each rule, provide a clear before/after example:
 

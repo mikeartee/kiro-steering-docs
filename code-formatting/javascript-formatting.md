@@ -10,6 +10,16 @@ inclusion: always
 
 **This steering document guides Kiro to write JavaScript code that follows consistent patterns and avoids common syntax errors.** When Kiro generates or edits JavaScript files, it will automatically apply these standards.
 
+## RULES
+
+You MUST follow these rules when creating or editing JavaScript files:
+
+1. You MUST include semicolons at the end of all statements
+2. You MUST use single quotes for strings (unless escaping is needed)
+3. You MUST use 2-space indentation consistently
+4. You MUST organize imports with external packages first, then local imports
+5. You MUST use const/let instead of var
+
 ## How Kiro Will Write JavaScript
 
 ### Code Style

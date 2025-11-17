@@ -10,6 +10,16 @@ inclusion: always
 
 **Kiro writes clean, consistently formatted TypeScript that leverages strong typing and prevents common type-related errors.**
 
+## RULES
+
+You MUST follow these rules when creating or editing TypeScript files:
+
+1. You MUST provide explicit type annotations for function parameters and return types
+2. You MUST define interfaces for all object structures
+3. You MUST organize imports logically (external libraries, internal modules, type imports)
+4. You MUST use meaningful generic type names (not just T, U, V)
+5. You MUST NOT use `any` type unless absolutely necessary
+
 ## How Kiro Will Write TypeScript
 
 ### Type Annotations

@@ -15,6 +15,7 @@ A community-driven collection of reusable steering documents for Kiro. Discover,
 
 Explore steering documents organized by functional area:
 
+- **[Agents](agents/)** - Specialized Kiro agent personas and workflows
 - **[Code Quality](categories/code-quality/)** - Formatting, linting, and code standards
 - **[Testing](categories/testing/)** - Test coverage and quality standards
 - **[Security](categories/security/)** - Security best practices and vulnerability prevention
@@ -40,6 +41,12 @@ Find documents by technology, purpose, or use case. See [TAGS.md](TAGS.md) for t
 ## All Documents
 
 Comprehensive searchable index of all available steering documents:
+
+### Agents
+
+| Document | Description | Tags |
+|----------|-------------|------|
+| [BMAD Spec Converter](agents/bmad-spec-converter-agent.md) | Transform BMAD planning documents into formal Kiro specifications | `agent`, `bmad`, `specs`, `requirements`, `property-based-testing` |
 
 ### Code Formatting
 
@@ -216,6 +223,12 @@ Documents tagged with `api`:
 - [API Development Patterns](categories/workflows/api-development-patterns.md)
 - [FastAPI Patterns](categories/frameworks/fastapi-patterns.md)
 - [Node.js/Express Patterns](categories/frameworks/nodejs-express-patterns.md)
+
+#### Agents
+
+Documents tagged with `agent`:
+
+- [BMAD Spec Converter](agents/bmad-spec-converter-agent.md) - Transform BMAD documents to Kiro specs
 
 ## Coming Soon
 

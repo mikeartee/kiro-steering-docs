@@ -1,6 +1,11 @@
 {
   "categories": [
     {
+      "id": "agents",
+      "name": "Agents",
+      "description": "Specialized Kiro agent personas and workflows for specific development tasks"
+    },
+    {
       "id": "code-formatting",
       "name": "Code Formatting",
       "description": "Code formatting standards and quality enforcement for multiple languages"

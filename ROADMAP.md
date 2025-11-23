@@ -12,7 +12,7 @@ The repository has grown significantly with 27 production-ready steering documen
 - ✅ Comprehensive documentation (README, CONTRIBUTING, templates)
 - ✅ Validation tools and GitHub Actions workflow
 - ✅ Tag taxonomy and search system (66+ tags)
-- ✅ **27 steering documents** across all categories:
+- ✅ **27 steering documents** across all practice areas:
   - **12 Code Formatting**: Bash, CSS, Docker, GraphQL, JavaScript, JSON, Markdown, Python, SQL, Terraform, TypeScript, YAML
   - **4 Code Quality**: Code Review, Database Queries, Error Handling, Logging
   - **5 Frameworks**: Django, FastAPI, Node.js/Express, React, Vue

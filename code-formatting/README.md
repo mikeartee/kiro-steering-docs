@@ -1,10 +1,10 @@
 # Code Formatting Steering Documents
 
-Steering documents focused on code formatting standards and quality enforcement. Part of the [Code Quality](../categories/code-quality/) category.
+Steering documents focused on code formatting standards and quality enforcement. Part of the [Code Quality](../practices/code-quality/) practice area.
 
 ## Quick Navigation
 
-- [Browse All Categories](../categories/)
+- [Browse All Practices](../practices/)
 - [Search by Tag](../#search-by-tag)
 - [Main README](../)
 
@@ -60,12 +60,12 @@ These documents work well together. A typical setup:
 - **Configuration**: [JSON Formatting](json-formatting.md)
 - **Documentation**: [Markdown Formatting](markdown-formatting.md)
 
-### Other Categories
+### Other Practices
 
-- [Testing](../categories/testing/) - Test quality and coverage
-- [Security](../categories/security/) - Security best practices
-- [Frameworks](../categories/frameworks/) - Framework-specific patterns
-- [Workflows](../categories/workflows/) - CI/CD and automation
+- [Testing](../practices/testing/) - Test quality and coverage
+- [Security](../practices/security/) - Security best practices
+- [Frameworks](../practices/frameworks/) - Framework-specific patterns
+- [Workflows](../practices/workflows/) - CI/CD and automation
 
 ## Contributing
 

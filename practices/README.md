@@ -1,8 +1,8 @@
-# Steering Document Categories
+# Steering Document Practices
 
-Browse steering documents organized by functional area. Each category contains specialized steering documents that help Kiro generate better code for specific purposes.
+Browse steering documents organized by functional area. Each practice area contains specialized steering documents that help Kiro generate better code for specific purposes.
 
-## Available Categories
+## Available Practices
 
 ### [Code Quality](code-quality/)
 
@@ -77,18 +77,18 @@ Development workflow automation and CI/CD integration.
 
 **Best for:** Teams automating development processes
 
-## How to Use Categories
+## How to Use Practices
 
 ### Browse by Need
 
 1. Identify your primary need (code quality, testing, security, etc.)
-2. Navigate to the relevant category
+2. Navigate to the relevant practice area
 3. Review available steering documents
 4. Copy documents to your `.kiro/steering/` directory
 
-### Combine Categories
+### Combine Practices
 
-Steering documents from different categories work together:
+Steering documents from different practice areas work together:
 
 ```bash
 .kiro/steering/

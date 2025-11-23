@@ -575,7 +575,7 @@ Your steering document is successful if:
 ## Next Steps
 
 1. Review the [Steering Document Template](../templates/steering-document-template.md)
-2. Check out [existing steering documents](../categories/) for inspiration
+2. Check out [existing steering documents](../practices/) for inspiration
 3. Read the [Quality Checklist](../.github/QUALITY_CHECKLIST.md)
 4. Create your steering document
 5. Test it thoroughly

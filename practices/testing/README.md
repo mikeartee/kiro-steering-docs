@@ -29,7 +29,7 @@ Testing steering documents will help you:
 
 ```bash
 # Copy a testing steering document to your project
-cp categories/testing/test-coverage-standards.md .kiro/steering/
+cp practices/testing/test-coverage-standards.md .kiro/steering/
 ```
 
 ### Best Practices
@@ -39,7 +39,7 @@ cp categories/testing/test-coverage-standards.md .kiro/steering/
 - Keep tests simple and maintainable
 - Use testing steering documents to establish team standards
 
-## Related Categories
+## Related Practices
 
 - [Code Quality](../code-quality/) - Code formatting and standards
 - [Frameworks](../frameworks/) - Framework-specific testing patterns

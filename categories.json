@@ -11,9 +11,9 @@
       "description": "Code formatting standards and quality enforcement for multiple languages"
     },
     {
-      "id": "categories",
-      "name": "Categories",
-      "description": "Category documentation and organization guides"
+      "id": "practices",
+      "name": "Practices",
+      "description": "Best practices, patterns, and standards for code quality, frameworks, security, testing, and workflows"
     },
     {
       "id": "docs",

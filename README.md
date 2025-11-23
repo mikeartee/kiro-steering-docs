@@ -16,11 +16,11 @@ A community-driven collection of reusable steering documents for Kiro. Discover,
 Explore steering documents organized by functional area:
 
 - **[Agents](agents/)** - Specialized Kiro agent personas and workflows
-- **[Code Quality](categories/code-quality/)** - Formatting, linting, and code standards
-- **[Testing](categories/testing/)** - Test coverage and quality standards
-- **[Security](categories/security/)** - Security best practices and vulnerability prevention
-- **[Frameworks](categories/frameworks/)** - Framework-specific patterns and conventions
-- **[Workflows](categories/workflows/)** - CI/CD, Git hooks, and automation
+- **[Code Quality](practices/code-quality/)** - Formatting, linting, and code standards
+- **[Testing](practices/testing/)** - Test coverage and quality standards
+- **[Security](practices/security/)** - Security best practices and vulnerability prevention
+- **[Frameworks](practices/frameworks/)** - Framework-specific patterns and conventions
+- **[Workflows](practices/workflows/)** - CI/CD, Git hooks, and automation
 
 ## Search by Tag
 
@@ -69,41 +69,41 @@ Comprehensive searchable index of all available steering documents:
 
 | Document | Description | Tags |
 |----------|-------------|------|
-| [Code Review Standards](categories/code-quality/code-review-standards.md) | Code review best practices and standards | `code-review`, `quality`, `best-practices` |
-| [Database Query Patterns](categories/code-quality/database-query-patterns.md) | Database query organization and optimization | `database`, `sql`, `query-patterns` |
-| [Error Handling Standards](categories/code-quality/error-handling-standards.md) | Error handling patterns and best practices | `error-handling`, `exceptions`, `quality` |
-| [Logging Standards](categories/code-quality/logging-standards.md) | Logging patterns and best practices | `logging`, `debugging`, `observability` |
+| [Code Review Standards](practices/code-quality/code-review-standards.md) | Code review best practices and standards | `code-review`, `quality`, `best-practices` |
+| [Database Query Patterns](practices/code-quality/database-query-patterns.md) | Database query organization and optimization | `database`, `sql`, `query-patterns` |
+| [Error Handling Standards](practices/code-quality/error-handling-standards.md) | Error handling patterns and best practices | `error-handling`, `exceptions`, `quality` |
+| [Logging Standards](practices/code-quality/logging-standards.md) | Logging patterns and best practices | `logging`, `debugging`, `observability` |
 
 ### Frameworks
 
 | Document | Description | Tags |
 |----------|-------------|------|
-| [Django Patterns](categories/frameworks/django-patterns.md) | Django project structure and patterns | `django`, `python`, `framework`, `web` |
-| [FastAPI Patterns](categories/frameworks/fastapi-patterns.md) | FastAPI endpoint structure and patterns | `fastapi`, `python`, `api`, `framework` |
-| [Node.js/Express Patterns](categories/frameworks/nodejs-express-patterns.md) | Express route organization and middleware | `nodejs`, `express`, `javascript`, `api` |
-| [React Component Patterns](categories/frameworks/react-component-patterns.md) | React component structure and hooks | `react`, `javascript`, `components`, `frontend` |
-| [Vue Component Patterns](categories/frameworks/vue-component-patterns.md) | Vue composition API and component patterns | `vue`, `javascript`, `components`, `frontend` |
+| [Django Patterns](practices/frameworks/django-patterns.md) | Django project structure and patterns | `django`, `python`, `framework`, `web` |
+| [FastAPI Patterns](practices/frameworks/fastapi-patterns.md) | FastAPI endpoint structure and patterns | `fastapi`, `python`, `api`, `framework` |
+| [Node.js/Express Patterns](practices/frameworks/nodejs-express-patterns.md) | Express route organization and middleware | `nodejs`, `express`, `javascript`, `api` |
+| [React Component Patterns](practices/frameworks/react-component-patterns.md) | React component structure and hooks | `react`, `javascript`, `components`, `frontend` |
+| [Vue Component Patterns](practices/frameworks/vue-component-patterns.md) | Vue composition API and component patterns | `vue`, `javascript`, `components`, `frontend` |
 
 ### Security
 
 | Document | Description | Tags |
 |----------|-------------|------|
-| [Security Best Practices](categories/security/security-best-practices.md) | Secure code with input validation and vulnerability prevention | `security`, `validation`, `best-practices`, `vulnerabilities` |
+| [Security Best Practices](practices/security/security-best-practices.md) | Secure code with input validation and vulnerability prevention | `security`, `validation`, `best-practices`, `vulnerabilities` |
 
 ### Testing
 
 | Document | Description | Tags |
 |----------|-------------|------|
-| [Testing Best Practices](categories/testing/testing-best-practices.md) | Test coverage and quality standards | `testing`, `quality`, `best-practices` |
+| [Testing Best Practices](practices/testing/testing-best-practices.md) | Test coverage and quality standards | `testing`, `quality`, `best-practices` |
 
 ### Workflows
 
 | Document | Description | Tags |
 |----------|-------------|------|
-| [API Development Patterns](categories/workflows/api-development-patterns.md) | API design and development patterns | `api`, `rest`, `development`, `patterns` |
-| [Environment Config](categories/workflows/environment-config.md) | Environment configuration management | `config`, `environment`, `deployment` |
-| [Git Commit Standards](categories/workflows/git-commit-standards.md) | Git commit message conventions | `git`, `version-control`, `commits` |
-| [Logging Standards](categories/workflows/logging-standards.md) | Application logging patterns | `logging`, `debugging`, `observability` |
+| [API Development Patterns](practices/workflows/api-development-patterns.md) | API design and development patterns | `api`, `rest`, `development`, `patterns` |
+| [Environment Config](practices/workflows/environment-config.md) | Environment configuration management | `config`, `environment`, `deployment` |
+| [Git Commit Standards](practices/workflows/git-commit-standards.md) | Git commit message conventions | `git`, `version-control`, `commits` |
+| [Logging Standards](practices/workflows/logging-standards.md) | Application logging patterns | `logging`, `debugging`, `observability` |
 
 ### Tag Reference
 
@@ -178,51 +178,51 @@ Documents tagged with `eslint`:
 
 Documents tagged with `testing`:
 
-- [Testing Best Practices](categories/testing/testing-best-practices.md)
+- [Testing Best Practices](practices/testing/testing-best-practices.md)
 
 #### React
 
 Documents tagged with `react`:
 
-- [React Component Patterns](categories/frameworks/react-component-patterns.md)
+- [React Component Patterns](practices/frameworks/react-component-patterns.md)
 
 #### Vue
 
 Documents tagged with `vue`:
 
-- [Vue Component Patterns](categories/frameworks/vue-component-patterns.md)
+- [Vue Component Patterns](practices/frameworks/vue-component-patterns.md)
 
 #### Django
 
 Documents tagged with `django`:
 
-- [Django Patterns](categories/frameworks/django-patterns.md)
+- [Django Patterns](practices/frameworks/django-patterns.md)
 
 #### FastAPI
 
 Documents tagged with `fastapi`:
 
-- [FastAPI Patterns](categories/frameworks/fastapi-patterns.md)
+- [FastAPI Patterns](practices/frameworks/fastapi-patterns.md)
 
 #### Express
 
 Documents tagged with `express`:
 
-- [Node.js/Express Patterns](categories/frameworks/nodejs-express-patterns.md)
+- [Node.js/Express Patterns](practices/frameworks/nodejs-express-patterns.md)
 
 #### Git
 
 Documents tagged with `git`:
 
-- [Git Commit Standards](categories/workflows/git-commit-standards.md)
+- [Git Commit Standards](practices/workflows/git-commit-standards.md)
 
 #### API Development
 
 Documents tagged with `api`:
 
-- [API Development Patterns](categories/workflows/api-development-patterns.md)
-- [FastAPI Patterns](categories/frameworks/fastapi-patterns.md)
-- [Node.js/Express Patterns](categories/frameworks/nodejs-express-patterns.md)
+- [API Development Patterns](practices/workflows/api-development-patterns.md)
+- [FastAPI Patterns](practices/frameworks/fastapi-patterns.md)
+- [Node.js/Express Patterns](practices/frameworks/nodejs-express-patterns.md)
 
 #### Agents
 
@@ -259,9 +259,9 @@ cp code-formatting/*.md .kiro/steering/
 
 **By Language**: Use the [tag reference](#tag-reference) to find all documents for your language
 
-**By Purpose**: Browse [categories](#browse-by-category) to find documents by functional area
+**By Purpose**: Browse [practices](#browse-by-category) to find documents by functional area
 
-**By Framework**: Check the [frameworks category](categories/frameworks/) for framework-specific patterns
+**By Framework**: Check the [frameworks practices](practices/frameworks/) for framework-specific patterns
 
 ### Combining Documents
 

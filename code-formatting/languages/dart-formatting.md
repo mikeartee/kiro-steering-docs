@@ -1,7 +1,7 @@
 ---
 title: "Dart Code Quality Standards"
 description: "Guides Kiro to write consistent, error-free Dart code for Flutter development"
-category: "code-formatting"
+category: "code-quality"
 tags: ["dart", "flutter", "formatting", "code-generation"]
 inclusion: always
 ---

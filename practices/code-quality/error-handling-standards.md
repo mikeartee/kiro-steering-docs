@@ -1,7 +1,7 @@
 ---
 title: "Error Handling Standards"
 description: "Guides Kiro to implement robust error handling patterns across different languages"
-category: "practices"
+category: "code-quality"
 tags: ["error-handling", "exceptions", "debugging", "best-practices"]
 inclusion: always
 version: "1.0.0"

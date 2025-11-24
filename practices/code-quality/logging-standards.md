@@ -1,7 +1,7 @@
 ---
 title: "Logging Standards"
 description: "Guides Kiro to write consistent, informative logging code that aids debugging without exposing sensitive data"
-category: "practices"
+category: "code-quality"
 tags: ["logging", "debugging", "monitoring", "security"]
 inclusion: always
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Python Code Quality Standards"
 description: "Guides Kiro to write clean, consistent Python code"
-category: "code-formatting"
+category: "code-quality"
 tags: ["python", "formatting", "code-generation"]
 inclusion: always
 ---

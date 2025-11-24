@@ -1,7 +1,7 @@
 ---
 title: "Logging Standards and Best Practices"
 description: "Guides Kiro to write consistent, secure logging code with appropriate log levels and structured output"
-category: "practices"
+category: "workflows"
 tags:
   ["logging", "observability", "debugging", "security", "structured-logging"]
 inclusion: always

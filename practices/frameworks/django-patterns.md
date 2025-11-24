@@ -1,7 +1,7 @@
 ---
 title: "Django Patterns"
 description: "Guides Kiro to write Django applications following best practices and conventions"
-category: "practices"
+category: "frameworks"
 tags: ["django", "python", "orm", "views", "models"]
 inclusion: always
 version: "1.0.0"

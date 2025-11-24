@@ -1,7 +1,7 @@
 ---
 title: "SQL Formatting Standards"
 description: "Guides Kiro to write readable, consistent SQL queries with proper formatting"
-category: "code-formatting"
+category: "code-quality"
 tags: ["sql", "database", "formatting", "queries"]
 inclusion: always
 ---

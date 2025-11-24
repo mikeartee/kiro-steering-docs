@@ -1,5 +1,4 @@
 ---
-category: "agents"
 inclusion: manual
 contextKey: "@bmad-spec-converter"
 ---

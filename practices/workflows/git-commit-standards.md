@@ -1,7 +1,7 @@
 ---
 title: "Git Commit Standards"
 description: "Guides Kiro to write clear, conventional commit messages that follow best practices"
-category: "practices"
+category: "workflows"
 tags: ["git", "commits", "conventional-commits", "version-control"]
 inclusion: always
 version: "1.0.0"

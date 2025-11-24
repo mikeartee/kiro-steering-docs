@@ -1,7 +1,7 @@
 ---
 title: "Database Query Patterns and Best Practices"
 description: "Guides Kiro to write secure, efficient database queries with proper formatting and parameterization"
-category: "code-quality"
+category: "practices"
 tags: ["database", "sql", "query-optimization", "security", "parameterization"]
 inclusion: always
 ---

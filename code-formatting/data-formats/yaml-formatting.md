@@ -1,7 +1,7 @@
 ---
 title: "YAML Formatting Standards"
 description: "Guides Kiro to write clean, properly indented YAML configuration files"
-category: "code-quality"
+category: "code-formatting"
 tags: ["yaml", "formatting", "config", "devops"]
 inclusion: always
 ---

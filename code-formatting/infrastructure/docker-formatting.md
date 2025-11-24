@@ -1,7 +1,7 @@
 ---
 title: "Dockerfile Best Practices"
 description: "Guides Kiro to write optimized, secure Dockerfiles with proper layer management"
-category: "code-quality"
+category: "code-formatting"
 tags: ["docker", "dockerfile", "containers", "devops"]
 inclusion: always
 ---

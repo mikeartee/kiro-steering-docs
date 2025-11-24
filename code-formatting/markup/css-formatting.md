@@ -1,7 +1,7 @@
 ---
 title: "CSS/SCSS Code Quality Standards"
 description: "Guides Kiro to write consistent, error-free CSS and SCSS code"
-category: "code-quality"
+category: "code-formatting"
 tags: ["css", "scss", "formatting", "code-generation"]
 inclusion: always
 ---

@@ -1,7 +1,7 @@
 ---
 title: "TypeScript Code Quality Standards"
 description: "Guides Kiro to write consistent, error-free TypeScript with proper types and formatting"
-category: "code-quality"
+category: "code-formatting"
 tags: ["typescript", "formatting", "code-generation", "types"]
 inclusion: always
 ---

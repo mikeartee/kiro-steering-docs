@@ -1,7 +1,7 @@
 ---
 title: "Testing Best Practices"
 description: "Guides Kiro to write effective, maintainable tests with clear organization and meaningful assertions"
-category: "testing"
+category: "practices"
 tags: ["testing", "unit-tests", "test-organization", "assertions"]
 inclusion: always
 ---

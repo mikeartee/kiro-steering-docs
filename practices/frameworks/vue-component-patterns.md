@@ -1,7 +1,7 @@
 ---
 title: "Vue.js Component Patterns"
 description: "Guides Kiro to write Vue components following modern Composition API and best practices"
-category: "frameworks"
+category: "practices"
 tags: ["vue", "components", "composition-api", "typescript", "patterns"]
 inclusion: always
 version: "1.0.0"

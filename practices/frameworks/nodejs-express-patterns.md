@@ -1,7 +1,7 @@
 ---
 title: "Node.js/Express Patterns"
 description: "Guides Kiro to write Node.js and Express applications following best practices and patterns"
-category: "frameworks"
+category: "practices"
 tags: ["nodejs", "express", "api", "middleware", "typescript"]
 inclusion: always
 version: "1.0.0"

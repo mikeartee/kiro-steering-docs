@@ -1,7 +1,7 @@
 ---
 title: "JSON Code Quality Standards"
 description: "Guides Kiro to write consistent, error-free JSON with proper formatting"
-category: "code-quality"
+category: "code-formatting"
 tags: ["json", "formatting", "code-generation", "data"]
 inclusion: always
 ---

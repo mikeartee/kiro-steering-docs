@@ -1,7 +1,7 @@
 ---
 title: "API Development Patterns"
 description: "Guides Kiro to design and implement REST APIs following best practices and conventions"
-category: "workflows"
+category: "practices"
 tags: ["api", "rest", "http", "endpoints", "web-services"]
 inclusion: always
 version: "1.0.0"

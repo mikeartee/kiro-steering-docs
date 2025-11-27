@@ -1,9 +1,25 @@
 ---
-title: "Dart Code Quality Standards"
-description: "Guides Kiro to write consistent, error-free Dart code for Flutter development"
-category: "code-quality"
-tags: ["dart", "flutter", "formatting", "code-generation"]
+title: Dart Code Quality Standards
+description: Guides Kiro to write consistent, error-free Dart code for Flutter development
+category: code-quality
+tags:
+  - dart
+  - flutter
+  - formatting
+  - code-generation
+  - express
+  - nodejs
+  - api
+  - best-practices
 inclusion: always
+applicableTo:
+  - api-server
+requiredDependencies:
+  - express
+filePatterns:
+  - routes/**/*.js
+  - routes/**/*.ts
+  - api/**/*
 ---
 
 ## Core Principle

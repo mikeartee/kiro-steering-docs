@@ -1,10 +1,23 @@
 ---
-title: "Logging Standards and Best Practices"
-description: "Guides Kiro to write consistent, secure logging code with appropriate log levels and structured output"
-category: "workflows"
+title: Logging Standards and Best Practices
+description: Guides Kiro to write consistent, secure logging code with appropriate log levels and structured output
+category: workflows
 tags:
-  ["logging", "observability", "debugging", "security", "structured-logging"]
+  - logging
+  - observability
+  - debugging
+  - security
+  - structured-logging
+  - git
+  - workflow
+  - best-practices
 inclusion: always
+applicableTo:
+  - web-app
+  - library
+  - cli-tool
+  - api-server
+  - vscode-extension
 ---
 
 ## Core Principle

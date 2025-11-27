@@ -1,9 +1,25 @@
 ---
-title: "YAML Formatting Standards"
-description: "Guides Kiro to write clean, properly indented YAML configuration files"
-category: "code-quality"
-tags: ["yaml", "formatting", "config", "devops"]
+title: YAML Formatting Standards
+description: Guides Kiro to write clean, properly indented YAML configuration files
+category: code-quality
+tags:
+  - yaml
+  - formatting
+  - config
+  - devops
+  - express
+  - nodejs
+  - api
+  - best-practices
 inclusion: always
+applicableTo:
+  - api-server
+requiredDependencies:
+  - express
+filePatterns:
+  - routes/**/*.js
+  - routes/**/*.ts
+  - api/**/*
 ---
 
 ## Core Principle

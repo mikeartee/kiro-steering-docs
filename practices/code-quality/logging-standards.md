@@ -1,9 +1,21 @@
 ---
-title: "Logging Standards"
-description: "Guides Kiro to write consistent, informative logging code that aids debugging without exposing sensitive data"
-category: "code-quality"
-tags: ["logging", "debugging", "monitoring", "security"]
+title: Logging Standards
+description: Guides Kiro to write consistent, informative logging code that aids debugging without exposing sensitive data
+category: code-quality
+tags:
+  - logging
+  - debugging
+  - monitoring
+  - security
+  - code-quality
+  - best-practices
 inclusion: always
+applicableTo:
+  - web-app
+  - library
+  - cli-tool
+  - api-server
+  - vscode-extension
 ---
 
 ## Core Principle

@@ -1,9 +1,34 @@
 ---
-title: "Testing Best Practices"
-description: "Guides Kiro to write effective, maintainable tests with clear organization and meaningful assertions"
-category: "testing"
-tags: ["testing", "unit-tests", "test-organization", "assertions"]
+title: Testing Best Practices
+description: Guides Kiro to write effective, maintainable tests with clear organization and meaningful assertions
+category: testing
+tags:
+  - testing
+  - unit-tests
+  - test-organization
+  - assertions
+  - react
+  - components
+  - best-practices
+  - quality
 inclusion: always
+applicableTo:
+  - web-app
+  - library
+  - cli-tool
+  - api-server
+  - vscode-extension
+requiredDependencies:
+  - react
+filePatterns:
+  - components/**/*.jsx
+  - components/**/*.tsx
+  - src/components/**/*
+  - '**/*.test.ts'
+  - '**/*.test.js'
+  - '**/*.spec.ts'
+  - '**/*.spec.js'
+  - tests/**/*
 ---
 
 ## Core Principle

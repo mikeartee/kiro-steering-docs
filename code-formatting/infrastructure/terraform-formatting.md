@@ -1,8 +1,12 @@
 ---
-title: "Terraform Configuration Standards"
-description: "Guides Kiro to write well-organized Terraform configurations with proper resource naming"
-category: "code-quality"
-tags: ["terraform", "iac", "infrastructure", "devops"]
+title: Terraform Configuration Standards
+description: Guides Kiro to write well-organized Terraform configurations with proper resource naming
+category: code-quality
+tags:
+  - terraform
+  - iac
+  - infrastructure
+  - devops
 inclusion: always
 ---
 

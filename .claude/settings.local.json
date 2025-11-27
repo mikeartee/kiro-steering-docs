@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run compile:*)",
+      "Bash(node out/scripts/enhance-frontmatter.js:*)",
+      "Bash(node out/scripts/validate-frontmatter.js:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

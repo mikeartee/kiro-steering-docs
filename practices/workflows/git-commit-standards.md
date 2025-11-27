@@ -1,10 +1,22 @@
 ---
-title: "Git Commit Standards"
-description: "Guides Kiro to write clear, conventional commit messages that follow best practices"
-category: "workflows"
-tags: ["git", "commits", "conventional-commits", "version-control"]
+title: Git Commit Standards
+description: Guides Kiro to write clear, conventional commit messages that follow best practices
+category: workflows
+tags:
+  - git
+  - commits
+  - conventional-commits
+  - version-control
+  - workflow
+  - best-practices
 inclusion: always
-version: "1.0.0"
+applicableTo:
+  - web-app
+  - library
+  - cli-tool
+  - api-server
+  - vscode-extension
+version: 1.0.0
 ---
 
 ## Core Principle

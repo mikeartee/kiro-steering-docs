@@ -1,9 +1,19 @@
 ---
-title: "Python Code Quality Standards"
-description: "Guides Kiro to write clean, consistent Python code"
-category: "code-quality"
-tags: ["python", "formatting", "code-generation"]
+title: Python Code Quality Standards
+description: Guides Kiro to write clean, consistent Python code
+category: code-quality
+tags:
+  - python
+  - formatting
+  - code-generation
 inclusion: always
+applicableTo:
+  - web-app
+  - library
+  - cli-tool
+  - api-server
+filePatterns:
+  - '**/*.py'
 ---
 
 ## Core Principle: Clean, Readable Python

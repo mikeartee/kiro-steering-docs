@@ -1,10 +1,21 @@
 ---
-title: "Code Review Standards"
-description: "Guides Kiro to write code that follows code review best practices and common standards"
-category: "code-quality"
-tags: ["code-review", "best-practices", "standards", "quality"]
+title: Code Review Standards
+description: Guides Kiro to write code that follows code review best practices and common standards
+category: code-quality
+tags:
+  - code-review
+  - best-practices
+  - standards
+  - quality
+  - code-quality
 inclusion: always
-version: "1.0.0"
+applicableTo:
+  - web-app
+  - library
+  - cli-tool
+  - api-server
+  - vscode-extension
+version: 1.0.0
 ---
 
 ## Core Principle

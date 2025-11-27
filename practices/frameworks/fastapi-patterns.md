@@ -1,10 +1,21 @@
 ---
-title: "FastAPI Patterns"
-description: "Guides Kiro to write FastAPI applications following best practices and modern async patterns"
-category: "frameworks"
-tags: ["fastapi", "python", "api", "async", "pydantic"]
+title: FastAPI Patterns
+description: Guides Kiro to write FastAPI applications following best practices and modern async patterns
+category: frameworks
+tags:
+  - fastapi
+  - python
+  - api
+  - async
+  - pydantic
+  - best-practices
 inclusion: always
-version: "1.0.0"
+applicableTo:
+  - api-server
+filePatterns:
+  - routes/**/*.py
+  - api/**/*.py
+version: 1.0.0
 ---
 
 ## Core Principle

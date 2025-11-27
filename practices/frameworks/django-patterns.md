@@ -1,10 +1,24 @@
 ---
-title: "Django Patterns"
-description: "Guides Kiro to write Django applications following best practices and conventions"
-category: "frameworks"
-tags: ["django", "python", "orm", "views", "models"]
+title: Django Patterns
+description: Guides Kiro to write Django applications following best practices and conventions
+category: frameworks
+tags:
+  - django
+  - python
+  - orm
+  - views
+  - models
+  - web
+  - best-practices
 inclusion: always
-version: "1.0.0"
+applicableTo:
+  - web-app
+  - api-server
+filePatterns:
+  - views/**/*.py
+  - models/**/*.py
+  - urls.py
+version: 1.0.0
 ---
 
 ## Core Principle

@@ -1,10 +1,32 @@
 ---
-title: "API Development Patterns"
-description: "Guides Kiro to design and implement REST APIs following best practices and conventions"
-category: "workflows"
-tags: ["api", "rest", "http", "endpoints", "web-services"]
+title: API Development Patterns
+description: Guides Kiro to design and implement REST APIs following best practices and conventions
+category: workflows
+tags:
+  - api
+  - rest
+  - http
+  - endpoints
+  - web-services
+  - express
+  - nodejs
+  - best-practices
+  - git
+  - workflow
 inclusion: always
-version: "1.0.0"
+applicableTo:
+  - api-server
+  - web-app
+  - library
+  - cli-tool
+  - vscode-extension
+requiredDependencies:
+  - express
+filePatterns:
+  - routes/**/*.js
+  - routes/**/*.ts
+  - api/**/*
+version: 1.0.0
 ---
 
 ## Core Principle

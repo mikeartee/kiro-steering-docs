@@ -1,9 +1,37 @@
 ---
-title: "Environment Variables and Configuration Management"
-description: "Guides Kiro to write secure, maintainable configuration code with proper environment variable handling"
-category: "workflows"
-tags: ["configuration", "environment-variables", "secrets", "config-management"]
+title: Environment Variables and Configuration Management
+description: Guides Kiro to write secure, maintainable configuration code with proper environment variable handling
+category: workflows
+tags:
+  - configuration
+  - environment-variables
+  - secrets
+  - config-management
+  - express
+  - nodejs
+  - api
+  - best-practices
+  - django
+  - python
+  - web
+  - git
+  - workflow
 inclusion: always
+applicableTo:
+  - api-server
+  - web-app
+  - library
+  - cli-tool
+  - vscode-extension
+requiredDependencies:
+  - express
+filePatterns:
+  - routes/**/*.js
+  - routes/**/*.ts
+  - api/**/*
+  - views/**/*.py
+  - models/**/*.py
+  - urls.py
 ---
 
 ## Core Principle

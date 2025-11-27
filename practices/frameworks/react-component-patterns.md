@@ -1,10 +1,25 @@
 ---
-title: "React Component Patterns"
-description: "Guides Kiro to write React components following modern best practices and patterns"
-category: "frameworks"
-tags: ["react", "components", "hooks", "typescript", "patterns"]
+title: React Component Patterns
+description: Guides Kiro to write React components following modern best practices and patterns
+category: frameworks
+tags:
+  - react
+  - components
+  - hooks
+  - typescript
+  - patterns
+  - best-practices
 inclusion: always
-version: "1.0.0"
+applicableTo:
+  - web-app
+  - library
+requiredDependencies:
+  - react
+filePatterns:
+  - components/**/*.jsx
+  - components/**/*.tsx
+  - src/components/**/*
+version: 1.0.0
 ---
 
 ## Core Principle

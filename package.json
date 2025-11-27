@@ -1,0 +1,21 @@
+{
+  "name": "kiro-steering-docs-enhancement",
+  "version": "1.0.0",
+  "description": "Tools for enhancing steering documents with recommendation metadata",
+  "private": true,
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "enhance-frontmatter": "node out/scripts/enhance-frontmatter.js",
+    "validate-frontmatter": "node out/scripts/validate-frontmatter.js"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.5",
+    "@types/node": "^18.x",
+    "fast-check": "^4.3.0",
+    "typescript": "^5.1.0"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  }
+}

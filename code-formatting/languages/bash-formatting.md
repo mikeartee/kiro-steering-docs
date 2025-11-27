@@ -1,9 +1,18 @@
 ---
-title: "Bash Scripting Standards"
-description: "Guides Kiro to write safe, readable Bash scripts with proper error handling"
-category: "code-quality"
-tags: ["bash", "shell", "scripting", "linux"]
+title: Bash Scripting Standards
+description: Guides Kiro to write safe, readable Bash scripts with proper error handling
+category: code-quality
+tags:
+  - bash
+  - shell
+  - scripting
+  - linux
 inclusion: always
+applicableTo:
+  - cli-tool
+filePatterns:
+  - '**/*.sh'
+  - '**/*.bash'
 ---
 
 ## Core Principle

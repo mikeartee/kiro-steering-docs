@@ -1,8 +1,12 @@
 ---
-title: "Markdown Quality Standards"
-description: "Prevents markdown formatting issues and MD047 errors automatically"
-category: "code-quality"
-tags: ["markdown", "quality", "linting", "formatting"]
+title: Markdown Quality Standards
+description: Prevents markdown formatting issues and MD047 errors automatically
+category: code-quality
+tags:
+  - markdown
+  - quality
+  - linting
+  - formatting
 inclusion: always
 ---
 

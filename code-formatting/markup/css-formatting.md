@@ -1,9 +1,20 @@
 ---
-title: "CSS/SCSS Code Quality Standards"
-description: "Guides Kiro to write consistent, error-free CSS and SCSS code"
-category: "code-quality"
-tags: ["css", "scss", "formatting", "code-generation"]
+title: CSS/SCSS Code Quality Standards
+description: Guides Kiro to write consistent, error-free CSS and SCSS code
+category: code-quality
+tags:
+  - css
+  - scss
+  - formatting
+  - code-generation
+  - styling
 inclusion: always
+applicableTo:
+  - web-app
+filePatterns:
+  - '**/*.css'
+  - '**/*.scss'
+  - '**/*.sass'
 ---
 
 ## Core Principle

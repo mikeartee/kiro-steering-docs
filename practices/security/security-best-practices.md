@@ -1,9 +1,18 @@
 ---
-title: "Security Best Practices"
-description: "Guides Kiro to write secure code with proper input validation and vulnerability prevention"
-category: "security"
-tags: ["security", "validation", "best-practices", "vulnerabilities"]
+title: Security Best Practices
+description: Guides Kiro to write secure code with proper input validation and vulnerability prevention
+category: security
+tags:
+  - security
+  - validation
+  - best-practices
+  - vulnerabilities
 inclusion: always
+applicableTo:
+  - web-app
+  - library
+  - cli-tool
+  - api-server
 ---
 
 ## Core Principle

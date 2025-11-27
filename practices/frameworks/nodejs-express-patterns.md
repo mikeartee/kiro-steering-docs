@@ -1,10 +1,33 @@
 ---
-title: "Node.js/Express Patterns"
-description: "Guides Kiro to write Node.js and Express applications following best practices and patterns"
-category: "frameworks"
-tags: ["nodejs", "express", "api", "middleware", "typescript"]
+title: Node.js/Express Patterns
+description: Guides Kiro to write Node.js and Express applications following best practices and patterns
+category: frameworks
+tags:
+  - nodejs
+  - express
+  - api
+  - middleware
+  - typescript
+  - javascript
+  - formatting
+  - code-generation
+  - best-practices
 inclusion: always
-version: "1.0.0"
+applicableTo:
+  - web-app
+  - library
+  - cli-tool
+  - api-server
+requiredDependencies:
+  - express
+filePatterns:
+  - '**/*.js'
+  - '**/*.mjs'
+  - '**/*.cjs'
+  - routes/**/*.js
+  - routes/**/*.ts
+  - api/**/*
+version: 1.0.0
 ---
 
 ## Core Principle

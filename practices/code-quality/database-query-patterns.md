@@ -1,9 +1,22 @@
 ---
-title: "Database Query Patterns and Best Practices"
-description: "Guides Kiro to write secure, efficient database queries with proper formatting and parameterization"
-category: "code-quality"
-tags: ["database", "sql", "query-optimization", "security", "parameterization"]
+title: Database Query Patterns and Best Practices
+description: Guides Kiro to write secure, efficient database queries with proper formatting and parameterization
+category: code-quality
+tags:
+  - database
+  - sql
+  - query-optimization
+  - security
+  - parameterization
+  - code-quality
+  - best-practices
 inclusion: always
+applicableTo:
+  - web-app
+  - library
+  - cli-tool
+  - api-server
+  - vscode-extension
 ---
 
 ## Core Principle

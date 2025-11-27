@@ -1,9 +1,22 @@
 ---
-title: "JSON Code Quality Standards"
-description: "Guides Kiro to write consistent, error-free JSON with proper formatting"
-category: "code-quality"
-tags: ["json", "formatting", "code-generation", "data"]
+title: JSON Code Quality Standards
+description: Guides Kiro to write consistent, error-free JSON with proper formatting
+category: code-quality
+tags:
+  - json
+  - formatting
+  - code-generation
+  - data
+  - data-format
 inclusion: always
+applicableTo:
+  - web-app
+  - library
+  - cli-tool
+  - api-server
+  - vscode-extension
+filePatterns:
+  - '**/*.json'
 ---
 
 ## Core Principle

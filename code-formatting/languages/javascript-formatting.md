@@ -1,9 +1,29 @@
 ---
-title: "JavaScript Code Quality Standards"
-description: "Guides Kiro to write consistent, error-free JavaScript code"
-category: "code-quality"
-tags: ["javascript", "formatting", "code-generation"]
+title: JavaScript Code Quality Standards
+description: Guides Kiro to write consistent, error-free JavaScript code
+category: code-quality
+tags:
+  - javascript
+  - formatting
+  - code-generation
+  - react
+  - components
+  - best-practices
 inclusion: always
+applicableTo:
+  - web-app
+  - library
+  - cli-tool
+  - api-server
+requiredDependencies:
+  - react
+filePatterns:
+  - '**/*.js'
+  - '**/*.mjs'
+  - '**/*.cjs'
+  - components/**/*.jsx
+  - components/**/*.tsx
+  - src/components/**/*
 ---
 
 ## Core Principle: Consistent, Clean JavaScript

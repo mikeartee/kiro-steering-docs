@@ -1,9 +1,38 @@
 ---
-title: "TypeScript Code Quality Standards"
-description: "Guides Kiro to write consistent, error-free TypeScript with proper types and formatting"
-category: "code-quality"
-tags: ["typescript", "formatting", "code-generation", "types"]
+title: TypeScript Code Quality Standards
+description: Guides Kiro to write consistent, error-free TypeScript with proper types and formatting
+category: code-quality
+tags:
+  - typescript
+  - formatting
+  - code-generation
+  - types
+  - react
+  - components
+  - best-practices
+  - express
+  - nodejs
+  - api
 inclusion: always
+applicableTo:
+  - web-app
+  - library
+  - cli-tool
+  - api-server
+  - vscode-extension
+requiredDependencies:
+  - typescript
+  - react
+  - express
+filePatterns:
+  - '**/*.ts'
+  - '**/*.tsx'
+  - components/**/*.jsx
+  - components/**/*.tsx
+  - src/components/**/*
+  - routes/**/*.js
+  - routes/**/*.ts
+  - api/**/*
 ---
 
 ## Core Principle

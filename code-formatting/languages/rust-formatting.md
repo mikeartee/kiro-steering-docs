@@ -1,8 +1,24 @@
 ---
-title: "Rust Code Quality Standards"
-description: "Guides Kiro to write safe, idiomatic Rust code following ownership, borrowing, and error handling best practices"
-tags: ["rust", "formatting", "code-generation", "safety"]
+title: Rust Code Quality Standards
+description: Guides Kiro to write safe, idiomatic Rust code following ownership, borrowing, and error handling best practices
+tags:
+  - rust
+  - formatting
+  - code-generation
+  - safety
+  - express
+  - nodejs
+  - api
+  - best-practices
 inclusion: always
+applicableTo:
+  - api-server
+requiredDependencies:
+  - express
+filePatterns:
+  - routes/**/*.js
+  - routes/**/*.ts
+  - api/**/*
 ---
 
 ## Core Principle

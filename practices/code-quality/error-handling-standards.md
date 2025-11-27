@@ -1,10 +1,30 @@
 ---
-title: "Error Handling Standards"
-description: "Guides Kiro to implement robust error handling patterns across different languages"
-category: "code-quality"
-tags: ["error-handling", "exceptions", "debugging", "best-practices"]
+title: Error Handling Standards
+description: Guides Kiro to implement robust error handling patterns across different languages
+category: code-quality
+tags:
+  - error-handling
+  - exceptions
+  - debugging
+  - best-practices
+  - express
+  - nodejs
+  - api
+  - code-quality
 inclusion: always
-version: "1.0.0"
+applicableTo:
+  - api-server
+  - web-app
+  - library
+  - cli-tool
+  - vscode-extension
+requiredDependencies:
+  - express
+filePatterns:
+  - routes/**/*.js
+  - routes/**/*.ts
+  - api/**/*
+version: 1.0.0
 ---
 
 ## Core Principle

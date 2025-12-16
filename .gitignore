@@ -12,6 +12,7 @@ _drafts/
 
 # Kiro workspace files (local development only)
 .kiro/
+!.kiro/steering/
 
 # Add more as needed for tooling
 

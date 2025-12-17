@@ -1,6 +1,7 @@
 ---
 title: Rust Code Quality Standards
 description: Guides Kiro to write safe, idiomatic Rust code following ownership, borrowing, and error handling best practices
+category: code-quality
 tags:
   - rust
   - formatting

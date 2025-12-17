@@ -5,7 +5,9 @@ Steering documents focused on code formatting standards and quality enforcement.
 ## Quick Navigation
 
 - [Browse All Practices](../practices/)
+
 - [Search by Tag](../#search-by-tag)
+
 - [Main README](../)
 
 ## Available Documents
@@ -31,6 +33,7 @@ cp code-formatting/javascript-formatting.md .kiro/steering/
 
 # Copy all formatting documents
 cp code-formatting/*.md .kiro/steering/
+
 ```
 
 ### Combining Documents
@@ -43,6 +46,7 @@ These documents work well together. A typical setup:
 ├── typescript-formatting.md    # For .ts/.tsx files
 ├── json-formatting.md          # For config files
 └── markdown-formatting.md      # For documentation
+
 ```
 
 ## Related Documents
@@ -50,21 +54,29 @@ These documents work well together. A typical setup:
 ### By Language
 
 - **JavaScript**: [JavaScript Formatting](javascript-formatting.md)
+
 - **TypeScript**: [TypeScript Formatting](typescript-formatting.md)
+
 - **Python**: [Python Formatting](python-formatting.md)
+
 - **CSS/SCSS**: [CSS Formatting](css-formatting.md)
 
 ### By Purpose
 
 - **Code Generation**: [JavaScript](javascript-formatting.md), [TypeScript](typescript-formatting.md), [Python](python-formatting.md)
+
 - **Configuration**: [JSON Formatting](json-formatting.md)
+
 - **Documentation**: [Markdown Formatting](markdown-formatting.md)
 
 ### Other Practices
 
 - [Testing](../practices/testing/) - Test quality and coverage
+
 - [Security](../practices/security/) - Security best practices
+
 - [Frameworks](../practices/frameworks/) - Framework-specific patterns
+
 - [Workflows](../practices/workflows/) - CI/CD and automation
 
 ## Contributing

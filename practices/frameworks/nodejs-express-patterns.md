@@ -81,6 +81,7 @@ app.get('/api/users/:id', (req, res) => { /* ... */ });
 app.post('/api/users', (req, res) => { /* ... */ });
 app.get('/api/posts', (req, res) => { /* ... */ });
 // All routes in one file
+
 ```
 
 ### Controller Pattern
@@ -195,6 +196,7 @@ app.get('/api/users/:id', async (req, res) => {
   const user = await db.query('SELECT * FROM users WHERE id = ?', [req.params.id]);
   res.json(user);
 });
+
 ```
 
 ### Middleware Pattern
@@ -280,6 +282,7 @@ app.post('/api/users', (req, res) => {
   }
   // Validation logic mixed with route handler
 });
+
 ```
 
 ### Error Handling
@@ -362,6 +365,7 @@ app.get('/api/users/:id', async (req, res) => {
     res.status(500).json({ error: 'Something went wrong' });
   }
 });
+
 ```
 
 ### Service Layer
@@ -452,6 +456,7 @@ app.post('/api/users', async (req, res) => {
   const user = await db.query('INSERT INTO users ...', [req.body.email, hashedPassword]);
   res.json(user);
 });
+
 ```
 
 ### Async Handler Wrapper
@@ -500,6 +505,7 @@ router.get('/:id', async (req, res, next) => {
     next(error);
   }
 });
+
 ```
 
 ### Configuration Management
@@ -557,15 +563,21 @@ export default config;
 const port = process.env.PORT || 3000;
 const dbHost = process.env.DB_HOST || 'localhost';
 // Scattered throughout the application
+
 ```
 
 ## What This Prevents
 
 - **Spaghetti code** from mixing concerns in route handlers
+
 - **Inconsistent error handling** across endpoints
+
 - **Security vulnerabilities** from improper validation and authentication
+
 - **Difficult testing** from tightly coupled code
+
 - **Configuration chaos** from scattered environment variables
+
 - **Unmaintainable routes** from monolithic route files
 
 ## Simple Examples
@@ -642,6 +654,7 @@ export const validateUser = [
     next();
   }
 ];
+
 ```
 
 ## Customization
@@ -649,14 +662,19 @@ export const validateUser = [
 This is a starting point for Express patterns. You can customize by:
 
 - Adding different database patterns (Prisma, TypeORM, Mongoose)
+
 - Including authentication strategies (Passport.js, JWT)
+
 - Adding API documentation (Swagger/OpenAPI)
+
 - Incorporating rate limiting and security middleware
 
 ## Related Documents
 
 - [TypeScript Formatting](../../code-formatting/typescript-formatting.md) - TypeScript conventions
+
 - [Error Handling Standards](../../workflows/error-handling-standards.md) - Error patterns
+
 - [API Development Patterns](../../workflows/api-development-patterns.md) - API conventions
 
 ## Optional: Validation with External Tools
@@ -674,6 +692,7 @@ npm install --save-dev jest supertest @types/jest @types/supertest
 
 # Security middleware
 npm install helmet cors express-rate-limit
+
 ```
 
 **Note**: These tools help enforce patterns but aren't required for the steering document to work.

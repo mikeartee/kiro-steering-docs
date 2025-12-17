@@ -119,7 +119,9 @@ Tags for coding standards and conventions:
 ### Finding Documents by Tag
 
 1. **Browse this document** to see all documents with a specific tag
+
 2. **Use the main README** [tag search](README.md#search-by-tag) for quick navigation
+
 3. **Check category READMEs** for tag-filtered lists within categories
 
 ### Tag Combinations
@@ -127,7 +129,9 @@ Tags for coding standards and conventions:
 Find documents by combining tags:
 
 - `javascript` + `formatting` = JavaScript formatting documents
+
 - `python` + `code-generation` = Python code generation guides
+
 - `typescript` + `types` = TypeScript type system documents
 
 ### Adding Tags to New Documents
@@ -140,6 +144,7 @@ title: "Your Document Title"
 description: "Brief description"
 tags: ["language", "purpose", "tool", "framework"]
 ---
+
 ```
 
 ## Tag Guidelines
@@ -147,15 +152,21 @@ tags: ["language", "purpose", "tool", "framework"]
 ### Choosing Tags
 
 - **Be specific**: Use precise tags that describe the document
+
 - **Use existing tags**: Check this taxonomy before creating new tags
+
 - **Limit quantity**: Use 3-5 relevant tags per document
+
 - **Include language**: Always tag with the primary language
 
 ### Tag Naming Conventions
 
 - **Lowercase**: All tags use lowercase letters
+
 - **Hyphens**: Use hyphens for multi-word tags (e.g., `github-actions`)
+
 - **No spaces**: Never use spaces in tags
+
 - **Descriptive**: Tags should be self-explanatory
 
 ## Contributing Tags
@@ -163,8 +174,11 @@ tags: ["language", "purpose", "tool", "framework"]
 When adding new tags:
 
 1. Check if an existing tag covers your need
+
 2. Propose new tags in your pull request
+
 3. Update this taxonomy document
+
 4. Add the tag to relevant category READMEs
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
@@ -174,9 +188,13 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 Current tag distribution:
 
 - **Language tags**: 13 active, 1 planned
+
 - **Purpose tags**: 18 active, 2 planned
+
 - **Tool tags**: 6 active, 4 planned
+
 - **Framework tags**: 6 active, 2 planned
+
 - **Standard tags**: 23 active
 
 Total documents: 27 active steering documents

@@ -26,6 +26,7 @@ Every steering document follows this structure:
 ## [Optional sections]
 
 [Additional content]
+
 ```
 
 ## Frontmatter Reference
@@ -46,13 +47,17 @@ Every steering document follows this structure:
 title: "JavaScript Code Quality Standards"
 title: "Python Formatting Guidelines"
 title: "React Component Patterns"
+
 ```
 
 **Best Practices**:
 
 - Keep under 60 characters
+
 - Be specific about what the document covers
+
 - Use title case
+
 - Include the language/framework name
 
 #### description
@@ -69,13 +74,17 @@ title: "React Component Patterns"
 description: "Guides Kiro to write consistent, error-free JavaScript code"
 description: "Ensures Python code follows PEP 8 indentation and naming standards"
 description: "Provides React component structure and hooks best practices"
+
 ```
 
 **Best Practices**:
 
 - Start with an action verb ("Guides", "Ensures", "Provides")
+
 - Mention the specific benefit
+
 - Keep it concise and clear
+
 - Avoid jargon
 
 #### tags
@@ -92,13 +101,17 @@ description: "Provides React component structure and hooks best practices"
 tags: ["javascript", "formatting", "code-generation"]
 tags: ["python", "pep8", "indentation"]
 tags: ["react", "components", "hooks"]
+
 ```
 
 **Best Practices**:
 
 - Include the primary language/framework
+
 - Add functional tags (formatting, testing, security)
+
 - Use existing tags from TAGS.md when possible
+
 - Keep tags relevant and specific
 
 #### inclusion
@@ -114,12 +127,15 @@ tags: ["react", "components", "hooks"]
 ```yaml
 inclusion: always  # Active by default
 inclusion: manual  # Only active when user includes it
+
 ```
 
 **Best Practices**:
 
 - Use `always` for general language formatting rules
+
 - Use `manual` for opinionated or project-specific rules
+
 - Use `manual` for framework-specific rules that might conflict
 
 ### Optional Fields
@@ -138,6 +154,7 @@ category: "testing"
 category: "security"
 category: "frameworks"
 category: "workflows"
+
 ```
 
 #### author
@@ -151,6 +168,7 @@ category: "workflows"
 ```yaml
 author: "octocat"
 author: "your-github-username"
+
 ```
 
 #### version
@@ -166,13 +184,17 @@ author: "your-github-username"
 ```yaml
 version: "1.0.0"
 version: "2.1.0"
+
 ```
 
 **Best Practices**:
 
 - Start at 1.0.0
+
 - Increment MAJOR for breaking changes
+
 - Increment MINOR for new features
+
 - Increment PATCH for bug fixes
 
 #### kiro_version
@@ -188,6 +210,7 @@ version: "2.1.0"
 ```yaml
 kiro_version: ">=1.0.0"
 kiro_version: "^2.0.0"
+
 ```
 
 #### dependencies
@@ -202,6 +225,7 @@ kiro_version: "^2.0.0"
 dependencies: []
 dependencies: ["javascript-formatting.md"]
 dependencies: ["typescript-formatting.md", "react-patterns.md"]
+
 ```
 
 #### file_references
@@ -216,6 +240,7 @@ dependencies: ["typescript-formatting.md", "react-patterns.md"]
 file_references: []
 file_references: ["package.json", ".eslintrc.js"]
 file_references: [".prettierrc", "tsconfig.json"]
+
 ```
 
 ## Content Sections
@@ -231,6 +256,7 @@ file_references: [".prettierrc", "tsconfig.json"]
 ## Core Principle
 
 **[Brief description of what this steering does and why it matters]**
+
 ```
 
 **Examples**:
@@ -239,19 +265,24 @@ file_references: [".prettierrc", "tsconfig.json"]
 ## Core Principle
 
 **Kiro writes clean, consistently formatted JavaScript that prevents common syntax errors.**
+
 ```
 
 ```markdown
 ## Core Principle
 
 **This steering document guides Kiro to write Python code that follows basic standards and avoids common syntax errors.**
+
 ```
 
 **Best Practices**:
 
 - Keep it to one sentence
+
 - Make it bold for emphasis
+
 - Focus on the benefit, not just the rules
+
 - Be specific about what it does
 
 ### How Kiro Will Write [Language]
@@ -274,6 +305,7 @@ file_references: [".prettierrc", "tsconfig.json"]
 
 // Not:
 [bad example]
+
 ```
 
 ### [Rule Category 2]
@@ -282,6 +314,7 @@ file_references: [".prettierrc", "tsconfig.json"]
 
 ```text
 (end of template)
+
 ```
 
 **Examples**:
@@ -299,18 +332,24 @@ const name = 'John';
 
 // Not:
 const name = 'John'
+
 ```
 
 ```text
 (end of example)
+
 ```
 
 **Best Practices**:
 
 - Use 3-4 rule categories maximum
+
 - Each rule should have a clear before/after example
+
 - Use code fencing with language tags
+
 - Use "Kiro will write" / "Not" format consistently
+
 - Keep examples realistic and practical
 
 ### What This Prevents
@@ -324,9 +363,13 @@ const name = 'John'
 ## What This Prevents
 
 - [Specific problem 1]
+
 - [Specific problem 2]
+
 - [Specific problem 3]
+
 - [Specific problem 4]
+
 ```
 
 **Examples**:
@@ -335,16 +378,23 @@ const name = 'John'
 ## What This Prevents
 
 - Syntax errors from missing semicolons
+
 - Inconsistent indentation that makes code hard to read
+
 - Import chaos with scattered dependencies
+
 - Common typos in variable names
+
 ```
 
 **Best Practices**:
 
 - List 3-5 specific problems
+
 - Focus on real issues developers face
+
 - Be concrete, not vague
+
 - Explain the impact
 
 ### Customization
@@ -360,8 +410,11 @@ const name = 'John'
 This is a starting point! You can modify these rules by editing this steering document:
 
 - [Customization option 1]
+
 - [Customization option 2]
+
 - [Customization option 3]
+
 ```
 
 **Examples**:
@@ -372,15 +425,21 @@ This is a starting point! You can modify these rules by editing this steering do
 This is a starting point! You can modify these rules by editing this steering document:
 
 - Change single quotes to double quotes if preferred
+
 - Adjust indentation from 2 spaces to 4 spaces
+
 - Modify import organization patterns
+
 ```
 
 **Best Practices**:
 
 - Keep it brief
+
 - Mention 2-3 common customizations
+
 - Encourage users to adapt to their needs
+
 - Don't overwhelm with options
 
 ### Optional: Validation with External Tools
@@ -399,9 +458,11 @@ Want to validate that generated code follows these standards? Add these tools:
 
 ```bash
 [installation command]
+
 ```
 
 **Note**: These tools validate the code after Kiro writes it, but aren't required for the steering document to work.
+
 ````
 
 **Examples**:
@@ -415,16 +476,21 @@ Want to validate that generated code follows these standards? Add these tools:
 
 ```bash
 npm install --save-dev eslint prettier
+
 ```
 
 **Note**: These tools validate the code after Kiro writes it, but aren't required for the steering document to work.
+
 ````
 
 **Best Practices**:
 
 - Always mark as "Optional"
+
 - Include the note about not being required
+
 - Keep setup instructions simple
+
 - Only include essential tools
 
 ## Markdown Formatting
@@ -434,20 +500,30 @@ npm install --save-dev eslint prettier
 **Always use fenced code blocks with language tags**:
 
 ````markdown
+
 ```javascript
 const example = 'code';
+
 ```
+
 ````
 
 **Supported languages**:
 
 - `javascript` / `js`
+
 - `typescript` / `ts`
+
 - `python` / `py`
+
 - `css` / `scss`
+
 - `json`
+
 - `yaml`
+
 - `bash` / `sh`
+
 - `markdown` / `md`
 
 ### Comments in Code Examples
@@ -457,11 +533,13 @@ const example = 'code';
 ```javascript
 // JavaScript comments
 const example = 'value';
+
 ```
 
 ```python
 # Python comments
 example = 'value'
+
 ```
 
 ```css
@@ -469,6 +547,7 @@ example = 'value'
 .example {
   color: blue;
 }
+
 ```
 
 ### Before/After Format
@@ -476,19 +555,24 @@ example = 'value'
 **Always use this format for examples**:
 
 ````markdown
+
 ```[language]
 // Kiro will write:
 [good example]
 
 // Not:
 [bad example]
+
 ```
+
 ````
 
 **Variations**:
 
 - "Kiro will write" / "Not"
+
 - "Good" / "Bad"
+
 - "Do this" / "Don't do this"
 
 **Best practice**: Use "Kiro will write" / "Not" for consistency
@@ -499,12 +583,14 @@ example = 'value'
 
 ```markdown
 **Semicolons**: Always include semicolons
+
 ```
 
 **Use bold for important notes**:
 
 ```markdown
 **Note**: These tools are optional
+
 ```
 
 ### Lists
@@ -512,17 +598,25 @@ example = 'value'
 **Use bullet lists for problems and benefits**:
 
 ```markdown
+
 - Problem 1
+
 - Problem 2
+
 - Problem 3
+
 ```
 
 **Use numbered lists for steps**:
 
 ```markdown
+
 1. Step 1
+
 2. Step 2
+
 3. Step 3
+
 ```
 
 ## Common Patterns
@@ -536,6 +630,7 @@ description: "Guides Kiro to write consistent, error-free [language] code"
 tags: ["language", "formatting", "code-generation"]
 inclusion: always
 ---
+
 ```
 
 ### Pattern: Framework-Specific Document
@@ -547,6 +642,7 @@ description: "Provides [framework] [feature] best practices and structure"
 tags: ["framework", "patterns", "components"]
 inclusion: manual
 ---
+
 ```
 
 ### Pattern: Testing Document
@@ -558,6 +654,7 @@ description: "Ensures [language] tests follow best practices and conventions"
 tags: ["language", "testing", "quality"]
 inclusion: always
 ---
+
 ```
 
 ### Pattern: Security Document
@@ -569,6 +666,7 @@ description: "Guides Kiro to write secure [language] code"
 tags: ["language", "security", "best-practices"]
 inclusion: always
 ---
+
 ```
 
 ## Validation
@@ -578,9 +676,13 @@ inclusion: always
 Check that your frontmatter:
 
 - [ ] Has all required fields (title, description, tags, inclusion)
+
 - [ ] Uses proper YAML syntax
+
 - [ ] Has at least 2 tags
+
 - [ ] Has description under 150 characters
+
 - [ ] Uses valid inclusion value (always or manual)
 
 ### Content Validation
@@ -588,11 +690,17 @@ Check that your frontmatter:
 Check that your content:
 
 - [ ] Has Core Principle section
+
 - [ ] Has "How Kiro Will Write" section
+
 - [ ] Has "What This Prevents" section
+
 - [ ] Has Customization section
+
 - [ ] Has 3-4 rule categories with examples
+
 - [ ] Uses proper code fencing with language tags
+
 - [ ] Uses "Kiro will write" / "Not" format
 
 ### Markdown Validation
@@ -600,9 +708,13 @@ Check that your content:
 Check that your markdown:
 
 - [ ] Has no linting errors
+
 - [ ] Uses proper heading hierarchy
+
 - [ ] Has blank lines around code blocks
+
 - [ ] Has language tags on all code blocks
+
 - [ ] Has no broken links
 
 ## Tools for Validation
@@ -613,6 +725,7 @@ Use markdownlint to check formatting:
 
 ```bash
 markdownlint your-document.md
+
 ```
 
 ### YAML Validation
@@ -621,13 +734,17 @@ Use yamllint to check frontmatter:
 
 ```bash
 yamllint your-document.md
+
 ```
 
 ### Manual Testing
 
 1. Copy document to `.kiro/steering/`
+
 2. Ask Kiro to write code
+
 3. Verify rules are followed
+
 4. Check examples match output
 
 ## Quick Reference
@@ -658,11 +775,13 @@ good_example
 
 // Not:
 bad_example
+
 ```
 
 ## What This Prevents
 
 - Problem 1
+
 - Problem 2
 
 ## Customization
@@ -671,12 +790,17 @@ This is a starting point - modify as needed.
 
 ```text
 (end of minimal example)
+
 ```
 
 ## Next Steps
 
 1. Use this reference when creating your document
+
 2. Validate your frontmatter and content
+
 3. Test your document with Kiro
+
 4. Review the [Quality Checklist](../.github/QUALITY_CHECKLIST.md)
+
 5. Submit your pull request

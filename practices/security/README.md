@@ -22,8 +22,11 @@ Security steering documents guide Kiro to write code that follows security best 
 Security steering documents will help you:
 
 - Implement secure coding practices from the start
+
 - Prevent common vulnerabilities (SQL injection, XSS, etc.)
+
 - Follow authentication and authorization best practices
+
 - Handle sensitive data securely
 
 ### Installation Example
@@ -31,26 +34,35 @@ Security steering documents will help you:
 ```bash
 # Copy a security steering document to your project
 cp categories/security/input-validation.md .kiro/steering/
+
 ```
 
 ### Best Practices
 
 - Apply security steering documents early in development
+
 - Combine multiple security documents for comprehensive coverage
+
 - Review generated code for security implications
+
 - Keep security steering documents updated with latest threats
 
 ### Security Considerations
 
 - Security steering documents provide guidance but don't replace security audits
+
 - Always review security-critical code manually
+
 - Use additional security tools for vulnerability scanning
+
 - Follow your organization's security policies
 
 ## Related Categories
 
 - [Code Quality](../code-quality/) - Code standards that support security
+
 - [Workflows](../workflows/) - Security scanning in CI/CD pipelines
+
 - [Frameworks](../frameworks/) - Framework-specific security patterns
 
 ## Contributing

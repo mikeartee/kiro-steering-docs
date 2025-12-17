@@ -56,6 +56,7 @@ function createUser(userData) {
     password: userData.password
   };
 }
+
 ```
 
 ### SQL Injection Prevention
@@ -76,6 +77,7 @@ async function getUserByEmail(email) {
   const result = await db.query(query);
   return result.rows[0];
 }
+
 ```
 
 ```python
@@ -90,6 +92,7 @@ def get_user_by_email(email):
     query = f"SELECT * FROM users WHERE email = '{email}'"
     cursor.execute(query)
     return cursor.fetchone()
+
 ```
 
 ### Password Handling
@@ -113,6 +116,7 @@ async function verifyPassword(password, hash) {
 function hashPassword(password) {
   return crypto.createHash('md5').update(password).digest('hex');
 }
+
 ```
 
 ### Sensitive Data Protection
@@ -147,15 +151,21 @@ function logUserAction(user, action) {
 function sanitizeError(error) {
   return error;  // May contain sensitive stack traces
 }
+
 ```
 
 ## What This Prevents
 
 - SQL injection attacks from unsanitized input
+
 - Cross-site scripting (XSS) vulnerabilities
+
 - Password exposure through weak hashing
+
 - Sensitive data leaks in logs and errors
+
 - Authentication bypass vulnerabilities
+
 - Command injection attacks
 
 ## Customization
@@ -163,8 +173,11 @@ function sanitizeError(error) {
 This is a starting point! You can modify these rules by editing this steering document:
 
 - Adjust password requirements
+
 - Add framework-specific security patterns
+
 - Modify validation rules for your use case
+
 - Add additional security checks
 
 ## Optional: Validation with External Tools
@@ -182,6 +195,7 @@ pip install bandit
 
 # General
 npm install -g snyk
+
 ```
 
 ### Usage
@@ -195,6 +209,7 @@ bandit -r .
 
 # ESLint security plugin
 eslint --plugin security .
+
 ```
 
 **Note**: These tools validate the code after Kiro writes it, but aren't required for the steering document to work.

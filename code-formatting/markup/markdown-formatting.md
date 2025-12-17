@@ -19,9 +19,13 @@ inclusion: always
 You MUST follow these rules when creating or editing markdown files:
 
 1. You MUST end markdown files with a single newline (`\n` not `\n\n`)
+
 2. You MUST run getDiagnostics immediately after creating/editing any .md file
+
 3. You MUST fix all linting errors before proceeding to other tasks
+
 4. You MUST NOT use multiple consecutive blank lines (causes MD012 errors)
+
 5. You MUST NOT proceed without fixing MD047 errors
 
 ## How Kiro Will Write Markdown
@@ -31,8 +35,11 @@ You MUST follow these rules when creating or editing markdown files:
 When creating or editing any .md files, follow this exact sequence:
 
 1. **Write properly formatted content** following the standards below
+
 2. **fsWrite(text="content\n\n")** - ALWAYS include empty line in text parameter (NEVER forget this - prevents MD047)
+
 3. **Run getDiagnostics immediately** after creating/editing
+
 4. **Fix any remaining issues in the same operation** - never proceed with linting errors
 
 ### Formatting Requirements
@@ -40,22 +47,31 @@ When creating or editing any .md files, follow this exact sequence:
 ### File Structure
 
 - **Empty line at end**: Always include an empty line after your last content line
+
 - **Simple prevention**: End fsWrite text with an empty line to avoid MD047 errors
+
 - **Consistent heading hierarchy**: Use proper H1 → H2 → H3 progression
+
 - **Unique headings**: Each heading must be unique (avoid duplicate text)
+
 - **Proper headings**: Use heading syntax, not bold text for section titles
 
 ### Spacing Rules
 
 - **Blank lines around headings**: Add blank lines before and after all headings
+
 - **Blank lines around lists**: Required for MD032 compliance
+
 - **Consistent paragraph spacing**: Single blank line between paragraphs
+
 - **No multiple consecutive blank lines**: Never use multiple blank lines in a row (causes MD012 errors)
 
 ### Content Standards
 
 - **Clear, descriptive headings**: Make headings self-explanatory
+
 - **Proper list formatting**: Use consistent bullet/number styles
+
 - **Code block formatting**: Use proper fencing with language tags
 
 ### Standard Template
@@ -70,6 +86,7 @@ Content paragraph with proper spacing.
 ### Subsection
 
 - List item with proper spacing
+
 - Another list item
 
 More content here.
@@ -77,23 +94,33 @@ More content here.
 ## Another Section
 
 Final content.
+
 ```
 
 ## What This Prevents
 
 - **MD047 errors** from missing trailing newlines
+
 - **MD012 errors** from multiple consecutive blank lines
+
 - **MD032 errors** from improper spacing around lists
+
 - **MD025 errors** from multiple H1 headings
+
 - **Linting failures** that waste time and credits
+
 - **Rework cycles** from formatting issues caught in CI/CD
 
 ## Efficiency Rules
 
 - **Zero tolerance for formatting issues**: Fix everything before proceeding
+
 - **Immediate diagnostics**: Always check after file operations
+
 - **Handle MD047 systematically**: Use the strReplace method for trailing newlines
+
 - **Single-pass completion**: Get it right the first time, every time
+
 - **Prevent rework**: Proper formatting saves time and credits
 
 ## Tool-Specific Instructions
@@ -106,6 +133,7 @@ Always include exactly one empty line at the end of your content:
 WRONG: fsWrite(path="file.md", text="Final sentence.")
 WRONG: fsWrite(path="file.md", text="Final sentence.\n\n\n")  # Multiple blank lines
 RIGHT: fsWrite(path="file.md", text="Final sentence.\n\n")
+
 ```
 
 The text should end with your content, then exactly one empty line (`\n\n`). Do not add extra spaces, newlines, or blank lines after `\n\n` as this creates multiple consecutive blank lines and triggers MD012 errors.
@@ -118,6 +146,7 @@ When getDiagnostics shows MD047, use strReplace with literal empty line in newSt
 strReplace(path="file.md", oldStr="last line content", newStr="last line content.
 
 ")
+
 ```
 
 The newStr must end with an actual empty line (line break in the string), not `\n`.
@@ -125,5 +154,7 @@ The newStr must end with an actual empty line (line break in the string), not `\
 ## 🚨 FINAL REMINDERS 🚨
 
 - **MD047 Prevention**: Always end fsWrite text with `\n\n` (one empty line) or you WILL get MD047 errors
+
 - **MD012 Prevention**: Never add extra blank lines after `\n\n` or you WILL get MD012 errors (multiple consecutive blank lines)
+
 - **The pattern**: `text="Your last line of content.\n\n"` - nothing after the second `\n`

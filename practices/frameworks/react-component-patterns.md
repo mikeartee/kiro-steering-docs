@@ -76,6 +76,7 @@ export function UserProfile(props) {
     </div>
   );
 }
+
 ```
 
 ### Props Interface
@@ -122,6 +123,7 @@ export function Button(props) {
     </button>
   );
 }
+
 ```
 
 ### useState Hook
@@ -175,6 +177,7 @@ function SearchForm() {
     </div>
   );
 }
+
 ```
 
 ### useEffect Hook
@@ -210,6 +213,7 @@ function UserActivityTracker({ userId }) {
     });
   }); // Missing dependencies and cleanup
 }
+
 ```
 
 ### Custom Hooks
@@ -285,6 +289,7 @@ function UserList() {
     </ul>
   );
 }
+
 ```
 
 ### Component Composition
@@ -349,6 +354,7 @@ function UserCard({ user }) {
     </div>
   );
 }
+
 ```
 
 ### Event Handlers
@@ -396,15 +402,21 @@ function LoginForm() {
     </form>
   );
 }
+
 ```
 
 ## What This Prevents
 
 - **Prop drilling** through proper component composition
+
 - **Type errors** with TypeScript interfaces
+
 - **Memory leaks** from missing cleanup in useEffect
+
 - **Unnecessary re-renders** from proper dependency management
+
 - **Inconsistent patterns** across components
+
 - **Hard-to-test components** from poor separation of concerns
 
 ## Simple Examples
@@ -493,6 +505,7 @@ function PostCard({ post }: { post: Post }): JSX.Element {
     </article>
   );
 }
+
 ```
 
 ## Customization
@@ -500,13 +513,17 @@ function PostCard({ post }: { post: Post }): JSX.Element {
 This is a starting point for React component patterns. You can customize by:
 
 - Adding state management patterns (Redux, Zustand, etc.)
+
 - Including routing conventions (React Router)
+
 - Adding form handling patterns (React Hook Form, Formik)
+
 - Incorporating testing patterns (React Testing Library)
 
 ## Related Documents
 
 - [TypeScript Formatting](../../code-formatting/typescript-formatting.md) - TypeScript conventions
+
 - [JavaScript Formatting](../../code-formatting/javascript-formatting.md) - JavaScript style
 
 ## Optional: Validation with External Tools
@@ -524,6 +541,7 @@ npm install --save-dev typescript @types/react @types/react-dom
 
 # React Testing Library
 npm install --save-dev @testing-library/react @testing-library/jest-dom
+
 ```
 
 **Note**: These tools help enforce patterns but aren't required for the steering document to work.

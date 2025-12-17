@@ -61,6 +61,7 @@ version: 1.0.0
 #   models.py
 #   views.py
 #   everything_in_one_place.py
+
 ```
 
 ### Model Definitions
@@ -94,7 +95,6 @@ class User(AbstractUser):
     def get_full_name(self):
         """Return the user's full name."""
         return f"{self.first_name} {self.last_name}".strip() or self.username
-
 
 class Post(models.Model):
     """Blog post model."""
@@ -140,7 +140,6 @@ class Post(models.Model):
             self.slug = slugify(self.title)
         super().save(*args, **kwargs)
 
-
 class Tag(models.Model):
     """Tag model for categorizing posts."""
     name = models.CharField(max_length=50, unique=True)
@@ -162,6 +161,7 @@ class Post(models.Model):
     
     def __str__(self):
         return self.title
+
 ```
 
 ### View Patterns
@@ -196,7 +196,6 @@ class PostListView(ListView):
         context['total_posts'] = self.get_queryset().count()
         return context
 
-
 class PostDetailView(DetailView):
     """Display single post detail."""
     model = Post
@@ -214,7 +213,6 @@ class PostDetailView(DetailView):
         obj.save(update_fields=['views'])
         return obj
 
-
 class PostCreateView(LoginRequiredMixin, CreateView):
     """Create new post."""
     model = Post
@@ -226,7 +224,6 @@ class PostCreateView(LoginRequiredMixin, CreateView):
         """Set the author to the current user."""
         form.instance.author = self.request.user
         return super().form_valid(form)
-
 
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     """Update existing post."""
@@ -242,7 +239,6 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     def get_success_url(self):
         """Redirect to post detail after update."""
         return reverse_lazy('post-detail', kwargs={'pk': self.object.pk})
-
 
 class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     """Delete post."""
@@ -263,6 +259,7 @@ def post_list(request):
 def post_detail(request, id):
     post = Post.objects.get(id=id)
     return render(request, 'post.html', {'post': post})
+
 ```
 
 ### URL Configuration
@@ -309,6 +306,7 @@ urlpatterns = [
     path('new_post/', views.create_post),
     path('edit_post/<int:id>/', views.edit_post),
 ]
+
 ```
 
 ### Forms
@@ -381,6 +379,7 @@ class PostForm(forms.Form):
     def clean(self):
         # All validation in one method
         pass
+
 ```
 
 ### Django REST Framework
@@ -402,14 +401,12 @@ class UserSerializer(serializers.ModelSerializer):
         fields = ['id', 'username', 'email', 'full_name', 'bio', 'avatar']
         read_only_fields = ['id']
 
-
 class TagSerializer(serializers.ModelSerializer):
     """Serializer for Tag model."""
     class Meta:
         model = Tag
         fields = ['id', 'name', 'slug']
         read_only_fields = ['id', 'slug']
-
 
 class PostSerializer(serializers.ModelSerializer):
     """Serializer for Post model."""
@@ -444,7 +441,6 @@ class PostSerializer(serializers.ModelSerializer):
                 'content': 'Published posts must have content'
             })
         return data
-
 
 # views.py (API)
 from rest_framework import viewsets, filters, status
@@ -500,6 +496,7 @@ def get_posts(request):
     posts = Post.objects.all()
     data = [{'id': p.id, 'title': p.title} for p in posts]
     return Response(data)
+
 ```
 
 ### Admin Configuration
@@ -520,12 +517,10 @@ class TagAdmin(admin.ModelAdmin):
     search_fields = ['name']
     prepopulated_fields = {'slug': ('name',)}
 
-
 class PostTagInline(admin.TabularInline):
     """Inline admin for post tags."""
     model = Post.tags.through
     extra = 1
-
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
@@ -578,6 +573,7 @@ class PostAdmin(admin.ModelAdmin):
 # Not:
 admin.site.register(Post)
 admin.site.register(Tag)
+
 ```
 
 ### Query Optimization
@@ -617,7 +613,6 @@ class PostQuerySet(models.QuerySet):
             Q(title__icontains=query) | Q(content__icontains=query)
         )
 
-
 class PostManager(models.Manager):
     """Custom manager for Post model."""
     
@@ -633,7 +628,6 @@ class PostManager(models.Manager):
         """Get most viewed posts."""
         return self.published().order_by('-views')[:limit]
 
-
 # In models.py
 class Post(models.Model):
     # ... fields ...
@@ -648,15 +642,21 @@ posts = Post.objects.all()
 for post in posts:
     author = post.author  # N+1 query
     tags = post.tags.all()  # N+1 query
+
 ```
 
 ## What This Prevents
 
 - **N+1 query problems** from missing select_related/prefetch_related
+
 - **Security vulnerabilities** from improper permission checks
+
 - **Inconsistent code** from not following Django conventions
+
 - **Poor performance** from unoptimized queries
+
 - **Difficult maintenance** from mixing concerns
+
 - **Admin interface limitations** from not customizing admin
 
 ## Simple Examples
@@ -685,6 +685,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
         """Set the author to the current user."""
         form.instance.author = self.request.user
         return super().form_valid(form)
+
 ```
 
 ## Customization
@@ -692,13 +693,17 @@ class PostCreateView(LoginRequiredMixin, CreateView):
 This is a starting point for Django patterns. You can customize by:
 
 - Adding different database backends (PostgreSQL, MySQL)
+
 - Including caching strategies (Redis, Memcached)
+
 - Adding celery for async tasks
+
 - Incorporating different authentication methods
 
 ## Related Documents
 
 - [Python Formatting](../../code-formatting/python-formatting.md) - Python conventions
+
 - [Database Query Patterns](../../code-quality/database-query-patterns.md) - Query optimization
 
 ## Optional: Validation with External Tools
@@ -716,6 +721,7 @@ pip install pylint django-stubs
 
 # Testing
 pip install pytest pytest-django factory-boy
+
 ```
 
 **Note**: These tools help enforce patterns but aren't required for the steering document to work.

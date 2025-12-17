@@ -48,6 +48,7 @@ services:
         image: nginx:latest
         ports:
         - "80:80"
+
 ```
 
 ### Key Formatting
@@ -69,6 +70,7 @@ database:
   host : localhost
   port:5432
   name:myapp
+
 ```
 
 ### List Formatting
@@ -90,15 +92,21 @@ features:
 
 # Not:
 dependencies:
+
 - express
+
 - mongoose
+
 - dotenv
 
 features:
+
 - name: authentication
   enabled: true
+
 - name: caching
   enabled: false
+
 ```
 
 ### String Quoting
@@ -118,14 +126,19 @@ message: Hello, World!
 version: 1.0.0
 port: "8080"
 enabled: "true"
+
 ```
 
 ## What This Prevents
 
 - Indentation errors that break YAML parsing
+
 - Inconsistent formatting across configuration files
+
 - Ambiguous value types (strings vs numbers vs booleans)
+
 - Hard-to-read nested structures
+
 - Merge conflicts from inconsistent spacing
 
 ## Customization
@@ -133,8 +146,11 @@ enabled: "true"
 This is a starting point! You can modify these rules by editing this steering document:
 
 - Adjust indentation from 2 spaces to 4 spaces if preferred
+
 - Change quoting preferences for strings
+
 - Modify list formatting style
+
 - Add project-specific conventions
 
 ## Optional: Validation with External Tools
@@ -147,6 +163,7 @@ Want to validate that generated YAML follows these standards? Add these tools:
 npm install --save-dev prettier prettier-plugin-yaml
 # or
 pip install yamllint
+
 ```
 
 **Note**: These tools validate the YAML after Kiro writes it, but aren't required for the steering document to work.

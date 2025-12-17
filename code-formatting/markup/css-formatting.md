@@ -60,6 +60,7 @@ filePatterns:
   width: 100px;
   border: 1px solid #0056b3;
 }
+
 ```
 
 ### Consistent Indentation
@@ -92,6 +93,7 @@ filePatterns:
   margin-bottom: 12px;
   font-weight: bold;
 }
+
 ```
 
 ### Naming Conventions
@@ -124,6 +126,7 @@ filePatterns:
 .isActive {
   opacity: 1;
 }
+
 ```
 
 ### Spacing and Formatting
@@ -158,14 +161,19 @@ filePatterns:
 .navigation a:hover {
   color: #007bff;
 }
+
 ```
 
 ## What This Prevents
 
 - **Layout debugging nightmares** from inconsistent property ordering
+
 - **Syntax errors** from missing spaces around colons and braces
+
 - **Readability issues** from inconsistent indentation
+
 - **Naming conflicts** from mixed naming conventions
+
 - **Maintenance headaches** from unorganized stylesheets
 
 ## Simple Examples
@@ -203,6 +211,7 @@ filePatterns:
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
 }
+
 ```
 
 ## Customization
@@ -217,6 +226,7 @@ Want to validate that generated CSS follows these standards? Add these tools:
 
 ```bash
 npm install --save-dev prettier stylelint stylelint-config-standard
+
 ```
 
 **Note**: These tools validate the CSS after Kiro writes it, but aren't required for the steering document to work.

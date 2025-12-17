@@ -35,9 +35,13 @@ filePatterns:
 You MUST follow these rules when creating or editing JavaScript files:
 
 1. You MUST include semicolons at the end of all statements
+
 2. You MUST use single quotes for strings (unless escaping is needed)
+
 3. You MUST use 2-space indentation consistently
+
 4. You MUST organize imports with external packages first, then local imports
+
 5. You MUST use const/let instead of var
 
 ## How Kiro Will Write JavaScript
@@ -54,6 +58,7 @@ const age = 30;
 // Not:
 const name = 'John'
 const age = 30
+
 ```
 
 **Quotes**: Use single quotes for strings
@@ -65,6 +70,7 @@ const className = 'btn-primary';
 
 // Not:
 const message = "Hello world";
+
 ```
 
 **Indentation**: Use 2 spaces for indentation
@@ -78,6 +84,7 @@ function example() {
 }
 
 // Not mixed tabs/spaces or 4-space indentation
+
 ```
 
 ### Import Organization
@@ -93,6 +100,7 @@ import { Button } from './components/Button';
 import { utils } from '../utils/helpers';
 
 // Not scattered or mixed order
+
 ```
 
 ### Function and Variable Declarations
@@ -110,6 +118,7 @@ const fetchUser = async (id) => {
 };
 
 // Avoid var, prefer const when possible
+
 ```
 
 ### Error Prevention
@@ -124,14 +133,19 @@ items.forEach((item) => {
 });
 
 // Avoid missing parentheses, brackets, or trailing commas in wrong places
+
 ```
 
 ## What This Prevents
 
 - **Syntax errors** from missing semicolons, brackets, or quotes
+
 - **Inconsistent indentation** that makes code hard to read
+
 - **Import chaos** with scattered and unorganized dependencies
+
 - **Common typos** in variable names and function calls
+
 - **Style inconsistencies** across different files
 
 ## Framework-Specific Behavior
@@ -159,6 +173,7 @@ const MyComponent = ({ title, onSubmit }) => {
 };
 
 export default MyComponent;
+
 ```
 
 ### TypeScript Files
@@ -179,6 +194,7 @@ const createUser = (userData: Partial<User>): User => {
     ...userData,
   } as User;
 };
+
 ```
 
 ## Customization
@@ -186,8 +202,11 @@ const createUser = (userData: Partial<User>): User => {
 **This is your starting point!** You can modify these rules by editing this steering document:
 
 - Change `'single quotes'` to `"double quotes"` if preferred
+
 - Adjust indentation from 2 spaces to 4 spaces or tabs
+
 - Modify import organization patterns
+
 - Add project-specific naming conventions
 
 ## Optional: Validation with External Tools
@@ -198,6 +217,7 @@ Want to validate that generated code follows these standards? Add these tools to
 
 ```bash
 npm install --save-dev eslint prettier
+
 ```
 
 ### Basic ESLint Config (Optional)
@@ -214,6 +234,7 @@ module.exports = {
     'indent': ['error', 2],
   },
 };
+
 ```
 
 **Note**: These tools validate the code after Kiro writes it, but aren't required for the steering document to work.
@@ -223,8 +244,11 @@ module.exports = {
 This steering document works automatically when you:
 
 - Ask Kiro to create JavaScript/TypeScript files
+
 - Request code modifications or refactoring
+
 - Generate React components or Node.js modules
+
 - Work with configuration files (package.json, etc.)
 
 The formatting rules apply consistently across all JavaScript code generation in your project.

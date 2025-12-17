@@ -44,6 +44,7 @@ LIMIT 10;
 
 -- Not:
 select u.id,u.name,u.email,u.created_at from users u where u.is_active=true and u.created_at>='2024-01-01' order by u.created_at desc limit 10;
+
 ```
 
 ### Parameterized Queries
@@ -75,6 +76,7 @@ const getUserById = async (userId) => {
   const result = await db.query(query);
   return result.rows[0];
 };
+
 ```
 
 ### Query Organization
@@ -107,6 +109,7 @@ def get_user_orders_with_totals(user_id, start_date, end_date):
     query = "SELECT o.id,o.order_date,o.status,COUNT(oi.id) as item_count,SUM(oi.quantity*oi.price) as total_amount FROM orders o INNER JOIN order_items oi ON o.id=oi.order_id WHERE o.user_id=%s AND o.order_date BETWEEN %s AND %s GROUP BY o.id,o.order_date,o.status ORDER BY o.order_date DESC"
     cursor.execute(query, (user_id, start_date, end_date))
     return cursor.fetchall()
+
 ```
 
 ### Transaction Handling
@@ -165,6 +168,7 @@ const transferFunds = async (fromAccountId, toAccountId, amount) => {
     [fromAccountId, toAccountId, amount]
   );
 };
+
 ```
 
 ### Query Optimization Patterns
@@ -205,13 +209,17 @@ def get_users_with_recent_orders_bad(limit=10):
         user['orders'] = orders
 
     return users
+
 ```
 
 ## What This Prevents
 
 - **SQL injection attacks** from concatenated user input
+
 - **Performance issues** from unoptimized queries and N+1 problems
+
 - **Data inconsistencies** from missing transaction handling
+
 - **Maintenance headaches** from poorly formatted queries
 
 ## Simple Examples
@@ -250,6 +258,7 @@ const authenticateUser = async (email, passwordHash) => {
   const isValid = await bcrypt.compare(passwordHash, user.password_hash);
   return isValid ? user : null;
 };
+
 ```
 
 ### Before/After: Complex Report Query
@@ -279,6 +288,7 @@ def get_sales_report(start_date, end_date):
 
     cursor.execute(query, (start_date, end_date))
     return cursor.fetchall()
+
 ```
 
 ### Before/After: Batch Insert
@@ -314,6 +324,7 @@ const createUsers = async (users) => {
   const result = await db.query(query, params);
   return result.rows;
 };
+
 ```
 
 ## Customization
@@ -321,8 +332,11 @@ const createUsers = async (users) => {
 This is a starting point focused on common database query patterns. You can extend these rules based on your project's specific needs:
 
 - Add database-specific patterns (PostgreSQL, MySQL, MongoDB)
+
 - Include ORM-specific guidelines (Sequelize, SQLAlchemy, Prisma)
+
 - Add stored procedure patterns
+
 - Include database migration best practices
 
 ## Optional: Validation with External Tools
@@ -337,6 +351,7 @@ npm install --save-dev pg node-postgres-named
 
 # Python
 pip install psycopg2-binary sqlalchemy
+
 ```
 
 ### Query Analysis (Optional)
@@ -348,6 +363,7 @@ SELECT * FROM users WHERE email = 'user@example.com';
 
 -- Check for missing indexes
 SELECT * FROM pg_stat_user_tables WHERE idx_scan = 0;
+
 ```
 
 **Note**: These tools help analyze and optimize queries after Kiro writes them, but aren't required for the steering document to work.

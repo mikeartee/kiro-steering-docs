@@ -27,15 +27,16 @@ filePatterns:
 
 ```bash
 # Kiro will write:
-#!/usr/bin/env bash
+# !/usr/bin/env bash
 set -euo pipefail
 
 # Script description here
 # Usage: ./script.sh [options]
 
 # Not:
-#!/bin/bash
+# !/bin/bash
 # No error handling
+
 ```
 
 ### Variable Quoting
@@ -60,6 +61,7 @@ file_path=/path/to/file.txt
 if [ -f $file_path ]; then
   cat $file_path
 fi
+
 ```
 
 ### Function Definition
@@ -96,6 +98,7 @@ check_deps() {
 
 check_deps git
 echo "All dependencies satisfied"
+
 ```
 
 ### Error Handling
@@ -127,14 +130,19 @@ backup_file() {
   cp $1 $2
   echo "Backed up $1 to $2"
 }
+
 ```
 
 ## What This Prevents
 
 - Script failures from unhandled errors
+
 - Word splitting bugs from unquoted variables
+
 - Globbing issues in file paths
+
 - Silent failures that are hard to debug
+
 - Unsafe script execution
 
 ## Customization
@@ -142,8 +150,11 @@ backup_file() {
 This is a starting point! You can modify these rules by editing this steering document:
 
 - Adjust `set` options based on your needs
+
 - Change function naming conventions
+
 - Modify error handling patterns
+
 - Add project-specific requirements
 
 ## Optional: Validation with External Tools
@@ -156,12 +167,14 @@ Want to validate that generated Bash scripts follow these standards? Add these t
 # Install shellcheck
 apt-get install shellcheck  # Debian/Ubuntu
 brew install shellcheck     # macOS
+
 ```
 
 ### Usage
 
 ```bash
 shellcheck script.sh
+
 ```
 
 **Note**: These tools validate the Bash scripts after Kiro writes them, but aren't required for the steering document to work.

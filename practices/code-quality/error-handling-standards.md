@@ -64,6 +64,7 @@ async function fetchUserData(userId) {
     return null;
   }
 }
+
 ```
 
 ### Custom Error Classes
@@ -119,6 +120,7 @@ function getUser(userId) {
   }
   return user;
 }
+
 ```
 
 ### Error Logging
@@ -156,6 +158,7 @@ function handleError(error, context = {}) {
 function handleError(error) {
   console.log(error);
 }
+
 ```
 
 ### User-Friendly Error Messages
@@ -198,6 +201,7 @@ app.use((error, req, res, next) => {
 app.use((error, req, res, next) => {
   res.status(500).json({ error: error.message });
 });
+
 ```
 
 ### Python Error Handling
@@ -245,6 +249,7 @@ def get_user(user_id):
         return user
     except:
         return None
+
 ```
 
 ### Error Recovery
@@ -279,6 +284,7 @@ async function getUserWithFallback(userId) {
 async function getUser(userId) {
   return await database.getUser(userId);  // No fallback
 }
+
 ```
 
 ### Retry Logic
@@ -324,6 +330,7 @@ const data = await retryOperation(() => fetchFromAPI(url));
 
 // Not:
 const data = await fetchFromAPI(url);  // No retry logic
+
 ```
 
 ### Input Validation Errors
@@ -379,15 +386,21 @@ function processOrder(orderData) {
   const order = createOrder(orderData);
   return order;
 }
+
 ```
 
 ## What This Prevents
 
 - **Silent failures** that hide bugs
+
 - **Unclear error messages** that frustrate users
+
 - **Application crashes** from unhandled exceptions
+
 - **Difficult debugging** from missing context
+
 - **Security leaks** from exposing internal errors
+
 - **Poor user experience** from cryptic error messages
 
 ## Simple Examples
@@ -449,6 +462,7 @@ app.post('/api/orders', async (req, res) => {
     });
   }
 });
+
 ```
 
 ### Before/After: Database Operations
@@ -490,6 +504,7 @@ def get_user_orders(user_id: int) -> List[Order]:
     except Exception as e:
         logger.error(f"Unexpected error: {e}")
         raise
+
 ```
 
 ## Customization
@@ -497,13 +512,17 @@ def get_user_orders(user_id: int) -> List[Order]:
 This is a starting point for error handling standards. You can customize by:
 
 - Adding language-specific error patterns
+
 - Including monitoring and alerting integration
+
 - Adding error tracking service integration (Sentry, Rollbar)
+
 - Incorporating circuit breaker patterns
 
 ## Related Documents
 
 - [Code Review Standards](./code-review-standards.md) - Code quality practices
+
 - [API Development Patterns](../workflows/api-development-patterns.md) - API error responses
 
 ## Optional: Validation with External Tools
@@ -524,6 +543,7 @@ pip install sentry-sdk
 
 # Python validation
 pip install pydantic marshmallow
+
 ```
 
 **Note**: These tools help enhance error handling but aren't required for the steering document to work.

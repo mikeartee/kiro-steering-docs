@@ -42,6 +42,7 @@ function calc(u, t) {
   const d = getDisc(u);
   return p - d;
 }
+
 ```
 
 ### Single Responsibility
@@ -66,6 +67,7 @@ def send_welcome_email(email: str) -> None:
     if not re.match(r'^[\w\.-]+@[\w\.-]+\.\w+$', email):
         raise ValueError("Invalid email")
     email_service.send(email, "Welcome!", get_welcome_template())
+
 ```
 
 ### Error Handling
@@ -95,6 +97,7 @@ async function fetchUserData(userId: string): Promise<User> {
     return null;
   }
 }
+
 ```
 
 ### Code Comments
@@ -122,6 +125,7 @@ def process_payment(amount: float, currency: str) -> bool:
     
     # Charge the payment
     return payment_gateway.charge(amount_in_cents, currency, idempotency_key)
+
 ```
 
 ### Avoid Magic Numbers
@@ -146,6 +150,7 @@ function checkLoginAttempts(attempts) {
     lockAccount();
   }
 }
+
 ```
 
 ### Keep Functions Short
@@ -189,6 +194,7 @@ function processOrder(order: Order): ProcessedOrder {
   const grandTotal = total + tax + shipping;
   // ... 50 more lines
 }
+
 ```
 
 ### Consistent Return Types
@@ -209,15 +215,21 @@ def find_user_by_email(email: str):
     if user:
         return user
     return False  # Inconsistent return type
+
 ```
 
 ## What This Prevents
 
 - **Unclear code** that requires extensive review comments
+
 - **Complex functions** that are hard to understand and maintain
+
 - **Silent failures** from poor error handling
+
 - **Magic numbers** that obscure business logic
+
 - **Inconsistent patterns** that confuse reviewers
+
 - **Missing context** from inadequate comments
 
 ## Simple Examples
@@ -274,6 +286,7 @@ function validateUserData(userData) {
     throw new ValidationError('Invalid email format');
   }
 }
+
 ```
 
 ### Before/After: Data Processing
@@ -298,6 +311,7 @@ def filter_and_double_positive_values(values: List[float]) -> List[float]:
     positive_values = [value for value in values if value > 0]
     doubled_values = [value * 2 for value in positive_values]
     return doubled_values
+
 ```
 
 ## Customization
@@ -305,14 +319,19 @@ def filter_and_double_positive_values(values: List[float]) -> List[float]:
 This is a starting point for code review standards. You can customize by:
 
 - Adding language-specific review patterns
+
 - Including team-specific conventions
+
 - Adding security-focused review checks
+
 - Incorporating performance review criteria
 
 ## Related Documents
 
 - [JavaScript Formatting](../../code-formatting/javascript-formatting.md) - JavaScript code style
+
 - [TypeScript Formatting](../../code-formatting/typescript-formatting.md) - TypeScript patterns
+
 - [Python Formatting](../../code-formatting/python-formatting.md) - Python conventions
 
 ## Optional: Validation with External Tools
@@ -330,6 +349,7 @@ pip install pylint
 
 # SonarQube for comprehensive analysis
 # See: https://www.sonarqube.org/
+
 ```
 
 **Note**: These tools help enforce standards but aren't required for the steering document to work.

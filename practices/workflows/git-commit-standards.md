@@ -38,6 +38,7 @@ Includes token refresh mechanism and middleware for protected routes.
 
 # Not:
 added auth stuff
+
 ```
 
 ### Commit Type Prefixes
@@ -59,6 +60,7 @@ perf: optimize database query performance
 update stuff
 changes
 fixed it
+
 ```
 
 ### Subject Line Rules
@@ -75,6 +77,7 @@ docs: add installation guide to README
 feat: I added a really cool new feature that allows users to verify their email addresses when they sign up for the first time
 fix: fixed a bug
 update
+
 ```
 
 ### Imperative Mood
@@ -91,6 +94,7 @@ refactor: extract validation logic to separate module
 fix: resolved null pointer exception
 feat: added pagination
 refactor: extracted validation logic
+
 ```
 
 ### Body Content
@@ -113,6 +117,7 @@ Closes #123
 fix: order bug
 
 fixed the bug
+
 ```
 
 ### Breaking Changes
@@ -144,6 +149,7 @@ After:
 
 # Not:
 feat: update API
+
 ```
 
 ### Scope Usage
@@ -159,6 +165,7 @@ test(user): add integration tests for user creation
 
 # Not:
 feat: add stuff to auth
+
 ```
 
 ### Footer References
@@ -176,14 +183,19 @@ Related to #123, #789
 
 # Not:
 fix: database issue
+
 ```
 
 ## What This Prevents
 
 - **Unclear project history** from vague commit messages
+
 - **Difficult debugging** when trying to understand when changes were made
+
 - **Broken automation** that relies on commit message parsing
+
 - **Poor collaboration** from inconsistent commit practices
+
 - **Lost context** about why changes were made
 
 ## Simple Examples
@@ -201,6 +213,7 @@ Allow users to customize their profile with avatar, bio, and theme preferences.
 Includes new API endpoints and UI components for profile management.
 
 Closes #234
+
 ```
 
 ### Before/After: Bug Fix
@@ -216,6 +229,7 @@ Tax calculation was using domestic rates for all orders. Now correctly
 applies international tax rules based on shipping destination.
 
 Fixes #567
+
 ```
 
 ### Before/After: Documentation
@@ -229,6 +243,7 @@ docs: add API authentication guide
 
 Include step-by-step instructions for implementing API authentication,
 with code examples in JavaScript, Python, and cURL.
+
 ```
 
 ### Before/After: Refactoring
@@ -242,6 +257,7 @@ refactor: extract email service to separate module
 
 Move email-related functionality from user service to dedicated email service.
 Improves code organization and makes email logic reusable across the application.
+
 ```
 
 ## Customization
@@ -249,8 +265,11 @@ Improves code organization and makes email logic reusable across the application
 This is a starting point for Git commit standards. You can customize by:
 
 - Adding project-specific commit types
+
 - Defining required vs optional scopes
+
 - Setting team-specific conventions
+
 - Adding custom footer keywords
 
 ## Related Documents
@@ -272,6 +291,7 @@ npm install --save-dev husky
 
 # Commitizen for interactive commit creation
 npm install --save-dev commitizen cz-conventional-changelog
+
 ```
 
 ### Sample Commitlint Configuration (Optional)
@@ -291,6 +311,7 @@ module.exports = {
     'subject-max-length': [2, 'always', 72]
   }
 };
+
 ```
 
 **Note**: These tools help enforce standards but aren't required for the steering document to work.

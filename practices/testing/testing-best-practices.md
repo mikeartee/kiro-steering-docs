@@ -70,6 +70,7 @@ it('test1', () => {
 it('user creation', () => {
   // too vague
 });
+
 ```
 
 ### Test Naming Conventions
@@ -96,6 +97,7 @@ def test_total():
 def test_1():
     # meaningless name
     pass
+
 ```
 
 ### Assertion Best Practices
@@ -118,6 +120,7 @@ test('user works', () => {
   const user = createUser({ name: 'Alice', age: 30 });
   expect(user).toBeTruthy(); // too vague
 });
+
 ```
 
 ### Test Coverage Guidance
@@ -152,13 +155,17 @@ describe('AuthService', () => {
 // - Don't test every possible input combination
 // - Don't test framework/library functionality
 // - Don't test trivial getters/setters
+
 ```
 
 ## What This Prevents
 
 - **Unclear test failures** from vague test names and assertions
+
 - **Maintenance burden** from over-testing edge cases
+
 - **False confidence** from tests that don't verify actual behavior
+
 - **Test organization chaos** from poorly structured test suites
 
 ## Simple Examples
@@ -190,6 +197,7 @@ describe('GET /users/:id', () => {
     expect(response.data.error).toBe('User not found');
   });
 });
+
 ```
 
 ### Before/After: Data Processing Test
@@ -223,6 +231,7 @@ def test_process_data_returns_empty_list_when_no_valid_entries():
     result = process_data(input_data)
     
     assert result == []
+
 ```
 
 ## Customization
@@ -230,8 +239,11 @@ def test_process_data_returns_empty_list_when_no_valid_entries():
 This is a starting point focused on the most common testing patterns. You can extend these rules based on your project's specific needs:
 
 - Add framework-specific patterns (Jest, pytest, RSpec)
+
 - Include integration test guidelines
+
 - Add performance test standards
+
 - Include test data management patterns
 
 ## Optional: Validation with External Tools
@@ -246,6 +258,7 @@ npm install --save-dev jest @testing-library/react
 
 # Python
 pip install pytest pytest-cov
+
 ```
 
 **Note**: These tools run and validate tests after Kiro writes them, but aren't required for the steering document to work.

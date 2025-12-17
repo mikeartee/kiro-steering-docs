@@ -56,6 +56,7 @@ logger.debug("Processing payment", { orderId, amount, currency });
 logger.info("Database connection failed"); // Should be ERROR
 logger.error("User logged in"); // Should be INFO
 logger.debug("Critical system failure"); // Should be ERROR
+
 ```
 
 ### Structured Logging
@@ -92,6 +93,7 @@ logger.error(
 # Not:
 logger.info(f"User {user.email} authenticated from {request.remote_addr}")
 logger.error("Payment failed for order " + str(order.id) + " amount " + str(order.total))
+
 ```
 
 ### Sensitive Data Handling
@@ -130,6 +132,7 @@ logger.info("User login", {
   password: user.password, // Exposed in logs!
   creditCard: user.creditCard, // Exposed in logs!
 });
+
 ```
 
 ### Error Logging
@@ -159,6 +162,7 @@ try {
   logger.error("Error"); // No context!
   throw error;
 }
+
 ```
 
 ### Contextual Logging
@@ -221,13 +225,17 @@ def process_user_order(user_id, order_id):
     result = charge_payment(order)
     logger.info("Done")  # Vague
     return result
+
 ```
 
 ## What This Prevents
 
 - **Security breaches** from logging sensitive data like passwords and tokens
+
 - **Debugging nightmares** from insufficient context in error logs
+
 - **Alert fatigue** from inappropriate log levels
+
 - **Performance issues** from excessive debug logging in production
 
 ## Simple Examples
@@ -288,6 +296,7 @@ function authenticateUser(email, password) {
 
   return user;
 }
+
 ```
 
 ### Before/After: API Request Logging
@@ -357,6 +366,7 @@ def handle_api_request(request):
             }
         )
         raise
+
 ```
 
 ### Before/After: Database Operation Logging
@@ -410,6 +420,7 @@ async function updateUserProfile(userId, data) {
     throw err;
   }
 }
+
 ```
 
 ## Customization
@@ -417,8 +428,11 @@ async function updateUserProfile(userId, data) {
 This is a starting point focused on common logging patterns. You can extend these rules based on your project's specific needs:
 
 - Add framework-specific logging patterns (Winston, Bunyan, Python logging)
+
 - Include distributed tracing integration (OpenTelemetry, Jaeger)
+
 - Add log aggregation service patterns (ELK, Splunk, CloudWatch)
+
 - Include performance logging and metrics
 
 ## Optional: Validation with External Tools
@@ -433,6 +447,7 @@ npm install --save-dev winston pino
 
 # Python
 pip install structlog python-json-logger
+
 ```
 
 ### Basic Usage (Optional)
@@ -449,6 +464,7 @@ const logger = winston.createLogger({
     new winston.transports.File({ filename: "combined.log" }),
   ],
 });
+
 ```
 
 ```python
@@ -462,6 +478,7 @@ logger.info(
     user_id=user.id,
     email=user.email
 )
+
 ```
 
 **Note**: These tools provide advanced logging features, but aren't required for the steering document to work.

@@ -21,8 +21,11 @@ Testing steering documents help Kiro write effective tests that focus on core fu
 Testing steering documents will help you:
 
 - Define test coverage expectations
+
 - Establish testing patterns and conventions
+
 - Guide Kiro in writing focused, effective tests
+
 - Balance comprehensive testing with development speed
 
 ### Installation Example
@@ -30,19 +33,25 @@ Testing steering documents will help you:
 ```bash
 # Copy a testing steering document to your project
 cp practices/testing/test-coverage-standards.md .kiro/steering/
+
 ```
 
 ### Best Practices
 
 - Focus on testing core functionality first
+
 - Write tests that validate real behavior, not implementation details
+
 - Keep tests simple and maintainable
+
 - Use testing steering documents to establish team standards
 
 ## Related Practices
 
 - [Code Quality](../code-quality/) - Code formatting and standards
+
 - [Frameworks](../frameworks/) - Framework-specific testing patterns
+
 - [Workflows](../workflows/) - CI/CD and automated testing
 
 ## Contributing

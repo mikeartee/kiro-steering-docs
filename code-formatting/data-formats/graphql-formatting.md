@@ -58,6 +58,7 @@ author: User!
 comments: [Comment!]!
 createdAt: DateTime!
 updatedAt: DateTime!}
+
 ```
 
 ### Query Definitions
@@ -91,6 +92,7 @@ type Query {
   post(id: ID!): Post
   posts(limit: Int = 10, offset: Int = 0, published: Boolean): [Post!]!
 }
+
 ```
 
 ### Mutation Definitions
@@ -126,6 +128,7 @@ type Mutation {
   updateUser(id: ID!, name: String, avatar: String): User!
   deleteUser(id: ID!): Boolean!
 }
+
 ```
 
 ### Naming Conventions
@@ -166,14 +169,19 @@ enum UserRole {
   user
   guest
 }
+
 ```
 
 ## What This Prevents
 
 - Inconsistent naming across schema
+
 - Unreadable compressed type definitions
+
 - Poor query organization
+
 - Unclear mutation purposes
+
 - Type definition confusion
 
 ## Customization
@@ -181,8 +189,11 @@ enum UserRole {
 This is a starting point! You can modify these rules by editing this steering document:
 
 - Adjust naming conventions (camelCase vs snake_case)
+
 - Change field ordering preferences
+
 - Modify comment style
+
 - Add project-specific patterns
 
 ## Optional: Validation with External Tools
@@ -193,6 +204,7 @@ Want to validate that generated GraphQL follows these standards? Add these tools
 
 ```bash
 npm install --save-dev @graphql-eslint/eslint-plugin
+
 ```
 
 **Note**: These tools validate the GraphQL after Kiro writes it, but aren't required for the steering document to work.

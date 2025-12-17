@@ -31,9 +31,13 @@ filePatterns:
 You MUST follow these rules when creating or editing Rust files:
 
 1. You MUST use 4-space indentation and follow Rust naming conventions (snake_case for functions/variables, PascalCase for types)
+
 2. You MUST handle errors with Result<T, E> and Option<T>, avoiding unwrap() in production code
+
 3. You MUST use proper ownership and borrowing patterns with clear lifetimes when needed
+
 4. You MUST implement common traits (Debug, Clone, PartialEq) for custom types
+
 5. You MUST organize imports and modules following Rust conventions
 
 ## How Kiro Will Write Rust
@@ -64,6 +68,7 @@ fn calculate_total(items: &[Item]) -> f64 {
   }
   total
 }
+
 ```
 
 **Naming Conventions**: Use snake_case for functions/variables, PascalCase for types, SCREAMING_SNAKE_CASE for constants
@@ -100,6 +105,7 @@ fn CalculateUserScore(UserID: u64) -> Result<f64, ScoreError> {
     let BonusMultiplier = 1.5;
     Ok(BaseScore * BonusMultiplier)
 }
+
 ```
 
 **Trailing Commas**: Use trailing commas in multi-line function calls, struct definitions, and match arms
@@ -136,6 +142,7 @@ fn create_connection(
 ) -> Result<Connection, ConnectionError> {
     Connection::new(host, port, timeout)
 }
+
 ```
 
 ### Error Handling
@@ -147,9 +154,13 @@ Rust's error handling is built around the Result type, which forces you to handl
 **Key concepts:**
 
 - **Result<T, E>**: For operations that can fail with recoverable errors
+
 - **Option<T>**: For values that might be absent
+
 - **? operator**: For propagating errors up the call stack
+
 - **match/if let**: For handling specific error cases
+
 - **Custom error types**: For domain-specific errors
 
 ```rust
@@ -185,6 +196,7 @@ fn read_config_file(path: &str) -> String {
 fn parse_user_id(input: &str) -> u64 {
     input.parse::<u64>().expect("Invalid user ID") // Panics!
 }
+
 ```
 
 **Option<T> for optional values**: Use Option when a value might be absent
@@ -221,6 +233,7 @@ fn find_user_by_email(email: &str) -> User {
 fn get_user_name(user: &Option<User>) -> String {
     user.as_ref().unwrap().name.clone() // Panics if None!
 }
+
 ```
 
 **Custom error types**: Define domain-specific errors with proper implementations
@@ -229,7 +242,7 @@ fn get_user_name(user: &Option<User>) -> String {
 // Kiro will write:
 use std::fmt;
 
-#[derive(Debug)]
+# [derive(Debug)]
 enum UserError {
     NotFound(u64),
     InvalidEmail(String),
@@ -264,6 +277,7 @@ fn validate_and_create_user(email: &str) -> User {
     }
     User::new(email)
 }
+
 ```
 
 **The ? operator**: Use for clean error propagation
@@ -305,6 +319,7 @@ fn load_and_process_user(user_id: u64) -> Result<ProcessedUser, UserError> {
     // Verbose and repetitive
     Ok(ProcessedUser { user, profile })
 }
+
 ```
 
 ### Ownership and Borrowing
@@ -316,10 +331,15 @@ Rust's ownership system is its most distinctive feature, preventing data races a
 **Key concepts:**
 
 - **Ownership**: Each value has a single owner
+
 - **Move semantics**: Ownership transfers by default
+
 - **Borrowing**: Temporary access without ownership transfer
+
 - **Immutable borrows (&T)**: Multiple readers allowed
+
 - **Mutable borrows (&mut T)**: Exclusive write access
+
 - **Lifetimes**: Ensure references remain valid
 
 ```rust
@@ -362,13 +382,14 @@ fn append_suffix(text: String, suffix: &str) -> String {
     result.push_str(suffix);
     result
 }
+
 ```
 
 **Clone when necessary**: Use clone() explicitly when you need ownership of borrowed data
 
 ```rust
 // Kiro will write:
-#[derive(Clone, Debug)]
+# [derive(Clone, Debug)]
 struct User {
     id: u64,
     name: String,
@@ -388,6 +409,7 @@ fn get_user_names(users: &[User]) -> Vec<String> {
 fn cache_user(user: User, cache: &mut HashMap<u64, User>) {
     cache.insert(user.id, user); // Takes ownership, user unusable after
 }
+
 ```
 
 **Lifetime annotations**: Use explicit lifetimes when the compiler needs help
@@ -434,6 +456,7 @@ struct UserView {
     name: &str, // Error: missing lifetime
     email: &str,
 }
+
 ```
 
 **Borrowing best practices**: Follow the borrowing rules to avoid compiler errors
@@ -470,6 +493,7 @@ fn process_items(items: &mut Vec<Item>) {
         item.process(); // Error: can't call mutable method
     }
 }
+
 ```
 
 ### Pattern Matching
@@ -481,9 +505,13 @@ Pattern matching is one of Rust's most powerful features. The compiler ensures y
 **Key concepts:**
 
 - **match expressions**: Exhaustive pattern matching
+
 - **if let**: Convenient for single-pattern matching
+
 - **while let**: Loop while pattern matches
+
 - **Destructuring**: Extract values from complex types
+
 - **Guards**: Add conditions to patterns
 
 ```rust
@@ -529,6 +557,7 @@ fn handle_status(status: Status) -> String {
         // Missing cases - won't compile!
     }
 }
+
 ```
 
 **if let for simple patterns**: Use when you only care about one case
@@ -567,6 +596,7 @@ fn process_optional_user(user: Option<User>) {
         None => {} // Verbose for simple case
     }
 }
+
 ```
 
 **Destructuring patterns**: Extract values from structs and tuples
@@ -616,6 +646,7 @@ fn describe_point(point: Point) -> String {
         format!("Point at ({}, {})", point.x, point.y)
     }
 }
+
 ```
 
 **Match guards**: Add conditions to patterns
@@ -653,6 +684,7 @@ fn categorize_number(n: i32) -> &'static str {
         "large positive"
     }
 }
+
 ```
 
 ### Trait Implementations
@@ -664,17 +696,22 @@ Traits define shared behavior in Rust. Implementing common traits makes your typ
 **Key traits to implement:**
 
 - **Debug**: For debugging output with {:?}
+
 - **Clone**: For explicit copying
+
 - **PartialEq/Eq**: For equality comparison
+
 - **PartialOrd/Ord**: For ordering
+
 - **Default**: For default values
+
 - **Display**: For user-facing output
 
 ```rust
 // Kiro will write:
 use std::fmt;
 
-#[derive(Debug, Clone, PartialEq)]
+# [derive(Debug, Clone, PartialEq)]
 struct User {
     id: u64,
     name: String,
@@ -711,6 +748,7 @@ struct User {
 }
 
 // Missing derives - can't debug print, clone, or compare
+
 ```
 
 **Custom trait implementations**: Implement traits for domain-specific behavior
@@ -765,6 +803,7 @@ impl Validate for User {
     }
     // Missing required method - won't compile!
 }
+
 ```
 
 **Trait bounds**: Use trait bounds for generic functions
@@ -805,6 +844,7 @@ fn print_value<T>(value: T) {
 fn compare_values<T>(a: T, b: T) -> bool {
     a > b // Error: T doesn't implement PartialOrd
 }
+
 ```
 
 ### Module Organization
@@ -816,8 +856,11 @@ Rust's module system helps organize code into logical units. Proper module organ
 **Key concepts:**
 
 - **mod declarations**: Define modules
+
 - **pub visibility**: Control what's public
+
 - **use statements**: Import items
+
 - **Crate organization**: lib.rs and main.rs structure
 
 ```rust
@@ -838,7 +881,7 @@ pub use user::User;
 pub use profile::Profile;
 
 // src/models/user.rs
-#[derive(Debug, Clone)]
+# [derive(Debug, Clone)]
 pub struct User {
     id: u64,
     name: String,
@@ -873,6 +916,7 @@ impl UserService {
 
 // Not:
 // Everything in one file or poorly organized modules
+
 ```
 
 **Import organization**: Group and organize use statements
@@ -900,6 +944,7 @@ use serde::Serialize;
 use crate::services::UserService;
 use std::fs::File;
 use tokio::runtime::Runtime;
+
 ```
 
 **Visibility modifiers**: Use pub appropriately for API boundaries
@@ -937,22 +982,35 @@ pub struct User {
     pub name: String,
     pub email: String,    // No validation possible
 }
+
 ```
 
 ## What This Prevents
 
 - **Memory safety errors** from incorrect ownership and borrowing
+
 - **Null pointer errors** by using Option<T> instead of null
+
 - **Unhandled errors** by enforcing Result<T, E> handling
+
 - **Runtime panics** from unwrap() in production code
+
 - **Data races** through the borrow checker
+
 - **Type confusion** with strong static typing
+
 - **Missing match cases** through exhaustive pattern matching
+
 - **Lifetime errors** with explicit lifetime annotations
+
 - **API misuse** through proper visibility controls
+
 - **Code organization issues** with clear module structure
+
 - **Trait implementation gaps** by deriving common traits
+
 - **Generic type errors** with proper trait bounds
+
 - **Formatting inconsistencies** that violate Rust conventions
 
 ## Simple Examples
@@ -1008,7 +1066,7 @@ impl UserService {
 use std::collections::HashMap;
 use std::fmt;
 
-#[derive(Debug, Clone, PartialEq)]
+# [derive(Debug, Clone, PartialEq)]
 pub struct User {
     id: u64,
     name: String,
@@ -1055,7 +1113,7 @@ impl fmt::Display for User {
     }
 }
 
-#[derive(Debug)]
+# [derive(Debug)]
 pub enum UserError {
     NotFound(u64),
     InvalidName,
@@ -1074,7 +1132,7 @@ impl fmt::Display for UserError {
 
 impl std::error::Error for UserError {}
 
-#[derive(Debug, Default)]
+# [derive(Debug, Default)]
 pub struct UserService {
     users: HashMap<u64, User>,
 }
@@ -1113,6 +1171,7 @@ impl UserService {
         self.users.len()
     }
 }
+
 ```
 
 **What changed:**
@@ -1168,7 +1227,7 @@ fn process_user(id: u64) -> String {
 use std::fs;
 use std::io;
 
-#[derive(Debug)]
+# [derive(Debug)]
 enum ConfigError {
     IoError(io::Error),
     ParseError(serde_json::Error),
@@ -1207,6 +1266,7 @@ fn process_user(id: u64) -> Result<String, UserError> {
     let user = fetch_user(id)?;
     Ok(user.name)
 }
+
 ```
 
 ### Before/After: Ownership and Borrowing Example
@@ -1257,6 +1317,7 @@ fn main() {
     println!("{}", formatted);
     println!("User still available: {:?}", user);
 }
+
 ```
 
 ## Customization
@@ -1266,12 +1327,19 @@ fn main() {
 You can customize these rules by editing this steering document to match your project's requirements:
 
 - **Adjust error handling patterns**: Add project-specific error types or error handling strategies
+
 - **Extend trait implementations**: Include additional traits commonly used in your domain
+
 - **Add async/await patterns**: Include tokio or async-std patterns if building async applications
+
 - **Include testing patterns**: Add guidelines for writing tests with proper assertions
+
 - **Add performance guidelines**: Include optimization patterns specific to your use case
+
 - **Extend module organization**: Adapt to your project's specific structure
+
 - **Add framework-specific patterns**: Include patterns for web frameworks (Actix, Rocket, Axum) or other libraries
+
 - **Include unsafe code guidelines**: If your project requires unsafe code, add safety documentation requirements
 
 The goal is to have a steering document that works for your team and project, ensuring Kiro generates code that fits seamlessly into your Rust codebase.
@@ -1289,6 +1357,7 @@ If you have Rust installed, you already have access to these tools. If not, inst
 ```bash
 rustc --version
 cargo --version
+
 ```
 
 ### rustfmt (Optional)
@@ -1309,14 +1378,19 @@ cargo fmt -- --check
 
 # Format with specific edition
 cargo fmt --edition 2021
+
 ```
 
 **What it does:**
 
 - Enforces 4-space indentation
+
 - Adds/removes trailing commas appropriately
+
 - Formats function signatures and struct definitions
+
 - Ensures consistent spacing and line breaks
+
 - Follows official Rust style guide
 
 **Configuration (optional):**
@@ -1327,6 +1401,7 @@ Create a `rustfmt.toml` in your project root:
 edition = "2021"
 max_width = 100
 use_small_heuristics = "Default"
+
 ```
 
 **Note**: This tool validates and formats the code after Kiro writes it, but isn't required for the steering document to work. Kiro will already follow these formatting standards.
@@ -1349,16 +1424,23 @@ cargo clippy -- -W clippy::pedantic
 
 # Fix automatically fixable issues
 cargo clippy --fix
+
 ```
 
 **What it checks:**
 
 - Common mistakes and anti-patterns
+
 - Performance issues
+
 - Idiomatic Rust patterns
+
 - Unnecessary clones and allocations
+
 - Error handling improvements
+
 - Type complexity
+
 - Documentation issues
 
 **Example output:**
@@ -1380,6 +1462,7 @@ warning: this function has too many arguments (8/7)
    | ^^^^^^^^^^^^^^^^^^
    |
    = help: consider using a struct for some arguments
+
 ```
 
 **Note**: This tool validates the code after Kiro writes it, but isn't required for the steering document to work. Kiro will already follow best practices to prevent most clippy warnings.
@@ -1402,14 +1485,19 @@ cargo check --tests
 
 # Check benchmarks
 cargo check --benches
+
 ```
 
 **What it does:**
 
 - Type checking
+
 - Borrow checker validation
+
 - Lifetime verification
+
 - Trait bound checking
+
 - Macro expansion validation
 
 ### Integration with CI/CD (Optional)
@@ -1443,6 +1531,7 @@ jobs:
       
       - name: Build
         run: cargo build --release
+
 ```
 
 **Remember**: These external tools are optional validation steps. The steering document guides Kiro to write properly formatted, safe, idiomatic Rust code from the start, so these tools should find minimal or no issues.

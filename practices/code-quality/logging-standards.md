@@ -48,6 +48,7 @@ logger.debug('Processing payment', { orderId, amount, gateway });
 console.log('something happened');  // unclear severity
 logger.info('ERROR: Database failed');  // wrong level
 logger.error('User clicked button');  // not an error
+
 ```
 
 ### Structured Logging
@@ -95,6 +96,7 @@ def process_order(order_id, user_id):
 def process_order(order_id, user_id):
     print(f"Processing order {order_id}")  # unstructured
     # Missing context, hard to search logs
+
 ```
 
 ### Sensitive Data Protection
@@ -128,6 +130,7 @@ logger.info('User login', {
   password: user.password,  // NEVER log passwords!
   creditCard: user.creditCard  // NEVER log credit cards!
 });
+
 ```
 
 ### Contextual Information
@@ -182,13 +185,17 @@ async createOrder(userId, items) {
   console.log('done');  // no useful information
   return order;
 }
+
 ```
 
 ## What This Prevents
 
 - **Security breaches** from logging sensitive data
+
 - **Debugging difficulties** from insufficient context
+
 - **Log noise** from inappropriate log levels
+
 - **Performance issues** from excessive logging
 
 ## Simple Examples
@@ -221,6 +228,7 @@ app.use((req, res, next) => {
   
   next();
 });
+
 ```
 
 ### Before/After: Error Logging
@@ -255,6 +263,7 @@ except Exception as e:
         }
     )
     raise
+
 ```
 
 ### Before/After: Business Logic Logging
@@ -299,6 +308,7 @@ function processPayment(orderId, amount, userId) {
     throw error;
   }
 }
+
 ```
 
 ## Customization
@@ -306,8 +316,11 @@ function processPayment(orderId, amount, userId) {
 This is a starting point focused on common logging patterns. You can extend these rules based on your project's specific needs:
 
 - Add framework-specific logging (Winston, Bunyan, Loguru)
+
 - Include log aggregation patterns (ELK, Splunk, CloudWatch)
+
 - Add performance logging and metrics
+
 - Include audit logging for compliance
 
 ## Optional: Validation with External Tools
@@ -322,6 +335,7 @@ npm install --save winston pino
 
 # Python
 pip install structlog python-json-logger
+
 ```
 
 **Note**: These tools provide advanced logging features, but aren't required for the steering document to work.

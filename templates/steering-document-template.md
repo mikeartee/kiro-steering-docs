@@ -27,6 +27,7 @@ inclusion: always
 
 // Not:
 [bad example]
+
 ```
 
 ### [Rule Category 2]
@@ -39,6 +40,7 @@ inclusion: always
 
 // Not:
 [bad example]
+
 ```
 
 ### [Rule Category 3]
@@ -51,13 +53,17 @@ inclusion: always
 
 // Not:
 [bad example]
+
 ```
 
 ## What This Prevents
 
 - [Specific problem 1 that this steering solves]
+
 - [Specific problem 2 that this steering solves]
+
 - [Specific problem 3 that this steering solves]
+
 - [Specific problem 4 that this steering solves]
 
 ## Usage Examples
@@ -72,6 +78,7 @@ When you ask Kiro to create a [specific type of code], it will follow these stan
 
 ```[language]
 [Example of properly formatted code that follows all the rules]
+
 ```
 
 ## Customization
@@ -79,7 +86,9 @@ When you ask Kiro to create a [specific type of code], it will follow these stan
 This is a starting point - you can modify any rules to match your team's preferences. The key sections to customize are:
 
 - **[Rule Category 1]**: Adjust [specific customizable aspect]
+
 - **[Rule Category 2]**: Modify [specific customizable aspect]
+
 - **Tags**: Add project-specific tags for better organization
 
 ## Optional: Validation with External Tools
@@ -90,6 +99,7 @@ Want to validate that generated code follows these standards? Add these tools:
 
 ```bash
 [package manager command to install validation tools]
+
 ```
 
 **Note**: These tools validate the code after Kiro writes it, but aren't required for the steering document to work.
@@ -100,13 +110,17 @@ Create `.[config-file]` in your project root:
 
 ```[config-format]
 [example configuration that matches the steering rules]
+
 ```
 
 ## Installation
 
 1. Copy this file to `.kiro/steering/[suggested-filename].md`
+
 2. Kiro will automatically apply these standards
+
 3. Test by asking Kiro to write some [language/framework] code
+
 4. Optionally set up external validation tools (see above)
 
 ## Troubleshooting
@@ -124,5 +138,7 @@ Create `.[config-file]` in your project root:
 Found an improvement or issue with this steering document? Please:
 
 1. Test your changes with actual Kiro code generation
+
 2. Ensure examples work as documented
+
 3. Submit a pull request with clear description of changes

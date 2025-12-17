@@ -57,6 +57,7 @@ version: 1.0.0
 # app.py
 # models.py
 # everything_in_one_file.py
+
 ```
 
 ### Pydantic Models (Schemas)
@@ -84,7 +85,6 @@ class UserBase(BaseModel):
             raise ValueError('Username must be alphanumeric')
         return v
 
-
 class UserCreate(UserBase):
     """Schema for creating a user."""
     password: str = Field(..., min_length=8, max_length=100)
@@ -98,13 +98,11 @@ class UserCreate(UserBase):
             raise ValueError('Password must contain at least one uppercase letter')
         return v
 
-
 class UserUpdate(BaseModel):
     """Schema for updating a user."""
     email: Optional[EmailStr] = None
     full_name: Optional[str] = Field(None, max_length=100)
     is_active: Optional[bool] = None
-
 
 class UserInDB(UserBase):
     """Schema for user in database."""
@@ -116,7 +114,6 @@ class UserInDB(UserBase):
     class Config:
         orm_mode = True
 
-
 class UserResponse(UserBase):
     """Schema for user response (without sensitive data)."""
     id: int
@@ -126,13 +123,13 @@ class UserResponse(UserBase):
     class Config:
         orm_mode = True
 
-
 # Not:
 class User(BaseModel):
     email: str
     username: str
     password: str
     # No validation, no separation of concerns
+
 ```
 
 ### Router Organization
@@ -169,7 +166,6 @@ async def get_users(
     users = await user_service.get_users(skip=skip, limit=limit)
     return users
 
-
 @router.get("/{user_id}", response_model=UserResponse)
 async def get_user(
     user_id: int,
@@ -187,7 +183,6 @@ async def get_user(
         )
     
     return user
-
 
 @router.post("/", response_model=UserResponse, status_code=status.HTTP_201_CREATED)
 async def create_user(
@@ -207,7 +202,6 @@ async def create_user(
     
     user = await user_service.create_user(user_data)
     return user
-
 
 @router.put("/{user_id}", response_model=UserResponse)
 async def update_user(
@@ -233,7 +227,6 @@ async def update_user(
         )
     
     return user
-
 
 @router.delete("/{user_id}", status_code=status.HTTP_204_NO_CONTENT)
 async def delete_user(
@@ -262,6 +255,7 @@ async def delete_user(
 def get_users():
     users = db.query(User).all()
     return users
+
 ```
 
 ### Dependency Injection
@@ -283,7 +277,6 @@ from .models.user import User
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="auth/login")
 
-
 def get_db():
     """Database session dependency."""
     db = SessionLocal()
@@ -291,7 +284,6 @@ def get_db():
         yield db
     finally:
         db.close()
-
 
 async def get_current_user(
     token: str = Depends(oauth2_scheme),
@@ -322,7 +314,6 @@ async def get_current_user(
     
     return user
 
-
 async def get_current_active_user(
     current_user: User = Depends(get_current_user)
 ) -> User:
@@ -333,7 +324,6 @@ async def get_current_active_user(
             detail="Inactive user"
         )
     return current_user
-
 
 def require_admin(
     current_user: User = Depends(get_current_active_user)
@@ -353,6 +343,7 @@ def get_users(token: str):
     if not user:
         return {"error": "Unauthorized"}
     # Repeated auth logic in every endpoint
+
 ```
 
 ### Service Layer
@@ -371,7 +362,6 @@ from ..models.user import User
 from ..schemas.user import UserCreate, UserUpdate
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
-
 
 class UserService:
     """Service for user operations."""
@@ -456,6 +446,7 @@ def create_user(user: UserCreate):
     db.add(db_user)
     db.commit()
     return db_user
+
 ```
 
 ### Application Setup
@@ -502,7 +493,6 @@ app.include_router(auth.router, prefix="/api/auth", tags=["authentication"])
 app.include_router(users.router, prefix="/api/users", tags=["users"])
 app.include_router(posts.router, prefix="/api/posts", tags=["posts"])
 
-
 @app.get("/")
 async def root():
     """Root endpoint."""
@@ -511,7 +501,6 @@ async def root():
         "docs": "/api/docs",
         "version": "1.0.0"
     }
-
 
 @app.get("/health")
 async def health_check():
@@ -528,6 +517,7 @@ def root():
 @app.get("/users")
 def get_users():
     return []
+
 ```
 
 ### Configuration Management
@@ -579,7 +569,6 @@ class Settings(BaseSettings):
         env_file = ".env"
         case_sensitive = True
 
-
 settings = Settings()
 
 # Not:
@@ -588,6 +577,7 @@ import os
 SECRET_KEY = os.getenv("SECRET_KEY", "default-secret")
 DATABASE_URL = os.getenv("DATABASE_URL")
 # Scattered configuration
+
 ```
 
 ### Error Handling
@@ -609,7 +599,6 @@ class AppException(Exception):
         self.status_code = status_code
         super().__init__(self.message)
 
-
 @app.exception_handler(AppException)
 async def app_exception_handler(request: Request, exc: AppException):
     """Handle application exceptions."""
@@ -621,7 +610,6 @@ async def app_exception_handler(request: Request, exc: AppException):
             "path": request.url.path
         }
     )
-
 
 @app.exception_handler(RequestValidationError)
 async def validation_exception_handler(request: Request, exc: RequestValidationError):
@@ -636,7 +624,6 @@ async def validation_exception_handler(request: Request, exc: RequestValidationE
         }
     )
 
-
 @app.exception_handler(IntegrityError)
 async def integrity_exception_handler(request: Request, exc: IntegrityError):
     """Handle database integrity errors."""
@@ -648,7 +635,6 @@ async def integrity_exception_handler(request: Request, exc: IntegrityError):
             "path": request.url.path
         }
     )
-
 
 @app.exception_handler(Exception)
 async def general_exception_handler(request: Request, exc: Exception):
@@ -670,6 +656,7 @@ def get_user(user_id: int):
         return user
     except Exception as e:
         return {"error": str(e)}
+
 ```
 
 ### Background Tasks
@@ -686,13 +673,11 @@ async def send_welcome_email(email: str, username: str):
     # Email sending logic here
     print(f"Sending welcome email to {email}")
 
-
 async def process_batch_data(data: List[dict]):
     """Process batch data in background."""
     for item in data:
         # Processing logic
         print(f"Processing item: {item}")
-
 
 @router.post("/", response_model=UserResponse, status_code=status.HTTP_201_CREATED)
 async def create_user(
@@ -719,15 +704,21 @@ def create_user(user: UserCreate):
     db_user = create_user_in_db(user)
     send_email(user.email)  # Blocking operation
     return db_user
+
 ```
 
 ## What This Prevents
 
 - **Type errors** from missing Pydantic validation
+
 - **Security vulnerabilities** from improper authentication
+
 - **Performance issues** from blocking operations
+
 - **Code duplication** from not using dependency injection
+
 - **Inconsistent responses** from poor error handling
+
 - **Difficult testing** from tightly coupled code
 
 ## Simple Examples
@@ -777,6 +768,7 @@ async def create_user(
     )
     
     return user
+
 ```
 
 ## Customization
@@ -784,13 +776,17 @@ async def create_user(
 This is a starting point for FastAPI patterns. You can customize by:
 
 - Adding different database backends (MongoDB, PostgreSQL)
+
 - Including caching strategies (Redis)
+
 - Adding WebSocket support
+
 - Incorporating background job queues (Celery, RQ)
 
 ## Related Documents
 
 - [Python Formatting](../../code-formatting/python-formatting.md) - Python conventions
+
 - [API Development Patterns](../../workflows/api-development-patterns.md) - API conventions
 
 ## Optional: Validation with External Tools
@@ -811,6 +807,7 @@ pip install sqlalchemy alembic
 
 # Authentication
 pip install python-jose passlib python-multipart
+
 ```
 
 **Note**: These tools help enforce patterns but aren't required for the steering document to work.

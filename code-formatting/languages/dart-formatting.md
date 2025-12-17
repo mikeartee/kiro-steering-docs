@@ -31,9 +31,13 @@ filePatterns:
 You MUST follow these rules when creating or editing Dart files:
 
 1. You MUST use 2-space indentation and single quotes for strings (unless interpolation is needed)
+
 2. You MUST organize imports in three groups: dart: imports first, package: imports second, relative imports last
+
 3. You MUST use const constructors and trailing commas in Flutter widget trees
+
 4. You MUST provide explicit type annotations for variables, functions, and parameters
+
 5. You MUST use null safety operators and async/await properly to prevent runtime errors
 
 ## How Kiro Will Write Dart
@@ -66,6 +70,7 @@ class MyWidget extends StatelessWidget {
         );
     }
 }
+
 ```
 
 **Quotes**: Use single quotes for strings, double quotes only for interpolation
@@ -80,6 +85,7 @@ const message = "Hello, $name!"; // Double quotes for interpolation
 const greeting = "Hello, World!";
 const name = "Alice";
 const message = 'Hello, $name!'; // Wrong: single quotes with interpolation
+
 ```
 
 **Naming Conventions**: Use lowerCamelCase for variables and functions, UpperCamelCase for classes
@@ -118,6 +124,7 @@ void CalculateTotalPrice(double item_price, double TaxRate) {
   final total_price = item_price + (item_price * TaxRate);
   print(total_price);
 }
+
 ```
 
 **Trailing Commas**: Use trailing commas in multi-line function calls and widget trees
@@ -127,8 +134,11 @@ Trailing commas are essential in Dart/Flutter for proper formatting. They enable
 **When to use trailing commas:**
 
 - After the last parameter in multi-line function calls
+
 - After the last element in multi-line lists
+
 - After the last widget in widget trees
+
 - After the last argument in constructor calls
 
 **Widget tree examples:**
@@ -187,6 +197,7 @@ Widget build(BuildContext context) {
     )
   );
 }
+
 ```
 
 **Formatting benefits:**
@@ -196,6 +207,7 @@ Without trailing commas, `dart format` keeps everything on one line when possibl
 ```dart
 // Without trailing comma - formats to single line
 return Container(child: Text('Hello'));
+
 ```
 
 With trailing commas, `dart format` maintains multi-line structure:
@@ -205,6 +217,7 @@ With trailing commas, `dart format` maintains multi-line structure:
 return Container(
   child: Text('Hello'),
 );
+
 ```
 
 **Version control benefits:**
@@ -216,16 +229,21 @@ When adding a new widget, trailing commas create cleaner diffs:
 children: [
   Text('First'),
   Text('Second'),
+
 + Text('Third'),
 ],
 
 // Without trailing commas - two lines modified in diff
 children: [
   Text('First'),
+
 - Text('Second')
+
 + Text('Second'),
+
 + Text('Third')
 ]
+
 ```
 
 ### Import Organization
@@ -242,6 +260,7 @@ These are Dart's core libraries (standard library). They come first because they
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
+
 ```
 
 #### Group 2: package: imports
@@ -253,6 +272,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
+
 ```
 
 #### Group 3: relative imports
@@ -264,6 +284,7 @@ import '../models/user.dart';
 import '../services/api_service.dart';
 import '../utils/helpers.dart';
 import 'widgets/custom_button.dart';
+
 ```
 
 #### Complete example with all three groups
@@ -306,13 +327,17 @@ import 'dart:convert';
 import 'widgets/custom_button.dart';
 import 'package:provider/provider.dart';
 import '../utils/helpers.dart';
+
 ```
 
 #### Additional import rules
 
 - **Alphabetical order**: Within each group, sort imports alphabetically
+
 - **Blank lines**: Separate each group with a single blank line
+
 - **No mixing**: Never mix imports from different groups
+
 - **Consistency**: Apply this pattern to every Dart file in your project
 
 ### Flutter Widget Patterns
@@ -324,8 +349,11 @@ StatelessWidget is the foundation of Flutter UI development. It's used for widge
 **Key characteristics:**
 
 - Immutable: All properties must be final
+
 - Const constructor: Use const for better performance
+
 - Build method: Override to return the widget tree
+
 - No state: Cannot change after creation
 
 ```dart
@@ -401,6 +429,7 @@ class UserCard extends StatelessWidget {
     );
   }
 }
+
 ```
 
 **StatefulWidget pattern**: Use for widgets that need to maintain and update mutable state
@@ -410,9 +439,13 @@ StatefulWidget is used when your widget needs to change over time based on user 
 **Key characteristics:**
 
 - Two classes: Widget class and State class
+
 - Immutable widget: The widget class is still immutable
+
 - Mutable state: The State class holds mutable data
+
 - setState: Call to trigger rebuilds
+
 - Lifecycle methods: Access to initState, dispose, etc.
 
 ```dart
@@ -525,17 +558,25 @@ class _CounterWidgetState extends State<CounterWidget> {
     );
   }
 }
+
 ```
 
 **Widget pattern best practices:**
 
 - **Use const constructors**: Improves performance by allowing widget reuse
+
 - **Mark properties as final**: Ensures immutability in both widget types
+
 - **Use super.key**: Modern Flutter syntax for passing keys
+
 - **Include trailing commas**: Enables proper formatting
+
 - **Private state class**: Prefix State class name with underscore
+
 - **Initialize in initState**: Set up state in initState, not in declarations
+
 - **Use late for non-nullable state**: When state depends on widget properties
+
 - **Extract methods**: Keep build method clean by extracting event handlers
 
 ### Type Annotations
@@ -547,15 +588,21 @@ Dart has powerful type inference, but explicit type annotations improve code rea
 **When to use explicit types:**
 
 - Public API variables and properties
+
 - Class fields and properties
+
 - Top-level variables
+
 - When the type isn't obvious from the initializer
+
 - When you want to enforce a specific type
 
 **When var/final is acceptable:**
 
 - Local variables where type is obvious from context
+
 - When the initializer clearly shows the type
+
 - In short functions where the type is immediately clear
 
 ```dart
@@ -621,6 +668,7 @@ class UserService {
 const maxRetries = 3;
 var defaultTheme = 'light';
 final supportedLanguages = ['en', 'es', 'fr'];
+
 ```
 
 **Collection type annotations**: Be explicit with collection types
@@ -639,13 +687,17 @@ var config = <String, dynamic>{'debug': true, 'port': 8080};
 final names = ['Alice', 'Bob', 'Charlie'];
 final scores = {'Alice': 95, 'Bob': 87};
 final uniqueIds = {1, 2, 3, 4, 5};
+
 ```
 
 **Guidelines summary:**
 
 - **Always explicit**: Class fields, top-level variables, public APIs
+
 - **Prefer explicit**: When type isn't immediately obvious
+
 - **var/final acceptable**: Local variables with obvious types from literals or method calls
+
 - **Be consistent**: Follow the same pattern throughout your codebase
 
 **Function type annotations**: Always specify return types and parameter types
@@ -700,6 +752,7 @@ fetchUser(id) async {
   final response = await http.get('/users/$id');
   return User.fromJson(response.body);
 }
+
 ```
 
 **Parameter type annotations:**
@@ -761,6 +814,7 @@ buildButton({
     child: Text(label),
   );
 }
+
 ```
 
 **Generic type usage:**
@@ -860,15 +914,21 @@ class ApiResponse {
   
   ApiResponse({this.success, this.data, this.error});
 }
+
 ```
 
 **Function type annotations best practices:**
 
 - **Always specify return types**: Even for void functions
+
 - **Always specify parameter types**: For all parameters (required, optional, named)
+
 - **Use Future<T> for async**: Make async return types explicit
+
 - **Use meaningful generic names**: TData, TResult, TItem instead of just T when it adds clarity
+
 - **Add type constraints**: Use extends when generics need specific capabilities
+
 - **Document complex signatures**: Add comments for complex generic functions
 
 ### Null Safety
@@ -880,8 +940,11 @@ Dart's null safety system prevents null reference errors at compile time. By def
 **Key concepts:**
 
 - **Non-nullable by default**: Types without ? cannot be null
+
 - **Nullable types**: Add ? to allow null (e.g., String?, int?, User?)
+
 - **Compile-time safety**: Null errors are caught before runtime
+
 - **Explicit handling**: Must check for null before using nullable values
 
 ```dart
@@ -928,6 +991,7 @@ int age = null; // Error!
 // Missing ? for nullable values
 String middleName; // Error if not initialized!
 User currentUser; // Error if not initialized!
+
 ```
 
 **Null-aware operators**: Safe ways to work with nullable values
@@ -963,6 +1027,7 @@ int? length;
 if (name != null) {
   length = name.length;
 }
+
 ```
 
 **Null coalescing operator (??)**: Provide default values for null
@@ -1001,6 +1066,7 @@ if (userName != null) {
 } else {
   displayName = 'Guest';
 }
+
 ```
 
 **Null-aware assignment operator (??=)**: Assign only if null
@@ -1035,6 +1101,7 @@ void updateCounter() {
 if (cachedData == null) {
   cachedData = fetchData();
 }
+
 ```
 
 **Null assertion operator (!)**: Assert that a value is not null
@@ -1044,13 +1111,17 @@ The null assertion operator (!) tells Dart "I know this value is not null, trust
 **When to use !:**
 
 - After explicit null checks
+
 - When you have external guarantees the value is not null
+
 - When working with legacy code or APIs that don't support null safety
 
 **When NOT to use !:**
 
 - As a quick fix for null safety errors
+
 - When you're not certain the value is non-null
+
 - When you can use null-aware operators instead
 
 ```dart
@@ -1114,6 +1185,7 @@ Widget build(BuildContext context) {
 // When null-aware operators would be better
 String displayEmail = user!.email!; // Bad
 String displayEmail = user?.email ?? 'No email'; // Good
+
 ```
 
 **Late variables**: Declare non-nullable variables initialized later
@@ -1123,14 +1195,19 @@ The `late` keyword allows you to declare non-nullable variables that will be ini
 **When to use late:**
 
 - Variables initialized in initState or other lifecycle methods
+
 - Expensive computations that should be deferred
+
 - Dependency injection scenarios
+
 - Variables that depend on other initialization
 
 **When NOT to use late:**
 
 - When the variable might actually be null (use Type? instead)
+
 - When you can initialize in the constructor
+
 - As a workaround for null safety errors
 
 ```dart
@@ -1222,15 +1299,21 @@ class BadExample {
     print(value); // Error!
   }
 }
+
 ```
 
 **Null safety best practices:**
 
 - **Prefer non-nullable types**: Make types nullable only when necessary
+
 - **Use null-aware operators**: Prefer ?. and ?? over explicit null checks
+
 - **Avoid excessive !**: Only use when you're absolutely certain
+
 - **Use late appropriately**: For deferred initialization, not as a workaround
+
 - **Provide defaults**: Use ?? to provide sensible default values
+
 - **Check before use**: Always verify nullable values before accessing properties
 
 ### Async/Await Patterns
@@ -1242,9 +1325,13 @@ Dart's async/await syntax makes asynchronous code readable and maintainable. Alw
 **Key concepts:**
 
 - **async keyword**: Marks a function as asynchronous
+
 - **await keyword**: Waits for a Future to complete
+
 - **Future<T> return type**: All async functions return a Future
+
 - **Sequential execution**: await pauses execution until the Future completes
+
 - **Error propagation**: Exceptions in async functions can be caught with try-catch
 
 ```dart
@@ -1334,6 +1421,7 @@ String fetchUserName(int userId) async { // Error: async must return Future!
   final response = await http.get('/api/users/$userId');
   return response.body;
 }
+
 ```
 
 **Try-catch with async/await**: Proper error handling for asynchronous code
@@ -1343,9 +1431,13 @@ Always wrap async operations in try-catch blocks to handle errors gracefully. Th
 **Error handling patterns:**
 
 - **Specific exceptions**: Catch specific exception types when possible
+
 - **Generic catch**: Use catch (e) for unexpected errors
+
 - **Finally block**: Use for cleanup operations
+
 - **Rethrow**: Rethrow exceptions after logging if needed
+
 - **User feedback**: Provide clear error messages
 
 ```dart
@@ -1518,17 +1610,25 @@ Future<void> processData() async {
     print('Error: $e');
   }
 }
+
 ```
 
 **Async/await best practices:**
 
 - **Always use try-catch**: Wrap async operations in error handling
+
 - **Catch specific exceptions**: Handle known error types specifically
+
 - **Use finally for cleanup**: Ensure resources are released
+
 - **Provide user feedback**: Show loading states and error messages
+
 - **Avoid blocking**: Don't use await in loops unless necessary
+
 - **Use Future.wait**: For parallel async operations
+
 - **Return Future<void>**: For async functions that don't return values
+
 - **Handle timeouts**: Use .timeout() for operations that might hang
 
 ### Collection Safety
@@ -1540,9 +1640,13 @@ Dart collections (List, Set, Map) are powerful but can cause runtime errors if n
 **Safe iteration patterns:**
 
 - **Use toList() for modifications**: Create a copy before modifying
+
 - **Use where() for filtering**: Returns a new iterable
+
 - **Use removeWhere()**: Safe way to remove during iteration
+
 - **Use for-in loops**: For read-only iteration
+
 - **Avoid indexed loops with modifications**: Can skip elements or cause errors
 
 ```dart
@@ -1618,6 +1722,7 @@ void duplicateActiveUsers(List<User> users) {
     }
   }
 }
+
 ```
 
 **Common collection pitfalls and solutions:**
@@ -1638,6 +1743,7 @@ void removeNegatives(List<int> numbers) {
 void removeNegatives(List<int> numbers) {
   numbers.removeWhere((num) => num < 0);
 }
+
 ```
 
 #### Pitfall 2: Index-based removal in forward loop
@@ -1665,6 +1771,7 @@ void removeEvenNumbers(List<int> numbers) {
 void removeEvenNumbers(List<int> numbers) {
   numbers.removeWhere((num) => num % 2 == 0);
 }
+
 ```
 
 #### Pitfall 3: Null safety with collections
@@ -1687,6 +1794,7 @@ String getFirstName(List<String> names) {
 String getFirstName(List<String> names) {
   return names.firstOrNull ?? 'Unknown';
 }
+
 ```
 
 #### Pitfall 4: Modifying map during iteration
@@ -1720,6 +1828,7 @@ void removeEmptyValues(Map<String, String> data) {
     data.remove(key);
   }
 }
+
 ```
 
 #### Pitfall 5: Assuming list order after modifications
@@ -1739,40 +1848,67 @@ void processUsers(List<User> users) {
   // Use admin reference directly
   print(admin.name);
 }
+
 ```
 
 **Collection safety best practices:**
 
 - **Use removeWhere()**: Instead of manual removal during iteration
+
 - **Use where().toList()**: For filtering without modifying original
+
 - **Check isEmpty**: Before accessing first, last, or indexed elements
+
 - **Iterate backwards**: If you must remove by index in a loop
+
 - **Create copies**: Use toList() when you need to modify during iteration
+
 - **Use functional methods**: map(), where(), fold() are safer than manual loops
+
 - **Avoid index assumptions**: Don't store indices across modifications
+
 - **Use null-safe accessors**: firstOrNull, lastOrNull instead of first, last
 
 ## What This Prevents
 
 - **Indentation errors** that break Dart code and cause compilation failures
+
 - **String interpolation bugs** from using single quotes with $ expressions
+
 - **Import chaos** with scattered dependencies making code hard to navigate
+
 - **Naming inconsistencies** that violate Dart conventions and confuse developers
+
 - **Missing trailing commas** that prevent proper formatting and create messy diffs
+
 - **Widget performance issues** from not using const constructors
+
 - **Type errors** caught at runtime instead of compile time
+
 - **Null reference errors** that crash your app unexpectedly
+
 - **Async/await mistakes** that lead to unhandled exceptions
+
 - **ConcurrentModificationError** from modifying collections during iteration
+
 - **Widget lifecycle errors** from improper StatefulWidget patterns
+
 - **State management bugs** from mutable properties in StatelessWidget
+
 - **Memory leaks** from not disposing controllers and resources
+
 - **Build method errors** from missing @override annotations
+
 - **Generic type confusion** from unclear or missing type parameters
+
 - **Late initialization errors** from accessing variables before they're set
+
 - **Collection access errors** from assuming non-empty lists or valid indices
+
 - **Error swallowing** from catch blocks without proper handling
+
 - **Resource leaks** from missing finally blocks in async operations
+
 - **Formatting inconsistencies** that make code reviews difficult
 
 ## Simple Examples
@@ -1889,6 +2025,7 @@ class UserCard extends StatelessWidget {
     );
   }
 }
+
 ```
 
 **What changed:**
@@ -1976,6 +2113,7 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
 ```
 
 **What changed:**
@@ -2006,12 +2144,19 @@ class MyApp extends StatelessWidget {
 You can customize these rules by editing this steering document to match your project's requirements:
 
 - **Adjust code style preferences**: Change indentation, quote styles, or naming conventions if your team has different standards
+
 - **Modify import organization**: Adapt the grouping pattern to match your project structure
+
 - **Extend widget patterns**: Add project-specific widget templates or patterns
+
 - **Add custom type rules**: Include additional type annotation guidelines for your domain
+
 - **Include framework-specific patterns**: Add rules for state management libraries (Provider, Riverpod, Bloc, etc.)
+
 - **Add project conventions**: Include team-specific coding standards or architectural patterns
+
 - **Customize error handling**: Extend async/await patterns with your error handling strategy
+
 - **Add performance guidelines**: Include Flutter-specific performance optimization rules
 
 The goal is to have a steering document that works for your team and project, ensuring Kiro generates code that fits seamlessly into your codebase.
@@ -2028,6 +2173,7 @@ The Dart SDK includes built-in tools for formatting and analyzing code. If you h
 
 ```bash
 dart --version
+
 ```
 
 If you don't have Dart installed, install Flutter which includes the Dart SDK: [https://docs.flutter.dev/get-started/install](https://docs.flutter.dev/get-started/install)
@@ -2050,14 +2196,19 @@ dart format --output=write lib/
 
 # Check formatting without making changes
 dart format --output=none --set-exit-if-changed lib/
+
 ```
 
 **What it does:**
 
 - Enforces 2-space indentation
+
 - Adds/removes trailing commas appropriately
+
 - Formats widget trees for readability
+
 - Ensures consistent spacing and line breaks
+
 - Follows official Dart style guide
 
 **Note**: This tool validates and formats the code after Kiro writes it, but isn't required for the steering document to work. Kiro will already follow these formatting standards.
@@ -2080,16 +2231,23 @@ dart analyze --fatal-infos
 
 # Analyze with specific rules
 dart analyze --no-fatal-warnings
+
 ```
 
 **What it checks:**
 
 - Type safety and null safety violations
+
 - Unused imports and variables
+
 - Potential null reference errors
+
 - Async/await usage issues
+
 - Dead code and unreachable statements
+
 - Code quality and best practices
+
 - Flutter-specific widget issues
 
 **Example output:**
@@ -2102,6 +2260,7 @@ Analyzing project...
   error • The getter 'name' isn't defined for the type 'User?' • lib/services/user_service.dart:45:15 • undefined_getter
 
 3 issues found.
+
 ```
 
 **Note**: This tool validates the code after Kiro writes it, but isn't required for the steering document to work. Kiro will already follow null safety and type annotation standards to prevent these issues.
@@ -2125,6 +2284,7 @@ jobs:
       - run: dart pub get
       - run: dart format --output=none --set-exit-if-changed .
       - run: dart analyze --fatal-infos
+
 ```
 
 **Remember**: These external tools are optional validation steps. The steering document guides Kiro to write properly formatted, type-safe Dart code from the start, so these tools should find minimal or no issues.

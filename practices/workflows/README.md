@@ -23,8 +23,11 @@ Workflow steering documents help automate and standardize development processes.
 Workflow steering documents will help you:
 
 - Automate repetitive development tasks
+
 - Enforce standards through automation
+
 - Set up CI/CD pipelines
+
 - Standardize team workflows
 
 ### Installation Example
@@ -32,6 +35,7 @@ Workflow steering documents will help you:
 ```bash
 # Copy a workflow steering document to your project
 cp categories/workflows/git-hooks.md .kiro/steering/
+
 ```
 
 ### Workflow Integration
@@ -39,21 +43,29 @@ cp categories/workflows/git-hooks.md .kiro/steering/
 Workflow steering documents can help with:
 
 - **Pre-commit**: Run linting and formatting before commits
+
 - **CI/CD**: Automated testing and deployment
+
 - **Code Review**: Automated checks on pull requests
+
 - **Release**: Version management and changelog generation
 
 ### Best Practices
 
 - Start with simple workflow automation
+
 - Test workflow changes in a safe environment
+
 - Document workflow requirements for team members
+
 - Combine workflow steering with code quality standards
 
 ## Related Categories
 
 - [Code Quality](../code-quality/) - Standards enforced by workflows
+
 - [Testing](../testing/) - Automated testing in CI/CD
+
 - [Security](../security/) - Security scanning in pipelines
 
 ## Contributing

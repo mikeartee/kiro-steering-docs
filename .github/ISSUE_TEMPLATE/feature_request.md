@@ -33,6 +33,9 @@ Add any other context, mockups, or examples about the feature request here.
 ## Would You Contribute?
 
 - [ ] I'm willing to submit a PR for this feature
+
 - [ ] I can help with documentation
+
 - [ ] I can help with testing
+
 - [ ] I'm just suggesting the idea

@@ -57,6 +57,7 @@ MAX_CONNECTIONS=10
 databaseUrl=postgresql://localhost:5432/myapp
 apikey=your-api-key-here
 jwtSecret=your-secret-key
+
 ```
 
 ### Configuration File Structure
@@ -85,6 +86,7 @@ const config = {
   database: process.env.DB_NAME,
   // missing defaults, inconsistent naming
 };
+
 ```
 
 ### Secrets Handling
@@ -109,6 +111,7 @@ class Config:
     SECRET_KEY = 'hardcoded-secret-key-123'  # NEVER do this
     DATABASE_URL = 'postgresql://user:password@localhost/db'
     API_KEY = 'sk-1234567890abcdef'
+
 ```
 
 ### Configuration Validation
@@ -139,13 +142,17 @@ const config = {
   database: process.env.DATABASE_URL,  // might be undefined
   secret: process.env.JWT_SECRET,      // might be undefined
 };
+
 ```
 
 ## What This Prevents
 
 - **Security breaches** from hardcoded secrets in code
+
 - **Configuration errors** from inconsistent naming conventions
+
 - **Deployment issues** from missing environment variables
+
 - **Debugging nightmares** from unclear configuration sources
 
 ## Simple Examples
@@ -190,6 +197,7 @@ const db = new Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
 });
+
 ```
 
 ### Before/After: Python Configuration
@@ -218,6 +226,7 @@ if missing:
 # Use environment variable
 DATABASE_URL = os.environ['DATABASE_URL']
 conn = psycopg2.connect(DATABASE_URL)
+
 ```
 
 ### .env File Template
@@ -244,6 +253,7 @@ API_BASE_URL=https://api.example.com
 
 # Feature Flags
 ENABLE_FEATURE_X=false
+
 ```
 
 ## Customization
@@ -251,8 +261,11 @@ ENABLE_FEATURE_X=false
 This is a starting point focused on common configuration patterns. You can extend these rules based on your project's specific needs:
 
 - Add framework-specific configuration patterns (Django settings, Spring Boot properties)
+
 - Include cloud provider configuration (AWS, Azure, GCP)
+
 - Add configuration for specific services (Redis, MongoDB, etc.)
+
 - Include multi-environment configuration strategies
 
 ## Optional: Validation with External Tools
@@ -267,6 +280,7 @@ npm install --save-dev dotenv dotenv-expand
 
 # Python
 pip install python-dotenv
+
 ```
 
 ### Basic Usage (Optional)
@@ -276,6 +290,7 @@ pip install python-dotenv
 require('dotenv').config();
 
 // Now use process.env.YOUR_VARIABLE
+
 ```
 
 ```python
@@ -284,6 +299,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Now use os.environ.get('YOUR_VARIABLE')
+
 ```
 
 **Note**: These tools help load environment variables from .env files, but aren't required for the steering document to work.

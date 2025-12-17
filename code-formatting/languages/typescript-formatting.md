@@ -44,9 +44,13 @@ filePatterns:
 You MUST follow these rules when creating or editing TypeScript files:
 
 1. You MUST provide explicit type annotations for function parameters and return types
+
 2. You MUST define interfaces for all object structures
+
 3. You MUST organize imports logically (external libraries, internal modules, type imports)
+
 4. You MUST use meaningful generic type names (not just T, U, V)
+
 5. You MUST NOT use `any` type unless absolutely necessary
 
 ## How Kiro Will Write TypeScript
@@ -81,6 +85,7 @@ const user = {
 };
 
 const items = ["apple", "banana", "orange"];
+
 ```
 
 ### Interface Definitions
@@ -116,6 +121,7 @@ interface User {
   id: number;
   email: string;
 }
+
 ```
 
 ### Import Organization
@@ -145,6 +151,7 @@ import React from "react";
 import { UserService } from "../services/UserService";
 import axios from "axios";
 import type { ApiResponse } from "../types/api";
+
 ```
 
 ### Generic Types
@@ -181,6 +188,7 @@ interface ApiResponse<T> {
 function fetchData<T>(url: string): Promise<ApiResponse<T>> {
   return axios.get(url);
 }
+
 ```
 
 ### Union Types and Enums
@@ -219,14 +227,19 @@ interface Task {
   assignee: any;
   priority: string;
 }
+
 ```
 
 ## What This Prevents
 
 - **Runtime type errors** from missing or incorrect type annotations
+
 - **API integration issues** from poorly defined interfaces
+
 - **Import confusion** from disorganized module imports
+
 - **Generic type errors** from unclear type constraints
+
 - **Maintenance headaches** from weak typing and unclear contracts
 
 ## Simple Examples
@@ -286,6 +299,7 @@ export class UserService {
     return response.json() as Promise<ApiResponse<User>>;
   }
 }
+
 ```
 
 ### Before/After: React Component
@@ -328,6 +342,7 @@ export function UserCard({ user, onEdit }: UserCardProps): JSX.Element {
     </div>
   );
 }
+
 ```
 
 ## Customization
@@ -342,6 +357,7 @@ Want to validate that generated TypeScript follows these standards? Add these to
 
 ```bash
 npm install --save-dev typescript @typescript-eslint/parser @typescript-eslint/eslint-plugin prettier
+
 ```
 
 **Note**: These tools validate the TypeScript after Kiro writes it, but aren't required for the steering document to work.

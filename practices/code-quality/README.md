@@ -23,7 +23,9 @@ Code quality steering documents guide Kiro to write clean, consistent code that 
 ### Getting Started
 
 1. Choose a steering document that matches your project's language
+
 2. Copy the document to your `.kiro/steering/` directory
+
 3. Kiro will automatically apply these standards when generating code
 
 ### Installation Example
@@ -31,6 +33,7 @@ Code quality steering documents guide Kiro to write clean, consistent code that 
 ```bash
 # Copy a steering document to your project
 cp categories/code-quality/javascript-formatting.md .kiro/steering/
+
 ```
 
 ### Customization
@@ -38,20 +41,27 @@ cp categories/code-quality/javascript-formatting.md .kiro/steering/
 All code quality steering documents are designed as starting points. You can:
 
 - Modify formatting rules to match your team's preferences
+
 - Add project-specific conventions
+
 - Combine multiple steering documents for comprehensive coverage
 
 ### Best Practices
 
 - Start with one language-specific document
+
 - Test the steering rules with sample code generation
+
 - Adjust rules based on your team's feedback
+
 - Keep steering documents focused on one language or area
 
 ## Related Categories
 
 - [Testing](../testing/) - Test quality and coverage standards
+
 - [Frameworks](../frameworks/) - Framework-specific code patterns
+
 - [Workflows](../workflows/) - Development workflow automation
 
 ## Contributing

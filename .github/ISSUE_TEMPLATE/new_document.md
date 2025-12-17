@@ -15,10 +15,15 @@ What should this steering document be called?
 Which category does this belong to?
 
 - [ ] Code Quality
+
 - [ ] Testing
+
 - [ ] Security
+
 - [ ] Frameworks
+
 - [ ] Workflows
+
 - [ ] Other (please specify)
 
 ## Description
@@ -48,7 +53,9 @@ If you have ideas for what this document should include, share them here.
 ## Contribution Status
 
 - [ ] I'm willing to write this document
+
 - [ ] I can provide examples and guidance
+
 - [ ] I'm just suggesting the idea
 
 ## Additional Context

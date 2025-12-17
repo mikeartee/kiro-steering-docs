@@ -19,9 +19,13 @@ inclusion: always
 You MUST follow these rules when working with Next.js App Router:
 
 1. You MUST use Server Components by default (no 'use client' unless needed)
+
 2. You MUST fetch data directly in Server Components using async/await
+
 3. You MUST use proper file conventions (page.tsx, layout.tsx, loading.tsx)
+
 4. You MUST import routing hooks from 'next/navigation' (not 'next/router')
+
 5. You MUST use 'use client' directive only for interactivity, state, or browser APIs
 
 ## How Kiro Will Write Next.js
@@ -65,6 +69,7 @@ export default function Page() {
   
   return <ul>...</ul>;
 }
+
 ```
 
 ### Data Fetching Strategies
@@ -89,6 +94,7 @@ export default async function Page() {
 }
 
 // Not using getServerSideProps or getStaticProps
+
 ```
 
 ### Client Components
@@ -117,6 +123,7 @@ export default function InteractiveComponent() {
 
 // Not:
 import { useRouter } from 'next/router'; // Wrong import!
+
 ```
 
 ### Composition Pattern
@@ -154,6 +161,7 @@ export default function ClientComponent({ data }) {
     </div>
   );
 }
+
 ```
 
 ### File Conventions
@@ -171,6 +179,7 @@ app/
 │   ├── page.tsx        # Dashboard page
 │   └── settings/
 │       └── page.tsx    # Settings page
+
 ```
 
 ```tsx
@@ -193,6 +202,7 @@ export default function DashboardLayout({ children }) {
     </div>
   );
 }
+
 ```
 
 ### Dynamic Routes
@@ -217,6 +227,7 @@ export async function generateStaticParams() {
     id: post.id,
   }));
 }
+
 ```
 
 ### Environment Variables
@@ -236,6 +247,7 @@ export default async function Component() {
 }
 
 // Not accessing process.env without connection() in dynamic contexts
+
 ```
 
 ### Link Component
@@ -256,14 +268,19 @@ export default function Navigation() {
 }
 
 // Not using <a> tags for internal navigation
+
 ```
 
 ## What This Prevents
 
 - **Unnecessary client-side rendering** from overusing 'use client'
+
 - **Poor performance** from client-side data fetching
+
 - **Hydration errors** from mixing Server and Client Component patterns incorrectly
+
 - **Import errors** from using Pages Router APIs in App Router
+
 - **Build failures** from incorrect file conventions
 
 ## Migration Patterns
@@ -294,6 +311,7 @@ export default async function Dashboard() {
   const data = await getData();
   return <div>{data.title}</div>;
 }
+
 ```
 
 ## Customization
@@ -308,6 +326,7 @@ Want to validate that generated code follows these standards? Add these tools:
 
 ```bash
 npm install --save-dev eslint eslint-config-next
+
 ```
 
 **Note**: These tools validate the code after Kiro writes it, but aren't required for the steering document to work.

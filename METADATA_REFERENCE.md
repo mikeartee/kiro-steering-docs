@@ -15,14 +15,20 @@ Steering documents use YAML frontmatter to provide metadata that enables intelli
 **Description:** A clear, descriptive title for the document.
 
 **Example:**
+
 ```yaml
 title: "React Component Best Practices"
+
 ```
 
 **Guidelines:**
+
 - Use title case
+
 - Be specific and descriptive
+
 - Keep under 60 characters when possible
+
 - Don't include the word "Steering" or "Document"
 
 ### description
@@ -32,14 +38,20 @@ title: "React Component Best Practices"
 **Description:** A brief one or two sentence description of what the document covers.
 
 **Example:**
+
 ```yaml
 description: "Best practices and patterns for writing maintainable React components"
+
 ```
 
 **Guidelines:**
+
 - Keep concise (under 150 characters)
+
 - Focus on what the document helps with
+
 - Use plain language, avoid jargon
+
 - Complete sentences
 
 ### tags
@@ -49,24 +61,35 @@ description: "Best practices and patterns for writing maintainable React compone
 **Description:** Tags for categorization and search.
 
 **Example:**
+
 ```yaml
 tags:
   - react
   - components
   - best-practices
+
 ```
 
 **Common tags:**
+
 - Language names: `javascript`, `typescript`, `python`, `bash`
+
 - Frameworks: `react`, `vue`, `express`, `django`, `fastapi`
+
 - Categories: `testing`, `security`, `formatting`, `best-practices`
+
 - Purposes: `code-generation`, `code-quality`, `workflow`
 
 **Guidelines:**
+
 - Use lowercase
+
 - Use hyphens for multi-word tags (e.g., `best-practices`)
+
 - Include at least 2 tags
+
 - Be specific but not overly granular
+
 - Include both general and specific tags
 
 ## Recommendation Metadata Fields
@@ -78,30 +101,43 @@ tags:
 **Description:** Indicates which types of projects this document applies to.
 
 **Valid values:**
+
 - `web-app` - Web applications
+
 - `library` - Reusable libraries and npm packages
+
 - `cli-tool` - Command-line tools
+
 - `api-server` - Backend API servers
+
 - `vscode-extension` - VS Code extensions
 
 **Example:**
+
 ```yaml
 applicableTo:
   - web-app
   - library
+
 ```
 
 **How it's used:**
 The recommendation system detects project type by analyzing:
+
 - Dependencies in package.json
+
 - File structure and patterns
+
 - Build configuration
 
 Documents with matching project types get higher recommendation scores.
 
 **When to use:**
+
 - Use for documents that apply to specific project architectures
+
 - Include multiple types if the document is broadly applicable
+
 - Omit only if the document is truly universal
 
 ### requiredDependencies
@@ -111,52 +147,71 @@ Documents with matching project types get higher recommendation scores.
 **Description:** npm package names that indicate this document is relevant.
 
 **Example:**
+
 ```yaml
 requiredDependencies:
   - react
   - typescript
+
 ```
 
 **How it's used:**
 The recommendation system checks the user's `package.json` for these dependencies. Documents whose required dependencies are present get boosted in recommendations.
 
 **Guidelines:**
+
 - Use exact npm package names
+
 - Include only direct dependencies (not transitive)
+
 - Framework documents MUST have this field
+
 - Language documents for TypeScript should include `typescript`
+
 - Python/Ruby documents can omit this (no npm equivalent)
 
 **Examples by category:**
 
 **React documents:**
+
 ```yaml
 requiredDependencies:
   - react
+
 ```
 
 **TypeScript documents:**
+
 ```yaml
 requiredDependencies:
   - typescript
+
 ```
 
 **Express documents:**
+
 ```yaml
 requiredDependencies:
   - express
+
 ```
 
 **Testing documents (Jest):**
+
 ```yaml
 requiredDependencies:
   - jest
+
 ```
 
 **When to omit:**
+
 - Language-agnostic documents
+
 - General best practices
+
 - Python/Ruby specific documents (no npm packages)
+
 - Documents that apply regardless of dependencies
 
 ### filePatterns
@@ -166,11 +221,13 @@ requiredDependencies:
 **Description:** Glob patterns indicating which files this document is relevant for.
 
 **Example:**
+
 ```yaml
 filePatterns:
   - "**/*.tsx"
   - "components/**/*"
   - "src/components/**/*.tsx"
+
 ```
 
 **How it's used:**
@@ -179,6 +236,7 @@ The recommendation system checks if the user's workspace contains files matching
 **Common patterns:**
 
 **Language-specific:**
+
 ```yaml
 # JavaScript
 filePatterns:
@@ -200,17 +258,21 @@ filePatterns:
   - "**/*.css"
   - "**/*.scss"
   - "**/*.sass"
+
 ```
 
 **Component patterns:**
+
 ```yaml
 filePatterns:
   - "components/**/*.jsx"
   - "components/**/*.tsx"
   - "src/components/**/*"
+
 ```
 
 **Test patterns:**
+
 ```yaml
 filePatterns:
   - "**/*.test.ts"
@@ -219,21 +281,29 @@ filePatterns:
   - "**/*.spec.js"
   - "tests/**/*"
   - "__tests__/**/*"
+
 ```
 
 **API patterns:**
+
 ```yaml
 filePatterns:
   - "routes/**/*.ts"
   - "api/**/*.ts"
   - "controllers/**/*.ts"
+
 ```
 
 **Guidelines:**
+
 - Use glob syntax (`**` for any directory depth, `*` for any characters)
+
 - Include all relevant variations
+
 - Don't be too specific (e.g., avoid hardcoding exact paths)
+
 - Order from most to least specific
+
 - Omit if document applies to all files or no specific pattern
 
 ## Optional Fields
@@ -245,15 +315,22 @@ filePatterns:
 **Description:** High-level category for the document.
 
 **Common values:**
+
 - `code-formatting`
+
 - `code-quality`
+
 - `testing`
+
 - `security`
+
 - `workflow`
 
 **Example:**
+
 ```yaml
 category: "code-quality"
+
 ```
 
 ### inclusion
@@ -263,13 +340,18 @@ category: "code-quality"
 **Description:** When to include this document in recommendations.
 
 **Valid values:**
+
 - `always` - Always include in recommendations
+
 - `contextual` - Only include when context matches
+
 - `manual` - Only show when explicitly requested
 
 **Example:**
+
 ```yaml
 inclusion: always
+
 ```
 
 ## Complete Examples
@@ -297,6 +379,7 @@ filePatterns:
   - "components/**/*.tsx"
   - "src/components/**/*"
 ---
+
 ```
 
 ### Example 2: TypeScript Formatting Document
@@ -323,6 +406,7 @@ filePatterns:
   - "**/*.ts"
   - "**/*.tsx"
 ---
+
 ```
 
 ### Example 3: Testing Best Practices Document
@@ -350,6 +434,7 @@ filePatterns:
   - "**/*.spec.js"
   - "tests/**/*"
 ---
+
 ```
 
 ### Example 4: Python Formatting Document
@@ -372,6 +457,7 @@ applicableTo:
 filePatterns:
   - "**/*.py"
 ---
+
 ```
 
 Note: No `requiredDependencies` since Python doesn't use npm.
@@ -392,6 +478,7 @@ applicableTo:
   - web-app
   - api-server
 ---
+
 ```
 
 Note: No `filePatterns` or `requiredDependencies` since this applies broadly.
@@ -436,6 +523,7 @@ npm run enhance-frontmatter
 
 # Validate results
 npm run validate-frontmatter
+
 ```
 
 See [ENHANCEMENT_GUIDE.md](ENHANCEMENT_GUIDE.md) for details.
@@ -445,21 +533,32 @@ See [ENHANCEMENT_GUIDE.md](ENHANCEMENT_GUIDE.md) for details.
 The validation system enforces these rules:
 
 1. **Required fields present**: title, description, tags
+
 2. **Minimum tags**: At least 2 tags required
+
 3. **Valid YAML**: All frontmatter must parse correctly
+
 4. **Framework documents**: Must have `requiredDependencies`
+
 5. **Valid enum values**: Project types must be from allowed list
 
 Run validation:
+
 ```bash
 npm run validate-frontmatter
+
 ```
 
 ## Best Practices
 
 1. **Be specific**: More metadata = better recommendations
+
 2. **Test your patterns**: Verify glob patterns match intended files
+
 3. **Keep tags focused**: 3-5 tags is usually ideal
+
 4. **Update when changing content**: If document scope changes, update metadata
+
 5. **Use the enhancement tool**: Let automation handle initial metadata
+
 6. **Validate regularly**: Run validation in CI/CD

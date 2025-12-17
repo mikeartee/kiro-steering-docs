@@ -19,9 +19,13 @@ inclusion: always
 You MUST follow these rules when working with Tailwind CSS:
 
 1. You MUST use complete static class names (never dynamic string interpolation)
+
 2. You MUST use mobile-first responsive design with breakpoint prefixes
+
 3. You MUST extract repeated utility combinations into components or loops
+
 4. You MUST use proper variant syntax (hover:, focus:, etc.)
+
 5. You MUST NOT concatenate class names with template literals
 
 ## How Kiro Will Write Tailwind CSS
@@ -45,6 +49,7 @@ function Button({ color }) {
 function Button({ color }) {
   return <button className={`bg-${color}-600 hover:bg-${color}-500`}>{children}</button>;
 }
+
 ```
 
 ### Responsive Design
@@ -58,6 +63,7 @@ function Button({ color }) {
 
 <!-- Not: -->
 <img class="lg:w-48 md:w-32 w-16" src="..." />
+
 ```
 
 ### Component Extraction
@@ -84,6 +90,7 @@ function Button({ color }) {
   <img className="inline-block h-12 w-12 rounded-full ring-2 ring-white" src="..." alt="" />
   <img className="inline-block h-12 w-12 rounded-full ring-2 ring-white" src="..." alt="" />
 </div>
+
 ```
 
 ### Conditional Classes
@@ -96,6 +103,7 @@ function Button({ color }) {
 
 <!-- Not: -->
 <div class="text-{{ error ? 'red' : 'green' }}-600"></div>
+
 ```
 
 ### Utility Organization
@@ -113,6 +121,7 @@ function Button({ color }) {
 </div>
 
 <!-- Not scattered or random order -->
+
 ```
 
 ### Variant Syntax
@@ -126,14 +135,19 @@ function Button({ color }) {
 </button>
 
 <!-- Not missing or incorrect variants -->
+
 ```
 
 ## What This Prevents
 
 - **Missing classes** from dynamic string interpolation
+
 - **Inconsistent responsive behavior** from incorrect breakpoint usage
+
 - **Code duplication** from repeated utility combinations
+
 - **Build errors** from undetected class names
+
 - **Maintenance issues** from scattered utility organization
 
 ## Framework-Specific Patterns
@@ -155,6 +169,7 @@ export function Card({ variant = 'default' }) {
     </div>
   );
 }
+
 ```
 
 ### Vue
@@ -178,6 +193,7 @@ const buttonClasses = computed(() => {
   return variants[props.variant] || variants.primary;
 });
 </script>
+
 ```
 
 ## Customization
@@ -192,7 +208,7 @@ Want to validate that generated code follows these standards? Add these tools:
 
 ```bash
 npm install --save-dev prettier prettier-plugin-tailwindcss
+
 ```
 
 **Note**: These tools validate the code after Kiro writes it, but aren't required for the steering document to work.
-

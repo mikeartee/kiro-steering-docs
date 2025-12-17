@@ -24,8 +24,11 @@ Framework steering documents provide specialized guidance for working with speci
 Framework steering documents will help you:
 
 - Follow framework-specific conventions and patterns
+
 - Generate components that match framework best practices
+
 - Implement common framework patterns correctly
+
 - Maintain consistency across framework-based projects
 
 ### Installation Example
@@ -33,6 +36,7 @@ Framework steering documents will help you:
 ```bash
 # Copy a framework steering document to your project
 cp categories/frameworks/react-patterns.md .kiro/steering/
+
 ```
 
 ### Combining with Other Categories
@@ -40,20 +44,27 @@ cp categories/frameworks/react-patterns.md .kiro/steering/
 Framework steering documents work best when combined with:
 
 - **Code Quality**: Base language formatting rules
+
 - **Testing**: Framework-specific testing patterns
+
 - **Security**: Framework security best practices
 
 ### Best Practices
 
 - Use framework steering documents that match your project's stack
+
 - Combine with base language steering documents
+
 - Update steering documents when framework versions change
+
 - Share framework patterns that work well for your team
 
 ## Related Categories
 
 - [Code Quality](../code-quality/) - Base language formatting
+
 - [Testing](../testing/) - Framework-specific testing
+
 - [Workflows](../workflows/) - Framework build and deployment
 
 ## Contributing

@@ -134,6 +134,7 @@ export default {
   }
 };
 </script>
+
 ```
 
 ### Props Definition
@@ -175,6 +176,7 @@ export default {
   }
 };
 </script>
+
 ```
 
 ### Reactive State with ref and reactive
@@ -233,6 +235,7 @@ const search = async () => {
   loading.value = false;
 };
 </script>
+
 ```
 
 ### Computed Properties
@@ -285,6 +288,7 @@ const total = computed(() => {
   return '$' + sum.toFixed(2);
 });
 </script>
+
 ```
 
 ### Lifecycle Hooks
@@ -339,6 +343,7 @@ onMounted(() => {
 });
 // Missing cleanup
 </script>
+
 ```
 
 ### Composables (Custom Hooks)
@@ -413,6 +418,7 @@ onMounted(async () => {
   loading.value = false;
 });
 </script>
+
 ```
 
 ### Event Handling
@@ -479,6 +485,7 @@ const submit = async () => {
     <button type="submit">Login</button>
   </form>
 </template>
+
 ```
 
 ### Component Composition
@@ -565,15 +572,21 @@ const handleEdit = () => {
     </div>
   </div>
 </template>
+
 ```
 
 ## What This Prevents
 
 - **Options API confusion** by using modern Composition API
+
 - **Type errors** with TypeScript integration
+
 - **Memory leaks** from missing cleanup in lifecycle hooks
+
 - **Prop drilling** through proper component composition
+
 - **Inconsistent patterns** across components
+
 - **Hard-to-test components** from poor separation of concerns
 
 ## Simple Examples
@@ -646,6 +659,7 @@ const isLoading = computed(() => isLoadingUser.value || isLoadingPosts.value);
   padding: 1rem;
 }
 </style>
+
 ```
 
 ## Customization
@@ -653,13 +667,17 @@ const isLoading = computed(() => isLoadingUser.value || isLoadingPosts.value);
 This is a starting point for Vue component patterns. You can customize by:
 
 - Adding state management patterns (Pinia, Vuex)
+
 - Including routing conventions (Vue Router)
+
 - Adding form handling patterns (VeeValidate)
+
 - Incorporating testing patterns (Vue Test Utils)
 
 ## Related Documents
 
 - [TypeScript Formatting](../../code-formatting/typescript-formatting.md) - TypeScript conventions
+
 - [JavaScript Formatting](../../code-formatting/javascript-formatting.md) - JavaScript style
 
 ## Optional: Validation with External Tools
@@ -677,6 +695,7 @@ npm install --save-dev typescript vue-tsc
 
 # Vue Test Utils
 npm install --save-dev @vue/test-utils vitest
+
 ```
 
 **Note**: These tools help enforce patterns but aren't required for the steering document to work.

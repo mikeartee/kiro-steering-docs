@@ -20,14 +20,23 @@ inclusion: always
 You MUST follow these rules when creating or editing Terraform files:
 
 1. You MUST use 2-space indentation for each nesting level
+
 2. You MUST align equals signs for consecutive single-line arguments
+
 3. You MUST organize files into main.tf, variables.tf, outputs.tf structure
+
 4. You MUST use snake_case for resource names without type prefixes
+
 5. You MUST place meta-arguments (count, for_each) before resource parameters
+
 6. You MUST place lifecycle blocks last, separated by blank lines
+
 7. You MUST use ~> for provider version constraints (pessimistic)
+
 8. You MUST set sensitive = true for sensitive variables and outputs
+
 9. You MUST run terraform fmt before committing
+
 10. You MUST NOT commit terraform.tfstate or .terraform/ directory
 
 **Note:** These rules apply to all Terraform providers (AWS, Azure, GCP, Kubernetes, etc.).
@@ -56,6 +65,7 @@ module/
         └── outputs.tf
 
 # Not scattered or inconsistent naming
+
 ```
 
 ### Code Formatting
@@ -95,6 +105,7 @@ tags = {
 Name = "server"
 }
 }
+
 ```
 
 ### Resource Naming
@@ -114,6 +125,7 @@ variable "enable_monitoring" {}
 resource "aws_instance" "webserver_instance" {}  # Type in name
 resource "aws_security_group" "sg_https" {}      # Abbreviation
 variable "instanceType" {}                       # camelCase
+
 ```
 
 ### Variable Definitions
@@ -152,6 +164,7 @@ variable "env" {
 variable "db_pass" {
   default = "password123"  # No sensitive flag!
 }
+
 ```
 
 ### Output Definitions
@@ -175,6 +188,7 @@ output "database_endpoint" {
 output "id" {
   value = aws_instance.web_server.id
 }
+
 ```
 
 ### Dynamic Resources
@@ -202,6 +216,7 @@ resource "aws_subnet" "private" {
 }
 
 # Not mixing or using wrong meta-argument
+
 ```
 
 ### Version Management
@@ -234,6 +249,7 @@ terraform {
     }
   }
 }
+
 ```
 
 ### Security Practices
@@ -262,6 +278,7 @@ variable "api_key" {
 resource "aws_db_instance" "main" {
   password = "hardcoded_password_123"  # Never do this!
 }
+
 ```
 
 ### Local Values
@@ -290,6 +307,7 @@ resource "aws_instance" "web_server" {
 }
 
 # Not repeating values everywhere
+
 ```
 
 ### Module Usage
@@ -321,18 +339,27 @@ module "vpc" {
   name   = "my-vpc"
   cidr   = "10.0.0.0/16"
 }
+
 ```
 
 ## What This Prevents
 
 - **Inconsistent formatting** across team members and CI/CD
+
 - **Module confusion** from non-standard file organization
+
 - **Version conflicts** from open-ended provider constraints
+
 - **Security leaks** from committed state files or hardcoded secrets
+
 - **Merge conflicts** from inconsistent argument ordering
+
 - **Resource naming confusion** from type prefixes in names
+
 - **State corruption** from improper state management
+
 - **Undocumented variables** that are hard to use
+
 - **Missing validation** that allows invalid inputs
 
 ## Customization
@@ -340,9 +367,13 @@ module "vpc" {
 This is a starting point based on HashiCorp's official style guide. You can modify these rules by editing this steering document:
 
 - Adjust naming conventions for your organization
+
 - Change variable validation rules
+
 - Modify tagging strategies
+
 - Add cloud provider-specific patterns
+
 - Customize module structure requirements
 
 ## Optional: Validation with External Tools
@@ -358,6 +389,7 @@ brew install terraform tflint  # macOS
 apt-get install terraform      # Linux
 # or
 choco install terraform tflint # Windows
+
 ```
 
 ### Usage
@@ -374,6 +406,7 @@ tflint
 
 # Check for security issues
 tfsec .
+
 ```
 
 **Note**: These tools validate the Terraform after Kiro writes it, but aren't required for the steering document to work.

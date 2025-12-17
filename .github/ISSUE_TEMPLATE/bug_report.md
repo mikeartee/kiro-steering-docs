@@ -25,14 +25,19 @@ What actually happened?
 ## Steps to Reproduce
 
 1. Go to '...'
+
 2. Copy document to '...'
+
 3. Run Kiro with '...'
+
 4. See error
 
 ## Environment
 
 - Kiro Version: [e.g., 1.0.0]
+
 - Operating System: [e.g., macOS 13.0, Windows 11, Ubuntu 22.04]
+
 - Project Type: [e.g., React, Node.js, Python]
 
 ## Additional Context

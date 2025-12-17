@@ -54,6 +54,7 @@ POST   /api/users/:id/posts    // Create post for user
 GET    /api/getUsers
 POST   /api/createUser
 GET    /api/user_posts/:id
+
 ```
 
 ### HTTP Method Usage
@@ -95,6 +96,7 @@ app.delete('/api/products/:id', async (req, res) => {
 // Not:
 app.get('/api/deleteProduct/:id')  // Wrong method for deletion
 app.post('/api/getProduct')        // Wrong method for retrieval
+
 ```
 
 ### Response Status Codes
@@ -121,6 +123,7 @@ res.status(500).json({ error: 'Internal server error' });    // Server Error
 // Not:
 res.status(200).json({ error: 'User not found' });  // Wrong status for error
 res.status(500).json({ message: 'Invalid input' }); // Wrong status for client error
+
 ```
 
 ### Consistent Response Format
@@ -172,6 +175,7 @@ res.status(500).json({ message: 'Invalid input' }); // Wrong status for client e
 // Not:
 { user: {...} }  // Inconsistent structure
 { error: "bad" } // Minimal error info
+
 ```
 
 ### Request Validation
@@ -224,6 +228,7 @@ app.post('/api/users', async (req, res) => {
   const user = await createUser(req.body);  // No validation
   res.json(user);
 });
+
 ```
 
 ### Query Parameters
@@ -278,6 +283,7 @@ app.get('/api/products', async (req, res) => {
   const products = await getAllProducts();  // No filtering or pagination
   res.json(products);
 });
+
 ```
 
 ### API Versioning
@@ -304,6 +310,7 @@ app.get('/api/users', (req, res) => {
 // Not:
 app.get('/api/users', handleGetUsers);  // No versioning
 app.get('/api/users_new', handleGetUsersNew);  // Poor versioning
+
 ```
 
 ### Authentication and Authorization
@@ -353,15 +360,21 @@ app.get('/api/users/me', async (req, res) => {
   const user = await getUser(userId);
   res.json(user);
 });
+
 ```
 
 ## What This Prevents
 
 - **Inconsistent API design** that confuses developers
+
 - **Poor error handling** that makes debugging difficult
+
 - **Security vulnerabilities** from missing validation
+
 - **Scalability issues** from lack of pagination
+
 - **Breaking changes** without proper versioning
+
 - **Unclear documentation** from inconsistent patterns
 
 ## Simple Examples
@@ -440,6 +453,7 @@ app.post('/api/v1/users', async (req, res) => {
     });
   }
 });
+
 ```
 
 ## Customization
@@ -447,13 +461,17 @@ app.post('/api/v1/users', async (req, res) => {
 This is a starting point for API development patterns. You can customize by:
 
 - Adding GraphQL or gRPC patterns
+
 - Including rate limiting strategies
+
 - Adding caching headers and strategies
+
 - Incorporating webhook patterns
 
 ## Related Documents
 
 - [Error Handling Standards](./error-handling-standards.md) - Error handling patterns
+
 - [Code Review Standards](../code-quality/code-review-standards.md) - Code quality practices
 
 ## Optional: Validation with External Tools
@@ -471,6 +489,7 @@ npm install --save-dev swagger-jsdoc swagger-ui-express
 
 # API testing
 npm install --save-dev supertest jest
+
 ```
 
 **Note**: These tools help enforce patterns but aren't required for the steering document to work.

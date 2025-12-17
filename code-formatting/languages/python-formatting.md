@@ -25,9 +25,13 @@ filePatterns:
 You MUST follow these rules when creating or editing Python files:
 
 1. You MUST use 4-space indentation (never tabs or mixed spacing)
+
 2. You MUST organize imports (standard library, third-party, local)
+
 3. You MUST use snake_case for functions/variables and PascalCase for classes
+
 4. You MUST catch specific exceptions (not bare `except:`)
+
 5. You MUST NOT mix tabs and spaces (this breaks Python)
 
 ## How Kiro Will Write Python
@@ -45,6 +49,7 @@ def example_function():
         return 'consistent spacing'
 
 # Not mixed tabs/spaces or 2-space indentation
+
 ```
 
 ### Import Organization
@@ -63,6 +68,7 @@ from .models import User
 from .utils import helper_function
 
 # Not scattered or mixed throughout the file
+
 ```
 
 ### Naming Conventions
@@ -80,6 +86,7 @@ class UserManager:
         return self._save_user(user_id, user_data)
 
 # Not camelCase or inconsistent naming
+
 ```
 
 ### Basic Error Prevention
@@ -97,13 +104,17 @@ def process_file(filename):
         return None
 
 # Avoid bare except: clauses
+
 ```
 
 ## What This Prevents
 
 - **Indentation errors** that break Python code
+
 - **Import chaos** with scattered dependencies
+
 - **Naming inconsistencies** across functions and classes
+
 - **Silent errors** from poor exception handling
 
 ## Simple Examples
@@ -120,6 +131,7 @@ def calculate_total(items):
     return total
 
 # Clean, consistent, readable
+
 ```
 
 ### Class Definition
@@ -135,6 +147,7 @@ class Calculator:
         return self.result
 
 # Simple, clear structure
+
 ```
 
 ## Customization
@@ -142,8 +155,11 @@ class Calculator:
 **This is your starting point!** You can modify these rules by editing this steering document:
 
 - Adjust indentation if your team uses a different standard
+
 - Change import organization patterns
+
 - Add project-specific naming conventions
+
 - Include additional error handling patterns
 
 ## Optional: Validation with External Tools
@@ -154,6 +170,7 @@ Want to validate that generated code follows these standards? Add these tools:
 
 ```bash
 pip install black flake8
+
 ```
 
 ### Basic Usage (Optional)
@@ -164,6 +181,7 @@ black your_file.py
 
 # Check for issues
 flake8 your_file.py
+
 ```
 
 **Note**: These tools validate the code after Kiro writes it, but aren't required for the steering document to work.
@@ -173,7 +191,9 @@ flake8 your_file.py
 This steering document works automatically when you:
 
 - Ask Kiro to create Python files (.py)
+
 - Request code modifications or refactoring
+
 - Generate Python scripts or modules
 
 The formatting rules apply consistently across all Python code generation in your project.

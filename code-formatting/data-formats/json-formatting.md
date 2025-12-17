@@ -28,9 +28,13 @@ filePatterns:
 You MUST follow these rules when creating or editing JSON files:
 
 1. You MUST use 2-space indentation consistently
+
 2. You MUST use double quotes for all keys and string values
+
 3. You MUST organize keys logically (important fields first)
+
 4. You MUST ensure valid JSON syntax (no trailing commas, proper brackets)
+
 5. You MUST NOT use single quotes or unquoted keys
 
 ## How Kiro Will Write JSON
@@ -58,6 +62,7 @@ You MUST follow these rules when creating or editing JSON files:
 
 // Not:
 {"name":"John Doe","age":30,"address":{"street":"123 Main St","city":"New York","zipCode":"10001"},"hobbies":["reading","coding","hiking"]}
+
 ```
 
 ### Key Ordering
@@ -94,6 +99,7 @@ You MUST follow these rules when creating or editing JSON files:
   "name": "John Doe",
   "id": "user-123"
 }
+
 ```
 
 ### Quote Consistency
@@ -120,6 +126,7 @@ You MUST follow these rules when creating or editing JSON files:
     'role': "admin"
   }
 }
+
 ```
 
 ### Array Formatting
@@ -157,14 +164,19 @@ You MUST follow these rules when creating or editing JSON files:
   "users": [{"id": 1, "name": "Alice"}, {"id": 2, "name": "Bob"}],
   "permissions": ["read", "write", "delete"]
 }
+
 ```
 
 ## What This Prevents
 
 - **Parsing errors** from invalid JSON syntax
+
 - **Readability issues** from inconsistent formatting
+
 - **Debugging nightmares** from minified or poorly structured JSON
+
 - **Merge conflicts** from inconsistent key ordering
+
 - **Validation failures** from quote inconsistencies
 
 ## Simple Examples
@@ -197,6 +209,7 @@ You MUST follow these rules when creating or editing JSON files:
     ]
   }
 }
+
 ```
 
 ### Before/After: Configuration File
@@ -221,6 +234,7 @@ You MUST follow these rules when creating or editing JSON files:
     "file": "app.log"
   }
 }
+
 ```
 
 ## Customization
@@ -235,6 +249,7 @@ Want to validate that generated JSON follows these standards? Add these tools:
 
 ```bash
 npm install --save-dev prettier jq
+
 ```
 
 **Note**: These tools validate the JSON after Kiro writes it, but aren't required for the steering document to work.

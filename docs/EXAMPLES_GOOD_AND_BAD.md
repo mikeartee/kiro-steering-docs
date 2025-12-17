@@ -32,6 +32,7 @@ const age = 30;
 // Not:
 const name = 'John'
 const age = 30
+
 ```
 
 **Quotes**: Use single quotes for strings
@@ -42,6 +43,7 @@ const message = 'Hello world';
 
 // Not:
 const message = "Hello world";
+
 ```
 
 **Indentation**: Use 2 spaces for indentation
@@ -55,13 +57,17 @@ function example() {
 }
 
 // Not mixed tabs/spaces or 4-space indentation
+
 ```
 
 ## What This Prevents
 
 - Syntax errors from missing semicolons
+
 - Inconsistent indentation that makes code hard to read
+
 - Import chaos with scattered dependencies
+
 - Common typos in variable names
 
 ## Customization
@@ -69,7 +75,9 @@ function example() {
 This is a starting point! You can modify these rules by editing this steering document:
 
 - Change single quotes to double quotes if preferred
+
 - Adjust indentation from 2 spaces to 4 spaces
+
 - Modify import organization patterns
 
 ## Optional: Validation with External Tools
@@ -80,18 +88,25 @@ Want to validate that generated code follows these standards? Add these tools:
 
 ```bash
 npm install --save-dev eslint prettier
+
 ```
 
 **Note**: These tools validate the code after Kiro writes it, but aren't required for the steering document to work.
+
 ````
 
 **Why this is good**:
 
 - ✅ Focuses on 3 core rules (semicolons, quotes, indentation)
+
 - ✅ Clear before/after examples
+
 - ✅ Works immediately without setup
+
 - ✅ External tools are clearly optional
+
 - ✅ Beginner-friendly language
+
 - ✅ Allows customization
 
 ### Bad Example
@@ -109,6 +124,7 @@ Before using this steering document, you must install and configure:
 
 ```bash
 npm install eslint prettier babel webpack
+
 ```
 
 Create .eslintrc.js with these 50 rules...
@@ -118,16 +134,22 @@ Create .eslintrc.js with these 50 rules...
 ### Variables (20 rules)
 
 1. Always use const unless you need let
+
 2. Never use var
+
 3. Use descriptive names
+
 4. Follow camelCase
+
 5. Avoid single letter names except in loops
 [15 more rules...]
 
 ### Functions (25 rules)
 
 1. Use arrow functions for callbacks
+
 2. Use function declarations for named functions
+
 3. Always return a value
 [22 more rules...]
 
@@ -146,15 +168,21 @@ Create .eslintrc.js with these 50 rules...
 ### Vue.js Patterns
 
 [Vue.js-specific content...]
+
 ````
 
 **Why this is bad**:
 
 - ❌ Requires extensive setup before working
+
 - ❌ Tries to cover everything (60+ rules)
+
 - ❌ Mixes multiple frameworks
+
 - ❌ No clear before/after examples
+
 - ❌ Overwhelming for beginners
+
 - ❌ No clear focus
 
 ## Example 2: Python Formatting
@@ -188,6 +216,7 @@ def example_function():
         return 'consistent spacing'
 
 # Not mixed tabs/spaces or 2-space indentation
+
 ```
 
 ### Import Organization
@@ -206,6 +235,7 @@ from .models import User
 from .utils import helper_function
 
 # Not scattered or mixed throughout the file
+
 ```
 
 ### Naming Conventions
@@ -223,13 +253,17 @@ class UserManager:
         return self._save_user(user_id, user_data)
 
 # Not camelCase or inconsistent naming
+
 ```
 
 ## What This Prevents
 
 - Indentation errors that break Python code
+
 - Import chaos with scattered dependencies
+
 - Naming inconsistencies across functions and classes
+
 - Silent errors from poor exception handling
 
 ## Customization
@@ -244,18 +278,25 @@ Want to validate that generated code follows these standards? Add these tools:
 
 ```bash
 pip install black flake8
+
 ```
 
 **Note**: These tools validate the code after Kiro writes it, but aren't required for the steering document to work.
+
 ````
 
 **Why this is good**:
 
 - ✅ Focuses on 3 essential rules
+
 - ✅ Emphasizes critical Python requirement (4-space indentation)
+
 - ✅ Clear, realistic examples
+
 - ✅ Works immediately
+
 - ✅ External tools optional
+
 - ✅ Beginner-friendly
 
 ### Bad Example
@@ -277,6 +318,7 @@ Use good variable names.
 ```python
 x = 5  # bad
 user_count = 5  # good
+
 ```
 
 ### Functions
@@ -298,15 +340,21 @@ Use classes properly.
 ### FastAPI Patterns
 
 [FastAPI-specific content mixed in...]
+
 ````
 
 **Why this is bad**:
 
 - ❌ Too vague ("use PEP 8" without specifics)
+
 - ❌ Incomplete examples (no before/after comparison)
+
 - ❌ Mixes multiple frameworks
+
 - ❌ Missing critical information (4-space indentation)
+
 - ❌ No clear structure
+
 - ❌ Not actionable
 
 ## Example 3: TypeScript Formatting
@@ -352,6 +400,7 @@ const user = {
   id: 1,
   name: "John Doe"
 };
+
 ```
 
 ### Interface Definitions
@@ -375,6 +424,7 @@ interface User {
   id: number;
   isActive: boolean;
 }
+
 ```
 
 ### Import Organization
@@ -390,13 +440,17 @@ import { UserService } from '../services/UserService';
 import type { User } from '../types/user';
 
 // Not scattered or mixed
+
 ```
 
 ## What This Prevents
 
 - Runtime type errors from missing annotations
+
 - API integration issues from poorly defined interfaces
+
 - Import confusion from disorganized modules
+
 - Maintenance headaches from weak typing
 
 ## Customization
@@ -411,18 +465,25 @@ Want to validate that generated TypeScript follows these standards? Add these to
 
 ```bash
 npm install --save-dev typescript @typescript-eslint/parser
+
 ```
 
 **Note**: These tools validate the TypeScript after Kiro writes it, but aren't required for the steering document to work.
+
 ````
 
 **Why this is good**:
 
 - ✅ Focuses on 3 TypeScript-specific issues
+
 - ✅ Clear type-related examples
+
 - ✅ Shows realistic code patterns
+
 - ✅ Works immediately
+
 - ✅ External tools optional
+
 - ✅ TypeScript-focused (not generic JavaScript)
 
 ### Bad Example
@@ -441,6 +502,7 @@ Add types to everything.
 
 ```typescript
 const x: number = 5;
+
 ```
 
 ## Interfaces
@@ -454,21 +516,32 @@ Use generics when needed.
 ## Advanced Types
 
 - Union types
+
 - Intersection types
+
 - Conditional types
+
 - Mapped types
+
 - Template literal types
+
 - Utility types
 [No examples provided]
+
 ````
 
 **Why this is bad**:
 
 - ❌ Too vague ("use types" without showing how)
+
 - ❌ Minimal examples
+
 - ❌ No before/after comparisons
+
 - ❌ Lists advanced features without explanation
+
 - ❌ Not actionable
+
 - ❌ Missing structure
 
 ## Key Patterns to Follow
@@ -483,12 +556,14 @@ const name = 'John';
 
 // Not:
 const name = "John"
+
 ```
 
 **Bad**:
 
 ```javascript
 const name = 'John';  // Use single quotes
+
 ```
 
 ### Pattern 2: Specific, Actionable Rules
@@ -513,6 +588,7 @@ const name = 'John';  // Use single quotes
 Want to validate? Add these tools:
 
 **Note**: These tools validate the code after Kiro writes it, but aren't required for the steering document to work.
+
 ```
 
 **Bad**:
@@ -521,6 +597,7 @@ Want to validate? Add these tools:
 ## Setup Required
 
 First, install these tools...
+
 ```
 
 ### Pattern 5: Beginner-Friendly Language
@@ -534,22 +611,35 @@ First, install these tools...
 Use this checklist to evaluate your steering document:
 
 - [ ] Focuses on 3-4 core rules
+
 - [ ] Includes clear before/after examples
+
 - [ ] Works immediately without setup
+
 - [ ] External tools are clearly optional
+
 - [ ] Uses beginner-friendly language
+
 - [ ] Doesn't mix multiple frameworks
+
 - [ ] Provides realistic, practical examples
+
 - [ ] Allows customization
+
 - [ ] Solves real problems
+
 - [ ] Has been tested with Kiro
 
 ## Next Steps
 
 1. Review these examples carefully
+
 2. Identify which patterns your document follows
+
 3. Refine your document based on the good examples
+
 4. Test your document with Kiro
+
 5. Submit for review
 
 Remember: The goal is to create immediately useful, beginner-friendly steering documents that solve real problems!

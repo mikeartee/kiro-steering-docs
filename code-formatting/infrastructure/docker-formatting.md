@@ -28,6 +28,7 @@ FROM python:3.11-slim
 # Not:
 FROM node:latest
 FROM python
+
 ```
 
 ### Layer Optimization
@@ -53,6 +54,7 @@ FROM node:18-alpine
 COPY . .
 RUN npm install
 CMD ["node", "server.js"]
+
 ```
 
 ### Multi-line Commands
@@ -71,6 +73,7 @@ RUN apt-get update && \
 
 # Not:
 RUN apt-get update && apt-get install -y curl git vim && apt-get clean && rm -rf /var/lib/apt/lists/*
+
 ```
 
 ### Security Practices
@@ -96,14 +99,19 @@ FROM node:18-alpine
 WORKDIR /app
 COPY . .
 CMD ["node", "server.js"]
+
 ```
 
 ## What This Prevents
 
 - Large image sizes from poor layer caching
+
 - Security vulnerabilities from running as root
+
 - Slow builds from inefficient layer ordering
+
 - Unpredictable behavior from using `latest` tags
+
 - Build cache invalidation from poor COPY ordering
 
 ## Customization
@@ -111,8 +119,11 @@ CMD ["node", "server.js"]
 This is a starting point! You can modify these rules by editing this steering document:
 
 - Adjust base image preferences
+
 - Change user/group IDs
+
 - Modify security requirements
+
 - Add project-specific build steps
 
 ## Optional: Validation with External Tools
@@ -127,12 +138,14 @@ docker pull hadolint/hadolint
 
 # Or install locally
 brew install hadolint  # macOS
+
 ```
 
 ### Usage
 
 ```bash
 hadolint Dockerfile
+
 ```
 
 **Note**: These tools validate the Dockerfile after Kiro writes it, but aren't required for the steering document to work.

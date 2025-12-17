@@ -163,8 +163,6 @@ Ask user: "Do the requirements look good? If so, we can move on to the design."
 
 ### Phase 3: Design with Correctness Properties
 
-
-
 **Command**: `*design` (after requirements approved)
 
 **Process**:
@@ -547,9 +545,9 @@ Agent: [Reads and analyzes documents]
 Which feature would you like to formalize first?
 ```
 
-# [[file:context/technical-preferences.md]]
+## Referenced Context Files
 
-# [[file:context/project-context.md]]
-
-# [[file:steering/bmad-method-guide.md]]
+- `#[[file:context/technical-preferences.md]]`
+- `#[[file:context/project-context.md]]`
+- `#[[file:steering/bmad-method-guide.md]]`
 

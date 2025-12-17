@@ -550,4 +550,3 @@ Which feature would you like to formalize first?
 - `#[[file:context/technical-preferences.md]]`
 - `#[[file:context/project-context.md]]`
 - `#[[file:steering/bmad-method-guide.md]]`
-

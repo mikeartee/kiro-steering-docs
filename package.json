@@ -7,7 +7,8 @@
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
     "enhance-frontmatter": "node out/scripts/enhance-frontmatter.js",
-    "validate-frontmatter": "node out/scripts/validate-frontmatter.js"
+    "validate-frontmatter": "node out/scripts/validate-frontmatter.js",
+    "test": "node --test out/tests/**/*.test.js"
   },
   "devDependencies": {
     "@types/js-yaml": "^4.0.5",

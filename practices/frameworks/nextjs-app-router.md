@@ -330,4 +330,3 @@ npm install --save-dev eslint eslint-config-next
 ```
 
 **Note**: These tools validate the code after Kiro writes it, but aren't required for the steering document to work.
-

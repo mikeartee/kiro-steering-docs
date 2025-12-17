@@ -47,7 +47,7 @@ You MUST follow these rules when creating or editing Terraform files:
 
 **Standard module layout**: Consistent file organization for all modules
 
-```
+```text
 # Kiro will create:
 module/
 ├── README.md           # Module documentation

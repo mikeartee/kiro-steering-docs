@@ -168,7 +168,7 @@ export default function ClientComponent({ data }) {
 
 **Use proper App Router file structure**: page.tsx, layout.tsx, loading.tsx, error.tsx
 
-```
+```text
 app/
 ├── layout.tsx          # Root layout (required)
 ├── page.tsx            # Home page

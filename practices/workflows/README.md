@@ -8,13 +8,14 @@ Workflow steering documents help automate and standardize development processes.
 
 ## Available Documents
 
-| Document | Description | Tools | Tags |
-|----------|-------------|-------|------|
-| *Coming soon* | Git commit message standards | Git | `git`, `commits`, `workflow` |
-| *Coming soon* | Pre-commit hook setup | Git, Husky | `git-hooks`, `automation` |
-| *Coming soon* | GitHub Actions CI/CD | GitHub Actions | `ci-cd`, `github`, `automation` |
-| *Coming soon* | Code review automation | Multiple | `code-review`, `automation` |
-| *Coming soon* | Release management | Multiple | `releases`, `versioning` |
+| Document | Description | Tags |
+|----------|-------------|------|
+| [Development Guidelines](development-guidelines.md) | Rigorous development practices with gap analysis and debugging protocols | `development`, `workflow`, `quality` |
+| [Tasks.md Structure](tasks-md-structure.md) | Standards for creating well-structured implementation plans | `tasks`, `implementation`, `spec` |
+| [Git Commit Standards](git-commit-standards.md) | Clear, conventional commit messages | `git`, `commits`, `workflow` |
+| [API Development Patterns](api-development-patterns.md) | API design and implementation patterns | `api`, `rest`, `workflow` |
+| [Environment Config](environment-config.md) | Environment configuration management | `config`, `environment`, `workflow` |
+| [Logging Standards](logging-standards.md) | Logging patterns and best practices | `logging`, `debugging`, `workflow` |
 
 ## Usage Guidance
 

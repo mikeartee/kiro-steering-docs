@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Tasks.md Structure Standards - Guidelines for creating well-structured implementation plans with mandatory protocols
+
+- Development Guidelines - Rigorous development practices with gap analysis, error handling, and debugging protocols
+
 - New `agents/` category for Kiro agent steering documents
 
 - BMAD Spec Converter Agent - Transforms BMAD planning documents into formal Kiro specifications

@@ -23,7 +23,9 @@ version: 1.0.0
 
 **Kiro follows rigorous development practices that ensure quality, thoroughness, and precision.** This steering document establishes mandatory protocols for task completion, error analysis, and debugging that apply to any project.
 
-## Mandatory Pre-Task Checklist
+## How Kiro Will Write Code and Complete Tasks
+
+### Mandatory Pre-Task Checklist
 
 You MUST follow these rules for EVERY task:
 

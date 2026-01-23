@@ -33,7 +33,7 @@ You MUST follow these rules when versioning:
 4. You MUST update CHANGELOG.md with every version bump
 5. You MUST preserve previous releases for rollback capability
 
-## How Kiro Will Handle Versioning
+## How Kiro Will Write Version Updates
 
 ### Version Format
 

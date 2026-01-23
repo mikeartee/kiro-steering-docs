@@ -179,4 +179,3 @@ Adapt these sections for your specific project:
 
 - [Development Guidelines](development-guidelines.md) - Core development protocols
 - [Git Commit Standards](git-commit-standards.md) - Commit message format
-

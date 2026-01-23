@@ -188,4 +188,3 @@ This is a starting point for development guidelines. You can customize by:
 - [Code Review Standards](../code-quality/code-review-standards.md) - Code quality practices
 - [Testing Best Practices](../testing/testing-best-practices.md) - Testing guidelines
 - [Error Handling Standards](../code-quality/error-handling-standards.md) - Error handling patterns
-

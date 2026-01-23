@@ -252,4 +252,3 @@ This is a starting point for versioning standards. You can customize by:
 
 - [Git Commit Standards](./git-commit-standards.md) - Commit message conventions
 - [Development Guidelines](./development-guidelines.md) - Development workflow practices
-

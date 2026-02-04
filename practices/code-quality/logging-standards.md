@@ -103,18 +103,42 @@ def process_order(order_id, user_id):
 
 **Never log sensitive information**: Redact passwords, tokens, and personal data
 
+#### Sensitive Fields Reference
+
+Kiro will never log fields matching these patterns:
+
+| Category | Fields to Never Log |
+|----------|---------------------|
+| **Authentication** | `password`, `passwd`, `pwd`, `pin` |
+| **Tokens** | `token`, `accessToken`, `access_token`, `refreshToken`, `refresh_token`, `authToken`, `auth_token`, `sessionToken`, `session_token`, `bearer` |
+| **API Credentials** | `apiKey`, `api_key`, `apikey`, `secret`, `privateKey`, `private_key`, `authorization` |
+| **Financial** | `creditCard`, `credit_card`, `cardNumber`, `card_number`, `cvv`, `cvc` |
+| **Personal Identity** | `ssn`, `socialSecurity`, `social_security` |
+
+#### Sanitization Patterns
+
 ```javascript
 // Kiro will write:
+const SENSITIVE_FIELDS = [
+  'password', 'passwd', 'pwd', 'secret', 'token',
+  'accessToken', 'access_token', 'refreshToken', 'refresh_token',
+  'apiKey', 'api_key', 'privateKey', 'private_key',
+  'creditCard', 'credit_card', 'cardNumber', 'card_number',
+  'cvv', 'cvc', 'ssn', 'socialSecurity', 'pin',
+  'authToken', 'auth_token', 'sessionToken', 'session_token',
+  'bearer', 'authorization'
+];
+
 const sanitizeForLogging = (data) => {
-  const sensitive = ['password', 'token', 'apiKey', 'ssn', 'creditCard'];
   const sanitized = { ...data };
-  
-  sensitive.forEach(field => {
-    if (sanitized[field]) {
-      sanitized[field] = '[REDACTED]';
+
+  Object.keys(sanitized).forEach(key => {
+    const lowerKey = key.toLowerCase();
+    if (SENSITIVE_FIELDS.some(field => lowerKey.includes(field.toLowerCase()))) {
+      sanitized[key] = '[REDACTED]';
     }
   });
-  
+
   return sanitized;
 };
 
@@ -129,6 +153,32 @@ logger.info('User login', {
   email: user.email,
   password: user.password,  // NEVER log passwords!
   creditCard: user.creditCard  // NEVER log credit cards!
+});
+
+```
+
+#### Common Mistakes to Avoid
+
+```javascript
+// Kiro will NOT write any of these:
+
+// Direct sensitive field access
+logger.info({ password: user.password });           // Error
+console.log(user.apiKey);                           // Error
+logger.debug({ token: authToken });                 // Error
+
+// Logging entire objects that contain sensitive data
+logger.info('User created', user);                  // Dangerous - may contain password
+logger.debug('Request body', req.body);             // Dangerous - may contain tokens
+
+// Kiro WILL write:
+logger.info('User created', {
+  userId: user.id,
+  email: user.email
+});
+logger.debug('Request received', {
+  path: req.path,
+  method: req.method
 });
 
 ```
@@ -323,6 +373,8 @@ This is a starting point focused on common logging patterns. You can extend thes
 
 - Include audit logging for compliance
 
+- Add domain-specific sensitive fields to the blocklist
+
 ## Optional: Validation with External Tools
 
 Want to enhance your logging capabilities? Add these tools:
@@ -338,4 +390,71 @@ pip install structlog python-json-logger
 
 ```
 
-**Note**: These tools provide advanced logging features, but aren't required for the steering document to work.
+### Architectural Guardrails with ESLint (Optional)
+
+Documentation guidelines rely on developers and AI agents following rules. Architectural guardrails enforce rules through tooling — violations fail the build rather than slip through review.
+
+For JavaScript/TypeScript projects, create a custom ESLint rule to catch sensitive data logging at build time:
+
+```javascript
+// eslint-rules/no-sensitive-logging.js
+const SENSITIVE_FIELDS = [
+  'password', 'token', 'apiKey', 'secret', 'creditCard',
+  'ssn', 'privateKey', 'authorization', 'bearer'
+];
+
+const LOGGING_CALLS = ['log', 'info', 'warn', 'error', 'debug'];
+const LOGGING_OBJECTS = ['console', 'logger', 'winston', 'pino'];
+
+module.exports = {
+  meta: {
+    type: 'problem',
+    docs: {
+      description: 'Disallow logging of sensitive data',
+      category: 'Security',
+    },
+  },
+  create(context) {
+    return {
+      CallExpression(node) {
+        if (node.callee.type !== 'MemberExpression') return;
+
+        const objectName = node.callee.object.name || '';
+        const methodName = node.callee.property.name || '';
+
+        const isLoggingCall =
+          LOGGING_OBJECTS.includes(objectName.toLowerCase()) &&
+          LOGGING_CALLS.includes(methodName.toLowerCase());
+
+        if (!isLoggingCall) return;
+
+        // Check arguments for sensitive fields
+        node.arguments.forEach(arg => {
+          checkForSensitiveData(arg, context);
+        });
+      },
+    };
+  },
+};
+
+```
+
+Usage in `eslint.config.js`:
+
+```javascript
+const noSensitiveLogging = require('./eslint-rules/no-sensitive-logging');
+
+module.exports = [
+  {
+    plugins: {
+      custom: { rules: { 'no-sensitive-logging': noSensitiveLogging } }
+    },
+    rules: {
+      'custom/no-sensitive-logging': 'error'
+    }
+  }
+];
+
+```
+
+**Note**: These tools validate the code after Kiro writes it, but aren't required for the steering document to work.

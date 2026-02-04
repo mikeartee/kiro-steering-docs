@@ -8,12 +8,15 @@
     "watch": "tsc -watch -p ./",
     "enhance-frontmatter": "node out/scripts/enhance-frontmatter.js",
     "validate-frontmatter": "node out/scripts/validate-frontmatter.js",
+    "lint:md": "markdownlint \"**/*.md\" --ignore node_modules --ignore _drafts",
+    "validate": "npm run compile && npm run validate-frontmatter && npm run lint:md",
     "test": "node --test out/tests/**/*.test.js"
   },
   "devDependencies": {
     "@types/js-yaml": "^4.0.5",
     "@types/node": "^18.x",
     "fast-check": "^4.3.0",
+    "markdownlint-cli": "^0.43.0",
     "typescript": "^5.1.0"
   },
   "dependencies": {

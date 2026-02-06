@@ -8,6 +8,16 @@ tags:
   - app-router
   - server-components
 inclusion: always
+applicableTo:
+  - web-app
+requiredDependencies:
+  - next
+  - react
+filePatterns:
+  - app/**/*.tsx
+  - app/**/*.ts
+  - src/app/**/*.tsx
+  - src/app/**/*.ts
 ---
 
 ## Core Principle

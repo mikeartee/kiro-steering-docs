@@ -8,19 +8,15 @@ tags:
   - composition-api
   - typescript
   - patterns
-  - react
   - best-practices
 inclusion: always
 applicableTo:
   - web-app
   - library
 requiredDependencies:
-  - react
   - vue
 filePatterns:
-  - components/**/*.jsx
-  - components/**/*.tsx
-  - src/components/**/*
+  - '**/*.vue'
   - components/**/*.vue
   - src/components/**/*.vue
 version: 1.0.0

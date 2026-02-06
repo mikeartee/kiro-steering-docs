@@ -7,19 +7,16 @@ tags:
   - flutter
   - formatting
   - code-generation
-  - express
-  - nodejs
-  - api
   - best-practices
 inclusion: always
 applicableTo:
-  - api-server
-requiredDependencies:
-  - express
+  - web-app
+  - library
+  - cli-tool
 filePatterns:
-  - routes/**/*.js
-  - routes/**/*.ts
-  - api/**/*
+  - '**/*.dart'
+  - lib/**/*.dart
+  - test/**/*.dart
 ---
 
 ## Core Principle

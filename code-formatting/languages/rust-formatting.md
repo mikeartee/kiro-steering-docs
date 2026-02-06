@@ -7,19 +7,16 @@ tags:
   - formatting
   - code-generation
   - safety
-  - express
-  - nodejs
-  - api
   - best-practices
 inclusion: always
 applicableTo:
+  - web-app
+  - library
+  - cli-tool
   - api-server
-requiredDependencies:
-  - express
 filePatterns:
-  - routes/**/*.js
-  - routes/**/*.ts
-  - api/**/*
+  - '**/*.rs'
+  - src/**/*.rs
 ---
 
 ## Core Principle

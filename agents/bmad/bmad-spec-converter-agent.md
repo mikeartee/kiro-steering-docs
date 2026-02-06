@@ -1,4 +1,12 @@
 ---
+title: BMAD Spec Converter Agent
+description: Transforms BMAD planning documents into formal Kiro specifications with EARS requirements and correctness properties
+tags:
+  - bmad
+  - spec-converter
+  - agent
+  - requirements
+  - transformation
 inclusion: manual
 contextKey: "@bmad-spec-converter"
 ---

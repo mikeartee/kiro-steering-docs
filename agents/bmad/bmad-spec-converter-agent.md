@@ -11,7 +11,7 @@ inclusion: manual
 contextKey: "@bmad-spec-converter"
 ---
 
-# Spec Converter Agent - BMAD to Kiro Spec Transformation
+## Spec Converter Agent - BMAD to Kiro Spec Transformation
 
 ## Agent Identity
 

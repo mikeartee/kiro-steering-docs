@@ -230,6 +230,155 @@ interface Task {
 
 ```
 
+### Type Guards Over Type Assertions
+
+**Prefer type guards**: Use runtime checks instead of unsafe type assertions
+
+```typescript
+// Kiro will write:
+function isUser(data: unknown): data is User {
+  return (
+    typeof data === "object" &&
+    data !== null &&
+    "id" in data &&
+    "name" in data
+  );
+}
+
+if (isUser(data)) {
+  console.log(data.name); // safely narrowed to User
+}
+
+// Not:
+const user = data as User;
+console.log(user.name); // unsafe, no runtime check
+
+```
+
+### Prefer Unknown Over Any
+
+**Use `unknown` with narrowing**: Safer alternative to `any` that forces type checking
+
+```typescript
+// Kiro will write:
+function processInput(data: unknown): string {
+  if (typeof data === "string") {
+    return data.toUpperCase();
+  }
+  if (typeof data === "number") {
+    return data.toString();
+  }
+  throw new Error("Unsupported input type");
+}
+
+// Not:
+function processInput(data: any): string {
+  return data.toUpperCase(); // no safety, crashes on non-strings
+}
+
+```
+
+### Const Assertions
+
+**Use `as const` for literal types**: Preserves exact values instead of widening to base types
+
+```typescript
+// Kiro will write:
+const ROUTES = {
+  HOME: "/",
+  ABOUT: "/about",
+  CONTACT: "/contact",
+} as const;
+
+type Route = (typeof ROUTES)[keyof typeof ROUTES];
+// Type is "/" | "/about" | "/contact"
+
+const colors = ["red", "green", "blue"] as const;
+// Type is readonly ["red", "green", "blue"]
+
+// Not:
+const ROUTES = {
+  HOME: "/",
+  ABOUT: "/about",
+  CONTACT: "/contact",
+};
+// Type is { HOME: string; ABOUT: string; CONTACT: string }
+
+```
+
+### Readonly for Immutability
+
+**Use `readonly` to prevent mutation**: Mark properties and parameters that should not change
+
+```typescript
+// Kiro will write:
+interface AppConfig {
+  readonly apiUrl: string;
+  readonly timeout: number;
+  readonly retries: number;
+}
+
+function processItems(items: readonly string[]): string[] {
+  // items.push("new"); // Error: readonly
+  return items.map((item) => item.toUpperCase());
+}
+
+// Not:
+interface AppConfig {
+  apiUrl: string;
+  timeout: number;
+  retries: number;
+}
+
+function processItems(items: string[]): string[] {
+  items.push("new"); // mutates the original array
+  return items.map((item) => item.toUpperCase());
+}
+
+```
+
+### Discriminated Unions
+
+**Use tagged unions for complex state**: Enables exhaustive type checking with a shared discriminant property
+
+```typescript
+// Kiro will write:
+interface LoadingState {
+  status: "loading";
+}
+
+interface SuccessState<T> {
+  status: "success";
+  data: T;
+}
+
+interface ErrorState {
+  status: "error";
+  error: string;
+}
+
+type RequestState<T> = LoadingState | SuccessState<T> | ErrorState;
+
+function handleState(state: RequestState<User[]>): string {
+  switch (state.status) {
+    case "loading":
+      return "Loading...";
+    case "success":
+      return `Found ${state.data.length} users`;
+    case "error":
+      return `Error: ${state.error}`;
+  }
+}
+
+// Not:
+interface RequestState {
+  loading: boolean;
+  data: any;
+  error: string | null;
+}
+
+```
+
 ## What This Prevents
 
 - **Runtime type errors** from missing or incorrect type annotations
@@ -241,6 +390,14 @@ interface Task {
 - **Generic type errors** from unclear type constraints
 
 - **Maintenance headaches** from weak typing and unclear contracts
+
+- **Unsafe type casting** from using assertions instead of type guards
+
+- **Hidden bugs** from untyped `any` values bypassing the type system
+
+- **Accidental mutation** from missing `readonly` on shared data
+
+- **Incomplete state handling** from loosely typed state objects
 
 ## Simple Examples
 

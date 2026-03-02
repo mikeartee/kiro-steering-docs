@@ -41,7 +41,7 @@ You MUST follow these rules for any task with more than two steps:
 
 The authoritative source of what needs to be done and in what order.
 
-```markdown
+```text
 # Task Plan: {Feature or Task Name}
 
 ## Goal
@@ -72,7 +72,7 @@ Brief description of the chosen implementation strategy and why.
 
 A running log of research, decisions, and dead ends. The most important file for preventing repeated mistakes.
 
-```markdown
+```text
 # Findings: {Feature or Task Name}
 
 ## Key Decisions
@@ -95,7 +95,7 @@ A running log of research, decisions, and dead ends. The most important file for
 
 Current status at a glance. Useful when resuming after a context reset.
 
-```markdown
+```text
 # Progress: {Feature or Task Name}
 
 ## Status
@@ -154,7 +154,7 @@ When resuming work, Kiro will:
 
 ## Simple Example
 
-### Before (no planning files):
+### Before (no planning files)
 
 ```text
 Session 1: Tried approach A, failed, switched to B, made progress
@@ -162,7 +162,7 @@ Session 2: Context reset. Tried approach A again. Failed again.
            Wasted an hour rediscovering what session 1 already knew.
 ```
 
-### After (with planning files):
+### After (with planning files)
 
 ```text
 Session 1: Created task_plan.md, findings.md, progress.md.
@@ -181,4 +181,3 @@ These files can live anywhere that makes sense for your project — project root
 
 - [Development Guidelines](development-guidelines.md) - Gap analysis and debugging protocols
 - [Tasks.md Structure](tasks-md-structure.md) - Structured implementation task lists
-

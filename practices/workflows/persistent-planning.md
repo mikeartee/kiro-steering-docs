@@ -115,7 +115,7 @@ Step 3 — description of what to do next
 - Waiting on X before Y can proceed
 ```
 
-## How Kiro Will Use These Files
+## How Kiro Will Write Persistent Planning Files
 
 ### Starting a Task
 

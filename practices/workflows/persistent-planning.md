@@ -19,8 +19,6 @@ applicableTo:
 version: 1.0.0
 ---
 
-# Persistent Planning Workflow
-
 ## Core Principle
 
 **For exploratory, multi-step tasks where you're not in a formal Kiro IDE spec flow — debugging sessions, research spikes, open-ended investigations — Kiro creates and maintains three planning files before starting work. These files survive context resets, prevent repeated mistakes, and ensure you never rediscover a dead end you already explored.**
@@ -41,7 +39,7 @@ You MUST follow these rules for any task with more than two steps:
 
 The authoritative source of what needs to be done and in what order.
 
-```text
+```markdown
 # Task Plan: {Feature or Task Name}
 
 ## Goal
@@ -72,7 +70,7 @@ Brief description of the chosen implementation strategy and why.
 
 A running log of research, decisions, and dead ends. The most important file for preventing repeated mistakes.
 
-```text
+```markdown
 # Findings: {Feature or Task Name}
 
 ## Key Decisions
@@ -95,7 +93,7 @@ A running log of research, decisions, and dead ends. The most important file for
 
 Current status at a glance. Useful when resuming after a context reset.
 
-```text
+```markdown
 # Progress: {Feature or Task Name}
 
 ## Status

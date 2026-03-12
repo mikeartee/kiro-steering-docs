@@ -11,12 +11,12 @@ Code quality steering documents guide Kiro to write clean, consistent code that 
 | Document | Description | Languages | Tags |
 |----------|-------------|-----------|------|
 | [Code Review Standards](code-review-standards.md) | Best practices for writing reviewable, maintainable code | Multiple | `code-review`, `best-practices`, `standards` |
-| [JavaScript Formatting](../../code-formatting/javascript-formatting.md) | Consistent JavaScript code style with semicolons, quotes, and indentation | JavaScript, TypeScript | `javascript`, `formatting`, `eslint` |
-| [TypeScript Formatting](../../code-formatting/typescript-formatting.md) | Strong typing and TypeScript-specific formatting standards | TypeScript | `typescript`, `types`, `formatting` |
-| [Python Formatting](../../code-formatting/python-formatting.md) | Clean, readable Python with proper indentation and naming | Python | `python`, `formatting`, `pep8` |
-| [JSON Formatting](../../code-formatting/json-formatting.md) | Consistent JSON structure and formatting | JSON | `json`, `formatting`, `config` |
-| [CSS Formatting](../../code-formatting/css-formatting.md) | Organized CSS with consistent property ordering | CSS, SCSS | `css`, `formatting`, `styles` |
-| [Markdown Formatting](../../code-formatting/markdown-formatting.md) | Clean markdown with proper structure and linting | Markdown | `markdown`, `documentation` |
+| [JavaScript Formatting](../../code-formatting/languages/javascript-formatting.md) | Consistent JavaScript code style with semicolons, quotes, and indentation | JavaScript, TypeScript | `javascript`, `formatting`, `eslint` |
+| [TypeScript Formatting](../../code-formatting/languages/typescript-formatting.md) | Strong typing and TypeScript-specific formatting standards | TypeScript | `typescript`, `types`, `formatting` |
+| [Python Formatting](../../code-formatting/languages/python-formatting.md) | Clean, readable Python with proper indentation and naming | Python | `python`, `formatting`, `pep8` |
+| [JSON Formatting](../../code-formatting/data-formats/json-formatting.md) | Consistent JSON structure and formatting | JSON | `json`, `formatting`, `config` |
+| [CSS Formatting](../../code-formatting/markup/css-formatting.md) | Organized CSS with consistent property ordering | CSS, SCSS | `css`, `formatting`, `styles` |
+| [Markdown Formatting](../../code-formatting/markup/markdown-formatting.md) | Clean markdown with proper structure and linting | Markdown | `markdown`, `documentation` |
 
 ## Usage Guidance
 
@@ -32,7 +32,7 @@ Code quality steering documents guide Kiro to write clean, consistent code that 
 
 ```bash
 # Copy a steering document to your project
-cp categories/code-quality/javascript-formatting.md .kiro/steering/
+cp code-formatting/languages/javascript-formatting.md .kiro/steering/
 
 ```
 

@@ -135,7 +135,7 @@ New to steering documents? Start with:
 
 - [Templates](../templates/) - Templates for creating new documents
 
-- [Examples](../examples/) - Complete example setups
+- Examples (coming soon) - Complete example setups
 
 ## Need Help?
 

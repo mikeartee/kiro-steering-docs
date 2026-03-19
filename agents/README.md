@@ -34,7 +34,7 @@ Transforms BMAD planning documents (PRDs, Architecture) into formal Kiro specifi
 
 - Full traceability from BMAD to implementation
 
-[View Full Documentation](bmad-spec-converter-agent.md)
+[View Full Documentation](bmad/bmad-spec-converter-agent.md)
 
 ## How to Use Agent Documents
 
@@ -58,7 +58,7 @@ Agent documents are perfect for:
 
 - Complex transformations or conversions
 
-See the [template](../templates/steering-document-template.md) and [BMAD Spec Converter](bmad-spec-converter-agent.md) as examples.
+See the [template](../templates/steering-document-template.md) and [BMAD Spec Converter](bmad/bmad-spec-converter-agent.md) as examples.
 
 ## Contributing
 

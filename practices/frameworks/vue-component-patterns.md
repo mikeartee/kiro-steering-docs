@@ -672,9 +672,9 @@ This is a starting point for Vue component patterns. You can customize by:
 
 ## Related Documents
 
-- [TypeScript Formatting](../../code-formatting/typescript-formatting.md) - TypeScript conventions
+- [TypeScript Formatting](../../code-formatting/languages/typescript-formatting.md) - TypeScript conventions
 
-- [JavaScript Formatting](../../code-formatting/javascript-formatting.md) - JavaScript style
+- [JavaScript Formatting](../../code-formatting/languages/javascript-formatting.md) - JavaScript style
 
 ## Optional: Validation with External Tools
 

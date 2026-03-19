@@ -56,24 +56,24 @@ Comprehensive searchable index of all available steering documents:
 
 | Document | Description | Tags |
 |----------|-------------|------|
-| [BMAD Spec Converter](agents/bmad-spec-converter-agent.md) | Transform BMAD planning documents into formal Kiro specifications | `agent`, `bmad`, `specs`, `requirements`, `property-based-testing` |
+| [BMAD Spec Converter](agents/bmad/bmad-spec-converter-agent.md) | Transform BMAD planning documents into formal Kiro specifications | `agent`, `bmad`, `specs`, `requirements`, `property-based-testing` |
 
 ### Code Formatting
 
 | Document | Description | Tags |
 |----------|-------------|------|
-| [Bash Scripting](code-formatting/bash-formatting.md) | Safe Bash scripts with error handling and quoting | `bash`, `shell`, `scripting`, `linux` |
-| [CSS Formatting](code-formatting/css-formatting.md) | Property ordering, naming conventions, consistent spacing | `css`, `scss`, `formatting`, `styles` |
-| [Dockerfile](code-formatting/docker-formatting.md) | Optimized Dockerfiles with layer caching and security | `docker`, `dockerfile`, `containers`, `devops` |
-| [GraphQL Schema](code-formatting/graphql-formatting.md) | Well-structured GraphQL schemas with consistent naming | `graphql`, `api`, `schema`, `formatting` |
-| [JavaScript Formatting](code-formatting/javascript-formatting.md) | Semicolons, quotes, indentation, import organization | `javascript`, `formatting`, `eslint`, `code-generation` |
-| [JSON Formatting](code-formatting/json-formatting.md) | Consistent indentation, key ordering, proper formatting | `json`, `formatting`, `config` |
-| [Markdown Formatting](code-formatting/markdown-formatting.md) | Formatting standards, heading hierarchy, list formatting | `markdown`, `documentation`, `formatting` |
-| [Python Formatting](code-formatting/python-formatting.md) | PEP 8 compliance, import organization, naming conventions | `python`, `formatting`, `pep8`, `code-generation` |
-| [SQL Formatting](code-formatting/sql-formatting.md) | Readable SQL queries with proper structure | `sql`, `database`, `formatting`, `queries` |
-| [Terraform Configuration](code-formatting/terraform-formatting.md) | Well-organized Terraform with proper resource naming | `terraform`, `iac`, `infrastructure`, `devops` |
-| [TypeScript Formatting](code-formatting/typescript-formatting.md) | Type annotations, interfaces, import organization | `typescript`, `formatting`, `types`, `code-generation` |
-| [YAML Formatting](code-formatting/yaml-formatting.md) | Clean YAML with proper indentation | `yaml`, `formatting`, `config`, `devops` |
+| [Bash Scripting](code-formatting/languages/bash-formatting.md) | Safe Bash scripts with error handling and quoting | `bash`, `shell`, `scripting`, `linux` |
+| [CSS Formatting](code-formatting/markup/css-formatting.md) | Property ordering, naming conventions, consistent spacing | `css`, `scss`, `formatting`, `styles` |
+| [Dockerfile](code-formatting/infrastructure/docker-formatting.md) | Optimized Dockerfiles with layer caching and security | `docker`, `dockerfile`, `containers`, `devops` |
+| [GraphQL Schema](code-formatting/data-formats/graphql-formatting.md) | Well-structured GraphQL schemas with consistent naming | `graphql`, `api`, `schema`, `formatting` |
+| [JavaScript Formatting](code-formatting/languages/javascript-formatting.md) | Semicolons, quotes, indentation, import organization | `javascript`, `formatting`, `eslint`, `code-generation` |
+| [JSON Formatting](code-formatting/data-formats/json-formatting.md) | Consistent indentation, key ordering, proper formatting | `json`, `formatting`, `config` |
+| [Markdown Formatting](code-formatting/markup/markdown-formatting.md) | Formatting standards, heading hierarchy, list formatting | `markdown`, `documentation`, `formatting` |
+| [Python Formatting](code-formatting/languages/python-formatting.md) | PEP 8 compliance, import organization, naming conventions | `python`, `formatting`, `pep8`, `code-generation` |
+| [SQL Formatting](code-formatting/data-formats/sql-formatting.md) | Readable SQL queries with proper structure | `sql`, `database`, `formatting`, `queries` |
+| [Terraform Configuration](code-formatting/infrastructure/terraform-formatting.md) | Well-organized Terraform with proper resource naming | `terraform`, `iac`, `infrastructure`, `devops` |
+| [TypeScript Formatting](code-formatting/languages/typescript-formatting.md) | Type annotations, interfaces, import organization | `typescript`, `formatting`, `types`, `code-generation` |
+| [YAML Formatting](code-formatting/data-formats/yaml-formatting.md) | Clean YAML with proper indentation | `yaml`, `formatting`, `config`, `devops` |
 
 ### Code Quality
 
@@ -121,75 +121,75 @@ Comprehensive searchable index of all available steering documents:
 
 Documents tagged with `javascript`:
 
-- [JavaScript Formatting](code-formatting/javascript-formatting.md) - Consistent JavaScript code style
+- [JavaScript Formatting](code-formatting/languages/javascript-formatting.md) - Consistent JavaScript code style
 
 #### TypeScript
 
 Documents tagged with `typescript`:
 
-- [TypeScript Formatting](code-formatting/typescript-formatting.md) - Strong typing and TypeScript standards
+- [TypeScript Formatting](code-formatting/languages/typescript-formatting.md) - Strong typing and TypeScript standards
 
 #### Python
 
 Documents tagged with `python`:
 
-- [Python Formatting](code-formatting/python-formatting.md) - Clean, readable Python code
+- [Python Formatting](code-formatting/languages/python-formatting.md) - Clean, readable Python code
 
 #### CSS
 
 Documents tagged with `css`:
 
-- [CSS Formatting](code-formatting/css-formatting.md) - Organized CSS with consistent properties
+- [CSS Formatting](code-formatting/markup/css-formatting.md) - Organized CSS with consistent properties
 
 #### JSON
 
 Documents tagged with `json`:
 
-- [JSON Formatting](code-formatting/json-formatting.md) - Consistent JSON structure
+- [JSON Formatting](code-formatting/data-formats/json-formatting.md) - Consistent JSON structure
 
 #### Markdown
 
 Documents tagged with `markdown`:
 
-- [Markdown Formatting](code-formatting/markdown-formatting.md) - Clean markdown documentation
+- [Markdown Formatting](code-formatting/markup/markdown-formatting.md) - Clean markdown documentation
 
 #### Formatting
 
 Documents tagged with `formatting`:
 
-- [CSS Formatting](code-formatting/css-formatting.md)
+- [CSS Formatting](code-formatting/markup/css-formatting.md)
 
-- [JavaScript Formatting](code-formatting/javascript-formatting.md)
+- [JavaScript Formatting](code-formatting/languages/javascript-formatting.md)
 
-- [JSON Formatting](code-formatting/json-formatting.md)
+- [JSON Formatting](code-formatting/data-formats/json-formatting.md)
 
-- [Markdown Formatting](code-formatting/markdown-formatting.md)
+- [Markdown Formatting](code-formatting/markup/markdown-formatting.md)
 
-- [Python Formatting](code-formatting/python-formatting.md)
+- [Python Formatting](code-formatting/languages/python-formatting.md)
 
-- [TypeScript Formatting](code-formatting/typescript-formatting.md)
+- [TypeScript Formatting](code-formatting/languages/typescript-formatting.md)
 
 #### Code Generation
 
 Documents tagged with `code-generation`:
 
-- [JavaScript Formatting](code-formatting/javascript-formatting.md)
+- [JavaScript Formatting](code-formatting/languages/javascript-formatting.md)
 
-- [Python Formatting](code-formatting/python-formatting.md)
+- [Python Formatting](code-formatting/languages/python-formatting.md)
 
-- [TypeScript Formatting](code-formatting/typescript-formatting.md)
+- [TypeScript Formatting](code-formatting/languages/typescript-formatting.md)
 
 #### Documentation
 
 Documents tagged with `documentation`:
 
-- [Markdown Formatting](code-formatting/markdown-formatting.md)
+- [Markdown Formatting](code-formatting/markup/markdown-formatting.md)
 
 #### ESLint
 
 Documents tagged with `eslint`:
 
-- [JavaScript Formatting](code-formatting/javascript-formatting.md)
+- [JavaScript Formatting](code-formatting/languages/javascript-formatting.md)
 
 #### Testing
 
@@ -247,7 +247,7 @@ Documents tagged with `api`:
 
 Documents tagged with `agent`:
 
-- [BMAD Spec Converter](agents/bmad-spec-converter-agent.md) - Transform BMAD documents to Kiro specs
+- [BMAD Spec Converter](agents/bmad/bmad-spec-converter-agent.md) - Transform BMAD documents to Kiro specs
 
 ## Coming Soon
 
@@ -271,10 +271,10 @@ Want to contribute one of these? Check out our [contribution guidelines](CONTRIB
 
 ```bash
 # Copy a steering document to your project
-cp code-formatting/javascript-formatting.md .kiro/steering/
+cp code-formatting/languages/javascript-formatting.md .kiro/steering/
 
 # Or copy multiple documents
-cp code-formatting/*.md .kiro/steering/
+cp code-formatting/{languages,markup,data-formats,infrastructure}/*.md .kiro/steering/
 
 ```
 
@@ -371,7 +371,7 @@ Comprehensive guides for creating and contributing steering documents:
 
 - [Templates](templates/) - Templates for creating new steering documents
 
-- [Examples](examples/) - Complete example setups (coming soon)
+- Examples - Complete example setups (coming soon)
 
 - [Tools](tools/) - Validation and utility scripts
 

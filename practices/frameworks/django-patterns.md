@@ -702,7 +702,7 @@ This is a starting point for Django patterns. You can customize by:
 
 ## Related Documents
 
-- [Python Formatting](../../code-formatting/python-formatting.md) - Python conventions
+- [Python Formatting](../../code-formatting/languages/python-formatting.md) - Python conventions
 
 - [Database Query Patterns](../../code-quality/database-query-patterns.md) - Query optimization
 

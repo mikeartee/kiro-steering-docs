@@ -671,7 +671,7 @@ This is a starting point for Express patterns. You can customize by:
 
 ## Related Documents
 
-- [TypeScript Formatting](../../code-formatting/typescript-formatting.md) - TypeScript conventions
+- [TypeScript Formatting](../../code-formatting/languages/typescript-formatting.md) - TypeScript conventions
 
 - [Error Handling Standards](../../workflows/error-handling-standards.md) - Error patterns
 

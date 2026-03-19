@@ -328,11 +328,11 @@ This is a starting point for code review standards. You can customize by:
 
 ## Related Documents
 
-- [JavaScript Formatting](../../code-formatting/javascript-formatting.md) - JavaScript code style
+- [JavaScript Formatting](../../code-formatting/languages/javascript-formatting.md) - JavaScript code style
 
-- [TypeScript Formatting](../../code-formatting/typescript-formatting.md) - TypeScript patterns
+- [TypeScript Formatting](../../code-formatting/languages/typescript-formatting.md) - TypeScript patterns
 
-- [Python Formatting](../../code-formatting/python-formatting.md) - Python conventions
+- [Python Formatting](../../code-formatting/languages/python-formatting.md) - Python conventions
 
 ## Optional: Validation with External Tools
 

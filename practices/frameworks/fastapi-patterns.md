@@ -785,7 +785,7 @@ This is a starting point for FastAPI patterns. You can customize by:
 
 ## Related Documents
 
-- [Python Formatting](../../code-formatting/python-formatting.md) - Python conventions
+- [Python Formatting](../../code-formatting/languages/python-formatting.md) - Python conventions
 
 - [API Development Patterns](../../workflows/api-development-patterns.md) - API conventions
 

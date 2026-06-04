@@ -48,7 +48,7 @@ describe('UserService', () => {
     it('should create a user with valid data', () => {
       const userData = { name: 'John', email: 'john@example.com' };
       const user = userService.createUser(userData);
-      
+
       expect(user.id).toBeDefined();
       expect(user.name).toBe('John');
       expect(user.email).toBe('john@example.com');
@@ -56,7 +56,7 @@ describe('UserService', () => {
 
     it('should throw error when email is missing', () => {
       const userData = { name: 'John' };
-      
+
       expect(() => userService.createUser(userData)).toThrow('Email is required');
     });
   });
@@ -108,7 +108,7 @@ def test_1():
 // Kiro will write:
 test('user has correct properties', () => {
   const user = createUser({ name: 'Alice', age: 30 });
-  
+
   expect(user.name).toBe('Alice');
   expect(user.age).toBe(30);
   expect(user.id).toBeDefined();
@@ -183,7 +183,7 @@ test('api test', () => {
 describe('GET /users/:id', () => {
   it('should return user data when user exists', async () => {
     const response = await api.get('/users/1');
-    
+
     expect(response.status).toBe(200);
     expect(response.data.id).toBe(1);
     expect(response.data.name).toBeDefined();
@@ -192,7 +192,7 @@ describe('GET /users/:id', () => {
 
   it('should return 404 when user does not exist', async () => {
     const response = await api.get('/users/99999');
-    
+
     expect(response.status).toBe(404);
     expect(response.data.error).toBe('User not found');
   });
@@ -215,9 +215,9 @@ def test_process_data_filters_invalid_entries():
         {'value': 20, 'valid': False},
         {'value': 30, 'valid': True}
     ]
-    
+
     result = process_data(input_data)
-    
+
     assert len(result) == 2
     assert result[0]['value'] == 10
     assert result[1]['value'] == 30
@@ -227,9 +227,9 @@ def test_process_data_returns_empty_list_when_no_valid_entries():
         {'value': 10, 'valid': False},
         {'value': 20, 'valid': False}
     ]
-    
+
     result = process_data(input_data)
-    
+
     assert result == []
 
 ```

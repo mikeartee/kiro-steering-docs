@@ -41,7 +41,7 @@ order by created_at desc;
 
 ```sql
 -- Kiro will write:
-SELECT 
+SELECT
   u.id,
   u.name,
   u.email,
@@ -66,7 +66,7 @@ SELECT u.id, u.name, u.email, COUNT(o.id) AS order_count FROM users u LEFT JOIN 
 
 ```sql
 -- Kiro will write:
-SELECT 
+SELECT
   id,
   first_name,
   last_name,
@@ -90,7 +90,7 @@ WHERE country = 'USA';
 
 ```sql
 -- Kiro will write:
-SELECT 
+SELECT
   u.name,
   p.title,
   c.comment_text

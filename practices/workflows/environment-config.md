@@ -101,7 +101,7 @@ class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY')
     DATABASE_URL = os.environ.get('DATABASE_URL')
     API_KEY = os.environ.get('API_KEY')
-    
+
     # Public settings can have defaults
     DEBUG = os.environ.get('DEBUG', 'False') == 'True'
     PORT = int(os.environ.get('PORT', '5000'))

@@ -32,20 +32,20 @@ function createUser(userData) {
   if (!userData.email || typeof userData.email !== 'string') {
     throw new Error('Invalid email');
   }
-  
+
   // Sanitize and validate email format
   const email = userData.email.trim().toLowerCase();
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  
+
   if (!emailRegex.test(email)) {
     throw new Error('Invalid email format');
   }
-  
+
   // Validate password strength
   if (!userData.password || userData.password.length < 12) {
     throw new Error('Password must be at least 12 characters');
   }
-  
+
   return { email, password: userData.password };
 }
 

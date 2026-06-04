@@ -609,27 +609,27 @@ class UserService {
   final String apiUrl;
   final int timeout;
   final Map<String, String> headers;
-  
+
   UserService({
     required this.apiUrl,
     required this.timeout,
     required this.headers,
   });
-  
+
   // Explicit type for public method variable
   Future<User> fetchUser(int userId) async {
     // var acceptable here - type obvious from literal
     var endpoint = '/users/$userId';
-    
+
     // Explicit type when not obvious
     final Response response = await http.get(endpoint);
-    
+
     // var acceptable - type clear from method call
     final data = jsonDecode(response.body);
-    
+
     // Explicit type for clarity
     final User user = User.fromJson(data);
-    
+
     return user;
   }
 }
@@ -645,13 +645,13 @@ class UserService {
   final apiUrl;
   var timeout;
   var headers;
-  
+
   UserService({
     required this.apiUrl,
     required this.timeout,
     required this.headers,
   });
-  
+
   fetchUser(userId) async {
     var endpoint = '/users/$userId';
     var response = await http.get(endpoint);
@@ -823,16 +823,16 @@ Use meaningful generic type parameters that clearly indicate their purpose. Gene
 // Generic class with meaningful type parameter
 class Repository<T> {
   final List<T> _items = [];
-  
+
   void add(T item) {
     _items.add(item);
   }
-  
+
   T? findById(int id) {
     // Implementation
     return null;
   }
-  
+
   List<T> getAll() {
     return List.unmodifiable(_items);
   }
@@ -856,13 +856,13 @@ class ApiResponse<TData> {
   final bool success;
   final TData? data;
   final String? error;
-  
+
   ApiResponse({
     required this.success,
     this.data,
     this.error,
   });
-  
+
   ApiResponse<TData> copyWith({
     bool? success,
     TData? data,
@@ -890,11 +890,11 @@ final listResponse = ApiResponse<List<String>>(
 // Not:
 class Repository<T> {
   final _items = [];
-  
+
   void add(item) {
     _items.add(item);
   }
-  
+
   findById(id) {
     return null;
   }
@@ -908,7 +908,7 @@ class ApiResponse {
   final success;
   final data;
   final error;
-  
+
   ApiResponse({this.success, this.data, this.error});
 }
 
@@ -971,7 +971,7 @@ class UserProfile {
   final String? bio;
   final String? avatarUrl;
   final int? age;
-  
+
   UserProfile({
     required this.name,
     this.bio,
@@ -1078,7 +1078,7 @@ cachedData ??= fetchData();
 // Useful for lazy initialization
 class DataService {
   List<String>? _cache;
-  
+
   List<String> getData() {
     _cache ??= loadDataFromDatabase();
     return _cache!;
@@ -1137,13 +1137,13 @@ class UserWidget extends StatefulWidget {
 
 class _UserWidgetState extends State<UserWidget> {
   User? _user;
-  
+
   @override
   void initState() {
     super.initState();
     _user = loadUser(); // We know this always returns a user
   }
-  
+
   @override
   Widget build(BuildContext context) {
     // Safe to use ! here because initState guarantees _user is set
@@ -1154,11 +1154,11 @@ class _UserWidgetState extends State<UserWidget> {
 // Use with late variables
 class ApiService {
   late final String apiKey;
-  
+
   void initialize(String key) {
     apiKey = key;
   }
-  
+
   Future<void> fetchData() async {
     // Safe to use apiKey here if initialize was called
     await http.get('/api/data', headers: {'key': apiKey});
@@ -1218,7 +1218,7 @@ class MyWidget extends StatefulWidget {
 class _MyWidgetState extends State<MyWidget> {
   late final AnimationController _controller;
   late final String _userId;
-  
+
   @override
   void initState() {
     super.initState();
@@ -1228,13 +1228,13 @@ class _MyWidgetState extends State<MyWidget> {
     );
     _userId = loadUserId();
   }
-  
+
   @override
   void dispose() {
     _controller.dispose();
     super.dispose();
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
@@ -1247,12 +1247,12 @@ class _MyWidgetState extends State<MyWidget> {
 // Late for lazy initialization
 class DataManager {
   late final List<String> _expensiveData = _loadExpensiveData();
-  
+
   List<String> _loadExpensiveData() {
     // Only computed when first accessed
     return List.generate(1000000, (i) => 'Item $i');
   }
-  
+
   List<String> get data => _expensiveData;
 }
 
@@ -1260,12 +1260,12 @@ class DataManager {
 class UserService {
   late final ApiClient apiClient;
   late final DatabaseService database;
-  
+
   void initialize(ApiClient client, DatabaseService db) {
     apiClient = client;
     database = db;
   }
-  
+
   Future<User> getUser(int id) async {
     return await apiClient.fetchUser(id);
   }
@@ -1280,7 +1280,7 @@ class MyWidget extends StatefulWidget {
 
 class _MyWidgetState extends State<MyWidget> {
   late String? _userName; // Redundant - just use String?
-  
+
   @override
   void initState() {
     super.initState();
@@ -1291,7 +1291,7 @@ class _MyWidgetState extends State<MyWidget> {
 // Using late as a workaround
 class BadExample {
   late final String value; // Never initialized - runtime error!
-  
+
   void doSomething() {
     print(value); // Error!
   }
@@ -1345,7 +1345,7 @@ Future<User> loadUserProfile(int userId) async {
   final user = await fetchUser(userId);
   final preferences = await fetchPreferences(userId);
   final posts = await fetchUserPosts(userId);
-  
+
   return User(
     id: user.id,
     name: user.name,
@@ -1370,26 +1370,26 @@ class MyWidget extends StatefulWidget {
 class _MyWidgetState extends State<MyWidget> {
   User? _user;
   bool _isLoading = true;
-  
+
   @override
   void initState() {
     super.initState();
     _loadUser();
   }
-  
+
   Future<void> _loadUser() async {
     setState(() {
       _isLoading = true;
     });
-    
+
     final user = await fetchUser(123);
-    
+
     setState(() {
       _user = user;
       _isLoading = false;
     });
   }
-  
+
   @override
   Widget build(BuildContext context) {
     if (_isLoading) {
@@ -1443,7 +1443,7 @@ Always wrap async operations in try-catch blocks to handle errors gracefully. Th
 Future<User> fetchUser(int userId) async {
   try {
     final response = await http.get('/api/users/$userId');
-    
+
     if (response.statusCode == 200) {
       return User.fromJson(jsonDecode(response.body));
     } else {
@@ -1475,7 +1475,7 @@ Future<String> readConfigFile(String path) async {
 // Using finally for cleanup
 Future<void> processData() async {
   final connection = await database.connect();
-  
+
   try {
     await connection.execute('BEGIN TRANSACTION');
     await connection.insert('data', {'value': 123});
@@ -1499,13 +1499,13 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
   User? _user;
   String? _error;
   bool _isLoading = false;
-  
+
   Future<void> _loadUser() async {
     setState(() {
       _isLoading = true;
       _error = null;
     });
-    
+
     try {
       final user = await fetchUser(123);
       setState(() {
@@ -1529,13 +1529,13 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
       });
     }
   }
-  
+
   @override
   Widget build(BuildContext context) {
     if (_isLoading) {
       return const CircularProgressIndicator();
     }
-    
+
     if (_error != null) {
       return Column(
         children: [
@@ -1547,7 +1547,7 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
         ],
       );
     }
-    
+
     return Text(_user?.name ?? 'No user');
   }
 }
@@ -1561,13 +1561,13 @@ Future<void> syncUserData(int userId) async {
       fetchPreferences(userId),
       fetchPosts(userId),
     ]);
-    
+
     final user = results[0] as User;
     final preferences = results[1] as Preferences;
     final posts = results[2] as List<Post>;
-    
+
     await saveToDatabase(user, preferences, posts);
-    
+
   } on TimeoutException catch (e) {
     print('Operation timed out: $e');
     throw Exception('Sync failed: timeout');
@@ -1682,7 +1682,7 @@ List<String> getUserNames(List<User> users) {
 void categorizeUsers(List<User> users) {
   final activeUsers = <User>[];
   final inactiveUsers = <User>[];
-  
+
   for (final user in users) {
     if (user.isActive) {
       activeUsers.add(user);
@@ -1814,13 +1814,13 @@ void removeEmptyValues(Map<String, String> data) {
 // Alternative: Create list of keys to remove
 void removeEmptyValues(Map<String, String> data) {
   final keysToRemove = <String>[];
-  
+
   for (final entry in data.entries) {
     if (entry.value.isEmpty) {
       keysToRemove.add(entry.key);
     }
   }
-  
+
   for (final key in keysToRemove) {
     data.remove(key);
   }

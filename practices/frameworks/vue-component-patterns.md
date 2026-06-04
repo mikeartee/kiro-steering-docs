@@ -437,7 +437,7 @@ const handleEmailChange = (event: Event) => {
 
 const handleSubmit = async () => {
   if (isSubmitting.value) return;
-  
+
   isSubmitting.value = true;
   try {
     await login(email.value, password.value);
@@ -449,13 +449,13 @@ const handleSubmit = async () => {
 
 <template>
   <form @submit.prevent="handleSubmit">
-    <input 
-      type="email" 
-      :value="email" 
+    <input
+      type="email"
+      :value="email"
       @input="handleEmailChange"
     />
-    <input 
-      type="password" 
+    <input
+      type="password"
       v-model="password"
     />
     <button type="submit" :disabled="isSubmitting">

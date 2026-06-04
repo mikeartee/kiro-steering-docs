@@ -72,12 +72,12 @@ fi
 # Kiro will write:
 function check_dependencies() {
   local required_cmd="$1"
-  
+
   if ! command -v "${required_cmd}" &> /dev/null; then
     echo "Error: ${required_cmd} is not installed" >&2
     return 1
   fi
-  
+
   return 0
 }
 
@@ -110,17 +110,17 @@ echo "All dependencies satisfied"
 function backup_file() {
   local source="$1"
   local dest="$2"
-  
+
   if [[ ! -f "${source}" ]]; then
     echo "Error: Source file does not exist: ${source}" >&2
     return 1
   fi
-  
+
   if ! cp "${source}" "${dest}"; then
     echo "Error: Failed to copy ${source} to ${dest}" >&2
     return 1
   fi
-  
+
   echo "Successfully backed up ${source} to ${dest}"
   return 0
 }

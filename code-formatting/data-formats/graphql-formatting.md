@@ -75,7 +75,7 @@ type Query {
     offset: Int = 0
     filter: UserFilter
   ): [User!]!
-  
+
   # Post queries
   post(id: ID!): Post
   posts(
@@ -116,7 +116,7 @@ type Mutation {
   createUser(input: CreateUserInput!): User!
   updateUser(id: ID!, input: UpdateUserInput!): User!
   deleteUser(id: ID!): Boolean!
-  
+
   createPost(input: CreatePostInput!): Post!
   updatePost(id: ID!, input: UpdatePostInput!): Post!
   deletePost(id: ID!): Boolean!

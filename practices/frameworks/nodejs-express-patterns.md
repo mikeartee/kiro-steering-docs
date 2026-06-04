@@ -332,9 +332,9 @@ export const errorHandler = (
   res.status(500).json({
     success: false,
     message: 'Internal server error',
-    ...(process.env.NODE_ENV === 'development' && { 
+    ...(process.env.NODE_ENV === 'development' && {
       error: err.message,
-      stack: err.stack 
+      stack: err.stack
     })
   });
 };
@@ -417,7 +417,7 @@ export class UserService {
     }
 
     const hashedPassword = await bcrypt.hash(userData.password, 10);
-    
+
     return this.userRepository.create({
       ...userData,
       password: hashedPassword
@@ -485,7 +485,7 @@ import { asyncHandler } from '../utils/asyncHandler';
 
 router.get('/:id', asyncHandler(async (req: Request, res: Response) => {
   const user = await userService.findById(req.params.id);
-  
+
   if (!user) {
     throw new AppError('User not found', 404);
   }
@@ -591,16 +591,16 @@ app.post('/api/users', async (req, res) => {
     if (!req.body.email || !req.body.password) {
       return res.status(400).json({ error: 'Missing fields' });
     }
-    
+
     const existing = await db.query('SELECT * FROM users WHERE email = ?', [req.body.email]);
     if (existing.length > 0) {
       return res.status(409).json({ error: 'Email exists' });
     }
-    
+
     const hashed = await bcrypt.hash(req.body.password, 10);
-    const result = await db.query('INSERT INTO users (email, password) VALUES (?, ?)', 
+    const result = await db.query('INSERT INTO users (email, password) VALUES (?, ?)',
       [req.body.email, hashed]);
-    
+
     res.status(201).json({ id: result.insertId, email: req.body.email });
   } catch (err) {
     res.status(500).json({ error: 'Server error' });
@@ -635,7 +635,7 @@ async create(userData: CreateUserDto) {
   }
 
   const hashedPassword = await bcrypt.hash(userData.password, 10);
-  
+
   return this.userRepository.create({
     ...userData,
     password: hashedPassword
@@ -673,9 +673,9 @@ This is a starting point for Express patterns. You can customize by:
 
 - [TypeScript Formatting](../../code-formatting/languages/typescript-formatting.md) - TypeScript conventions
 
-- [Error Handling Standards](../../workflows/error-handling-standards.md) - Error patterns
+- [Error Handling Standards](../code-quality/error-handling-standards.md) - Error patterns
 
-- [API Development Patterns](../../workflows/api-development-patterns.md) - API conventions
+- [API Development Patterns](../workflows/api-development-patterns.md) - API conventions
 
 ## Optional: Validation with External Tools
 

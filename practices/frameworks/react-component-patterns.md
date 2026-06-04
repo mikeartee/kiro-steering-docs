@@ -64,7 +64,7 @@ export function UserProfile({ userId, onUpdate }: UserProfileProps): JSX.Element
 export function UserProfile(props) {
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  
+
   useEffect(() => {
     fetchUser(props.userId).then(setUser).finally(() => setIsLoading(false));
   }, [props.userId]);
@@ -93,12 +93,12 @@ interface ButtonProps {
   isLoading?: boolean;
 }
 
-export function Button({ 
-  label, 
-  onClick, 
+export function Button({
+  label,
+  onClick,
   variant = 'primary',
   disabled = false,
-  isLoading = false 
+  isLoading = false
 }: ButtonProps): JSX.Element {
   return (
     <button
@@ -146,9 +146,9 @@ function SearchForm(): JSX.Element {
 
   return (
     <div>
-      <input 
-        value={searchQuery} 
-        onChange={(e) => setSearchQuery(e.target.value)} 
+      <input
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
       />
       <button onClick={handleSearch} disabled={isSearching}>
         Search

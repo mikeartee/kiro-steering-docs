@@ -262,7 +262,7 @@ fn validate_and_create_user(email: &str) -> Result<User, UserError> {
     if !email.contains('@') {
         return Err(UserError::InvalidEmail(email.to_string()));
     }
-    
+
     let user = User::new(email);
     Ok(user)
 }
@@ -285,7 +285,7 @@ fn load_and_process_user(user_id: u64) -> Result<ProcessedUser, UserError> {
     let user = fetch_user(user_id)?;
     let profile = fetch_profile(user_id)?;
     let preferences = fetch_preferences(user_id)?;
-    
+
     Ok(ProcessedUser {
         user,
         profile,
@@ -296,10 +296,10 @@ fn load_and_process_user(user_id: u64) -> Result<ProcessedUser, UserError> {
 fn read_and_parse_config(path: &str) -> Result<Config, ConfigError> {
     let contents = std::fs::read_to_string(path)
         .map_err(|e| ConfigError::IoError(e))?;
-    
+
     let config: Config = serde_json::from_str(&contents)
         .map_err(|e| ConfigError::ParseError(e))?;
-    
+
     Ok(config)
 }
 
@@ -364,7 +364,7 @@ fn main() {
     let data = vec![1, 2, 3];
     let sum = calculate_sum(&data); // Borrow, data still usable
     println!("Sum: {}", sum);
-    
+
     let processed = process_data(data); // Move, data no longer usable
     println!("Processed: {:?}", processed);
 }
@@ -437,7 +437,7 @@ impl<'a> UserView<'a> {
     fn new(name: &'a str, email: &'a str) -> Self {
         UserView { name, email }
     }
-    
+
     fn display(&self) -> String {
         format!("{} <{}>", self.name, self.email)
     }
@@ -465,7 +465,7 @@ fn update_and_read(data: &mut Vec<i32>) {
     data.push(42);
     data.push(43);
     // Mutable borrow ends here
-    
+
     // Immutable borrow scope
     let sum: i32 = data.iter().sum();
     println!("Sum: {}", sum);
@@ -761,18 +761,18 @@ impl Validate for User {
     fn is_valid(&self) -> bool {
         !self.name.is_empty() && self.email.contains('@')
     }
-    
+
     fn validation_errors(&self) -> Vec<String> {
         let mut errors = Vec::new();
-        
+
         if self.name.is_empty() {
             errors.push(String::from("Name cannot be empty"));
         }
-        
+
         if !self.email.contains('@') {
             errors.push(String::from("Invalid email format"));
         }
-        
+
         errors
     }
 }
@@ -784,7 +784,7 @@ trait Processable {
 
 impl Processable for User {
     type Output = ProcessedUser;
-    
+
     fn process(&self) -> Self::Output {
         ProcessedUser {
             id: self.id,
@@ -888,7 +888,7 @@ impl User {
     pub fn new(id: u64, name: String) -> Self {
         User { id, name }
     }
-    
+
     pub fn id(&self) -> u64 {
         self.id
     }
@@ -905,7 +905,7 @@ impl UserService {
     pub fn new() -> Self {
         UserService { users: Vec::new() }
     }
-    
+
     pub fn add_user(&mut self, user: User) {
         self.users.push(user);
     }
@@ -958,15 +958,15 @@ impl User {
     pub fn new(id: u64, name: String, email: String) -> Self {
         User { id, name, email }
     }
-    
+
     pub fn id(&self) -> u64 {
         self.id
     }
-    
+
     pub fn email(&self) -> &str {
         &self.email
     }
-    
+
     fn validate(&self) -> bool {
         // Private method
         !self.name.is_empty() && self.email.contains('@')
@@ -1030,7 +1030,7 @@ impl user {
     fn New(ID: u64, Name: String, Email: String) -> user {
         user { ID, Name, Email }
     }
-    
+
     fn GetName(&self) -> String {
         self.Name.clone()
     }
@@ -1044,15 +1044,15 @@ impl UserService {
     fn New() -> UserService {
         UserService { Users: HashMap::new() }
     }
-    
+
     fn AddUser(&mut self, User: user) {
         self.Users.insert(User.ID, User);
     }
-    
+
     fn GetUser(&self, ID: u64) -> user {
         self.Users.get(&ID).unwrap().clone()
     }
-    
+
     fn UpdateEmail(&mut self, ID: u64, Email: String) {
         let User = self.Users.get_mut(&ID).unwrap();
         User.Email = Email;
@@ -1075,26 +1075,26 @@ impl User {
         if name.is_empty() {
             return Err(UserError::InvalidName);
         }
-        
+
         if !email.contains('@') {
             return Err(UserError::InvalidEmail(email));
         }
-        
+
         Ok(User { id, name, email })
     }
-    
+
     pub fn id(&self) -> u64 {
         self.id
     }
-    
+
     pub fn name(&self) -> &str {
         &self.name
     }
-    
+
     pub fn email(&self) -> &str {
         &self.email
     }
-    
+
     pub fn update_email(&mut self, email: String) -> Result<(), UserError> {
         if !email.contains('@') {
             return Err(UserError::InvalidEmail(email));
@@ -1140,30 +1140,30 @@ impl UserService {
             users: HashMap::new(),
         }
     }
-    
+
     pub fn add_user(&mut self, user: User) {
         self.users.insert(user.id(), user);
     }
-    
+
     pub fn get_user(&self, id: u64) -> Option<&User> {
         self.users.get(&id)
     }
-    
+
     pub fn get_user_mut(&mut self, id: u64) -> Option<&mut User> {
         self.users.get_mut(&id)
     }
-    
+
     pub fn update_email(&mut self, id: u64, email: String) -> Result<(), UserError> {
         match self.users.get_mut(&id) {
             Some(user) => user.update_email(email),
             None => Err(UserError::NotFound(id)),
         }
     }
-    
+
     pub fn remove_user(&mut self, id: u64) -> Option<User> {
         self.users.remove(&id)
     }
-    
+
     pub fn user_count(&self) -> usize {
         self.users.len()
     }
@@ -1286,7 +1286,7 @@ fn main() {
     let numbers = vec![1, 2, 3, 4, 5];
     let (sum, count) = calculate_stats(numbers);
     // Can't use numbers anymore!
-    
+
     let user = User::new(1, "Alice".to_string(), "alice@example.com".to_string());
     let formatted = format_user(user);
     // Can't use user anymore!
@@ -1308,7 +1308,7 @@ fn main() {
     let (sum, count) = calculate_stats(&numbers);
     println!("Sum: {}, Count: {}", sum, count);
     println!("Numbers still available: {:?}", numbers);
-    
+
     let user = User::new(1, "Alice".to_string(), "alice@example.com".to_string())?;
     let formatted = format_user(&user);
     println!("{}", formatted);
@@ -1516,16 +1516,16 @@ jobs:
         with:
           toolchain: stable
           components: rustfmt, clippy
-      
+
       - name: Check formatting
         run: cargo fmt -- --check
-      
+
       - name: Run clippy
         run: cargo clippy -- -D warnings
-      
+
       - name: Run tests
         run: cargo test
-      
+
       - name: Build
         run: cargo build --release
 

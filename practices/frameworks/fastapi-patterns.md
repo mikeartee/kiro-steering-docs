@@ -175,13 +175,13 @@ async def get_user(
     """Get user by ID."""
     user_service = UserService(db)
     user = await user_service.get_user_by_id(user_id)
-    
+
     if not user:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail=f"User with id {user_id} not found"
         )
-    
+
     return user
 
 @router.post("/", response_model=UserResponse, status_code=status.HTTP_201_CREATED)
@@ -191,7 +191,7 @@ async def create_user(
 ):
     """Create new user."""
     user_service = UserService(db)
-    
+
     # Check if user already exists
     existing_user = await user_service.get_user_by_email(user_data.email)
     if existing_user:
@@ -199,7 +199,7 @@ async def create_user(
             status_code=status.HTTP_409_CONFLICT,
             detail="Email already registered"
         )
-    
+
     user = await user_service.create_user(user_data)
     return user
 
@@ -216,16 +216,16 @@ async def update_user(
             status_code=status.HTTP_403_FORBIDDEN,
             detail="Not authorized to update this user"
         )
-    
+
     user_service = UserService(db)
     user = await user_service.update_user(user_id, user_data)
-    
+
     if not user:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail=f"User with id {user_id} not found"
         )
-    
+
     return user
 
 @router.delete("/{user_id}", status_code=status.HTTP_204_NO_CONTENT)
@@ -240,10 +240,10 @@ async def delete_user(
             status_code=status.HTTP_403_FORBIDDEN,
             detail="Not authorized to delete this user"
         )
-    
+
     user_service = UserService(db)
     success = await user_service.delete_user(user_id)
-    
+
     if not success:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
@@ -295,7 +295,7 @@ async def get_current_user(
         detail="Could not validate credentials",
         headers={"WWW-Authenticate": "Bearer"},
     )
-    
+
     try:
         payload = jwt.decode(
             token,
@@ -307,11 +307,11 @@ async def get_current_user(
             raise credentials_exception
     except JWTError:
         raise credentials_exception
-    
+
     user = db.query(User).filter(User.id == user_id).first()
     if user is None:
         raise credentials_exception
-    
+
     return user
 
 async def get_current_active_user(
@@ -365,30 +365,30 @@ pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 class UserService:
     """Service for user operations."""
-    
+
     def __init__(self, db: Session):
         self.db = db
-    
+
     async def get_users(self, skip: int = 0, limit: int = 10) -> List[User]:
         """Get list of users."""
         return self.db.query(User).offset(skip).limit(limit).all()
-    
+
     async def get_user_by_id(self, user_id: int) -> Optional[User]:
         """Get user by ID."""
         return self.db.query(User).filter(User.id == user_id).first()
-    
+
     async def get_user_by_email(self, email: str) -> Optional[User]:
         """Get user by email."""
         return self.db.query(User).filter(User.email == email).first()
-    
+
     async def get_user_by_username(self, username: str) -> Optional[User]:
         """Get user by username."""
         return self.db.query(User).filter(User.username == username).first()
-    
+
     async def create_user(self, user_data: UserCreate) -> User:
         """Create new user."""
         hashed_password = pwd_context.hash(user_data.password)
-        
+
         db_user = User(
             email=user_data.email,
             username=user_data.username,
@@ -396,7 +396,7 @@ class UserService:
             hashed_password=hashed_password,
             is_active=user_data.is_active
         )
-        
+
         try:
             self.db.add(db_user)
             self.db.commit()
@@ -405,17 +405,17 @@ class UserService:
         except IntegrityError:
             self.db.rollback()
             raise ValueError("User with this email or username already exists")
-    
+
     async def update_user(self, user_id: int, user_data: UserUpdate) -> Optional[User]:
         """Update user."""
         db_user = await self.get_user_by_id(user_id)
         if not db_user:
             return None
-        
+
         update_data = user_data.dict(exclude_unset=True)
         for field, value in update_data.items():
             setattr(db_user, field, value)
-        
+
         try:
             self.db.commit()
             self.db.refresh(db_user)
@@ -423,17 +423,17 @@ class UserService:
         except IntegrityError:
             self.db.rollback()
             raise ValueError("Update failed due to constraint violation")
-    
+
     async def delete_user(self, user_id: int) -> bool:
         """Delete user."""
         db_user = await self.get_user_by_id(user_id)
         if not db_user:
             return False
-        
+
         self.db.delete(db_user)
         self.db.commit()
         return True
-    
+
     def verify_password(self, plain_password: str, hashed_password: str) -> bool:
         """Verify password."""
         return pwd_context.verify(plain_password, hashed_password)
@@ -532,39 +532,39 @@ from typing import List, Optional
 
 class Settings(BaseSettings):
     """Application settings."""
-    
+
     # Project
     PROJECT_NAME: str = "FastAPI Application"
     VERSION: str = "1.0.0"
     API_V1_PREFIX: str = "/api/v1"
-    
+
     # Security
     SECRET_KEY: str
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
-    
+
     # Database
     DATABASE_URL: PostgresDsn
-    
+
     # CORS
     ALLOWED_ORIGINS: List[str] = ["http://localhost:3000"]
-    
+
     @validator("ALLOWED_ORIGINS", pre=True)
     def assemble_cors_origins(cls, v):
         """Parse CORS origins."""
         if isinstance(v, str):
             return [i.strip() for i in v.split(",")]
         return v
-    
+
     # Redis (optional)
     REDIS_URL: Optional[str] = None
-    
+
     # Email (optional)
     SMTP_HOST: Optional[str] = None
     SMTP_PORT: Optional[int] = None
     SMTP_USER: Optional[str] = None
     SMTP_PASSWORD: Optional[str] = None
-    
+
     class Config:
         env_file = ".env"
         case_sensitive = True
@@ -688,14 +688,14 @@ async def create_user(
     """Create new user with background email."""
     user_service = UserService(db)
     user = await user_service.create_user(user_data)
-    
+
     # Add background task
     background_tasks.add_task(
         send_welcome_email,
         email=user.email,
         username=user.username
     )
-    
+
     return user
 
 # Not:
@@ -731,11 +731,11 @@ def create_user(user: UserCreate):
 def create_user(email: str, password: str, username: str):
     if not email or not password:
         return {"error": "Missing fields"}
-    
+
     existing = db.query(User).filter(User.email == email).first()
     if existing:
         return {"error": "Email exists"}
-    
+
     hashed = hash_password(password)
     user = User(email=email, password=hashed, username=username)
     db.add(user)
@@ -751,22 +751,22 @@ async def create_user(
 ):
     """Create new user."""
     user_service = UserService(db)
-    
+
     existing_user = await user_service.get_user_by_email(user_data.email)
     if existing_user:
         raise HTTPException(
             status_code=status.HTTP_409_CONFLICT,
             detail="Email already registered"
         )
-    
+
     user = await user_service.create_user(user_data)
-    
+
     background_tasks.add_task(
         send_welcome_email,
         email=user.email,
         username=user.username
     )
-    
+
     return user
 
 ```
@@ -787,7 +787,7 @@ This is a starting point for FastAPI patterns. You can customize by:
 
 - [Python Formatting](../../code-formatting/languages/python-formatting.md) - Python conventions
 
-- [API Development Patterns](../../workflows/api-development-patterns.md) - API conventions
+- [API Development Patterns](../workflows/api-development-patterns.md) - API conventions
 
 ## Optional: Validation with External Tools
 

@@ -31,11 +31,11 @@ Tags for document purpose and functionality:
 
 | Tag | Description | Documents |
 |-----|-------------|-----------|
-| `api` | API development | [GraphQL Schema](code-formatting/data-formats/graphql-formatting.md), [API Development Patterns](categories/workflows/api-development-patterns.md) |
-| `best-practices` | Best practices | [Security Best Practices](categories/security/security-best-practices.md), [Testing Best Practices](categories/testing/testing-best-practices.md) |
+| `api` | API development | [GraphQL Schema](code-formatting/data-formats/graphql-formatting.md), [API Development Patterns](practices/workflows/api-development-patterns.md) |
+| `best-practices` | Best practices | [Security Best Practices](practices/security/security-best-practices.md), [Testing Best Practices](practices/testing/testing-best-practices.md) |
 | `code-generation` | Guides code generation | [JavaScript](code-formatting/languages/javascript-formatting.md), [TypeScript](code-formatting/languages/typescript-formatting.md), [Python](code-formatting/languages/python-formatting.md) |
 | `containers` | Container technologies | [Dockerfile](code-formatting/infrastructure/docker-formatting.md) |
-| `database` | Database patterns | [SQL Formatting](code-formatting/data-formats/sql-formatting.md), [Database Query Patterns](categories/code-quality/database-query-patterns.md) |
+| `database` | Database patterns | [SQL Formatting](code-formatting/data-formats/sql-formatting.md), [Database Query Patterns](practices/code-quality/database-query-patterns.md) |
 | `devops` | DevOps practices | [Docker](code-formatting/infrastructure/docker-formatting.md), [Terraform](code-formatting/infrastructure/terraform-formatting.md), [YAML](code-formatting/data-formats/yaml-formatting.md) |
 | `documentation` | Documentation standards | [Markdown Formatting](code-formatting/markup/markdown-formatting.md) |
 | `formatting` | Code formatting rules | All code-formatting documents |
@@ -45,10 +45,10 @@ Tags for document purpose and functionality:
 | `queries` | Query patterns | [SQL Formatting](code-formatting/data-formats/sql-formatting.md) |
 | `schema` | Schema definitions | [GraphQL Schema](code-formatting/data-formats/graphql-formatting.md) |
 | `scripting` | Scripting languages | [Bash Scripting](code-formatting/languages/bash-formatting.md) |
-| `security` | Security practices | [Security Best Practices](categories/security/security-best-practices.md) |
-| `testing` | Testing standards | [Testing Best Practices](categories/testing/testing-best-practices.md) |
-| `validation` | Input validation | [Security Best Practices](categories/security/security-best-practices.md) |
-| `vulnerabilities` | Vulnerability prevention | [Security Best Practices](categories/security/security-best-practices.md) |
+| `security` | Security practices | [Security Best Practices](practices/security/security-best-practices.md) |
+| `testing` | Testing standards | [Testing Best Practices](practices/testing/testing-best-practices.md) |
+| `validation` | Input validation | [Security Best Practices](practices/security/security-best-practices.md) |
+| `vulnerabilities` | Vulnerability prevention | [Security Best Practices](practices/security/security-best-practices.md) |
 | `performance` | Performance optimization | *Coming soon* |
 | `accessibility` | Accessibility standards | *Coming soon* |
 
@@ -61,7 +61,7 @@ Tags for development tools and utilities:
 | `docker` | Docker containers | [Dockerfile](code-formatting/infrastructure/docker-formatting.md) |
 | `dockerfile` | Dockerfile syntax | [Dockerfile](code-formatting/infrastructure/docker-formatting.md) |
 | `eslint` | ESLint linting | [JavaScript Formatting](code-formatting/languages/javascript-formatting.md) |
-| `git` | Git version control | [Git Commit Standards](categories/workflows/git-commit-standards.md) |
+| `git` | Git version control | [Git Commit Standards](practices/workflows/git-commit-standards.md) |
 | `graphql` | GraphQL API | [GraphQL Schema](code-formatting/data-formats/graphql-formatting.md) |
 | `terraform` | Terraform IaC | [Terraform Configuration](code-formatting/infrastructure/terraform-formatting.md) |
 | `prettier` | Prettier formatting | *Coming soon* |
@@ -75,12 +75,12 @@ Tags for frameworks and libraries:
 
 | Tag | Description | Documents |
 |-----|-------------|-----------|
-| `django` | Django framework | [Django Patterns](categories/frameworks/django-patterns.md) |
-| `express` | Express.js | [Node.js/Express Patterns](categories/frameworks/nodejs-express-patterns.md) |
-| `fastapi` | FastAPI framework | [FastAPI Patterns](categories/frameworks/fastapi-patterns.md) |
-| `nodejs` | Node.js runtime | [Node.js/Express Patterns](categories/frameworks/nodejs-express-patterns.md) |
-| `react` | React framework | [React Component Patterns](categories/frameworks/react-component-patterns.md) |
-| `vue` | Vue.js framework | [Vue Component Patterns](categories/frameworks/vue-component-patterns.md) |
+| `django` | Django framework | [Django Patterns](practices/frameworks/django-patterns.md) |
+| `express` | Express.js | [Node.js/Express Patterns](practices/frameworks/nodejs-express-patterns.md) |
+| `fastapi` | FastAPI framework | [FastAPI Patterns](practices/frameworks/fastapi-patterns.md) |
+| `nodejs` | Node.js runtime | [Node.js/Express Patterns](practices/frameworks/nodejs-express-patterns.md) |
+| `react` | React framework | [React Component Patterns](practices/frameworks/react-component-patterns.md) |
+| `vue` | Vue.js framework | [Vue Component Patterns](practices/frameworks/vue-component-patterns.md) |
 | `angular` | Angular framework | *Coming soon* |
 | `nextjs` | Next.js | *Coming soon* |
 
@@ -90,29 +90,29 @@ Tags for coding standards and conventions:
 
 | Tag | Description | Documents |
 |-----|-------------|-----------|
-| `code-quality` | Code quality standards | [Code Review Standards](categories/code-quality/code-review-standards.md), [Error Handling](categories/code-quality/error-handling-standards.md) |
-| `code-review` | Code review practices | [Code Review Standards](categories/code-quality/code-review-standards.md) |
-| `commits` | Commit conventions | [Git Commit Standards](categories/workflows/git-commit-standards.md) |
-| `components` | Component patterns | [React](categories/frameworks/react-component-patterns.md), [Vue](categories/frameworks/vue-component-patterns.md) |
+| `code-quality` | Code quality standards | [Code Review Standards](practices/code-quality/code-review-standards.md), [Error Handling](practices/code-quality/error-handling-standards.md) |
+| `code-review` | Code review practices | [Code Review Standards](practices/code-quality/code-review-standards.md) |
+| `commits` | Commit conventions | [Git Commit Standards](practices/workflows/git-commit-standards.md) |
+| `components` | Component patterns | [React](practices/frameworks/react-component-patterns.md), [Vue](practices/frameworks/vue-component-patterns.md) |
 | `config` | Configuration files | [JSON Formatting](code-formatting/data-formats/json-formatting.md), [YAML Formatting](code-formatting/data-formats/yaml-formatting.md) |
-| `debugging` | Debugging practices | [Logging Standards](categories/code-quality/logging-standards.md) |
-| `deployment` | Deployment patterns | [Environment Config](categories/workflows/environment-config.md) |
-| `environment` | Environment management | [Environment Config](categories/workflows/environment-config.md) |
-| `error-handling` | Error handling | [Error Handling Standards](categories/code-quality/error-handling-standards.md) |
-| `exceptions` | Exception handling | [Error Handling Standards](categories/code-quality/error-handling-standards.md) |
+| `debugging` | Debugging practices | [Logging Standards](practices/code-quality/logging-standards.md) |
+| `deployment` | Deployment patterns | [Environment Config](practices/workflows/environment-config.md) |
+| `environment` | Environment management | [Environment Config](practices/workflows/environment-config.md) |
+| `error-handling` | Error handling | [Error Handling Standards](practices/code-quality/error-handling-standards.md) |
+| `exceptions` | Exception handling | [Error Handling Standards](practices/code-quality/error-handling-standards.md) |
 | `framework` | Framework patterns | All framework documents |
-| `frontend` | Frontend development | [React](categories/frameworks/react-component-patterns.md), [Vue](categories/frameworks/vue-component-patterns.md) |
-| `logging` | Logging patterns | [Logging Standards](categories/code-quality/logging-standards.md) |
-| `observability` | Observability practices | [Logging Standards](categories/code-quality/logging-standards.md) |
-| `patterns` | Design patterns | [API Development Patterns](categories/workflows/api-development-patterns.md) |
+| `frontend` | Frontend development | [React](practices/frameworks/react-component-patterns.md), [Vue](practices/frameworks/vue-component-patterns.md) |
+| `logging` | Logging patterns | [Logging Standards](practices/code-quality/logging-standards.md) |
+| `observability` | Observability practices | [Logging Standards](practices/code-quality/logging-standards.md) |
+| `patterns` | Design patterns | [API Development Patterns](practices/workflows/api-development-patterns.md) |
 | `pep8` | Python PEP 8 standard | [Python Formatting](code-formatting/languages/python-formatting.md) |
-| `quality` | Quality standards | [Code Quality](categories/code-quality/) documents, [Testing](categories/testing/testing-best-practices.md) |
-| `query-patterns` | Query patterns | [Database Query Patterns](categories/code-quality/database-query-patterns.md) |
-| `rest` | REST API patterns | [API Development Patterns](categories/workflows/api-development-patterns.md) |
+| `quality` | Quality standards | [Code Quality](practices/code-quality/) documents, [Testing](practices/testing/testing-best-practices.md) |
+| `query-patterns` | Query patterns | [Database Query Patterns](practices/code-quality/database-query-patterns.md) |
+| `rest` | REST API patterns | [API Development Patterns](practices/workflows/api-development-patterns.md) |
 | `styles` | Styling standards | [CSS Formatting](code-formatting/markup/css-formatting.md) |
 | `types` | Type systems | [TypeScript Formatting](code-formatting/languages/typescript-formatting.md) |
-| `version-control` | Version control | [Git Commit Standards](categories/workflows/git-commit-standards.md) |
-| `web` | Web development | [Django](categories/frameworks/django-patterns.md) |
+| `version-control` | Version control | [Git Commit Standards](practices/workflows/git-commit-standards.md) |
+| `web` | Web development | [Django](practices/frameworks/django-patterns.md) |
 
 ## Using Tags
 
@@ -120,7 +120,7 @@ Tags for coding standards and conventions:
 
 1. **Browse this document** to see all documents with a specific tag
 
-2. **Use the main README** [tag search](README.md#search-by-tag) for quick navigation
+2. **Use the main README** [tag search](#using-tags) for quick navigation
 
 3. **Check category READMEs** for tag-filtered lists within categories
 

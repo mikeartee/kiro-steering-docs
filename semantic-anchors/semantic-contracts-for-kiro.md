@@ -9,6 +9,7 @@ tags:
   - specs
   - steering
 inclusion: manual
+version: 1.0.0
 ---
 
 ## Core Principle

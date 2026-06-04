@@ -29,6 +29,11 @@
       "id": "tools",
       "name": "Tools",
       "description": "Development tools and utilities for validation"
+    },
+    {
+      "id": "semantic-anchors",
+      "name": "Semantic Anchors",
+      "description": "Steering docs that name established methods instead of describing them, plus Kiro-specific semantic contracts"
     }
   ]
 }

@@ -123,6 +123,12 @@ Comprehensive searchable index of all available steering documents:
 | [Git Commit Standards](practices/workflows/git-commit-standards.md) | Git commit message conventions | `git`, `version-control`, `commits` |
 | [Logging Standards](practices/workflows/logging-standards.md) | Application logging patterns | `logging`, `debugging`, `observability` |
 
+### Semantic Anchors
+
+| Document | Description | Tags |
+|----------|-------------|------|
+| [Semantic Contracts for Kiro](semantic-anchors/semantic-contracts-for-kiro.md) | Three reusable, Kiro-scoped semantic contracts for the Requirements and Design spec phases | `semantic-anchors`, `semantic-contracts`, `kiro`, `specs`, `steering` |
+
 ### Tag Reference
 
 #### JavaScript

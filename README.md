@@ -32,6 +32,8 @@ Explore steering documents organized by functional area:
 
 - **[Workflows](practices/workflows/)** - CI/CD, Git hooks, and automation
 
+- **[Semantic Anchors](semantic-anchors/)** - Name established methods instead of describing them
+
 ## Search by Tag
 
 Find documents by technology, purpose, or use case. See [TAGS.md](TAGS.md) for the complete tag taxonomy.
@@ -99,6 +101,12 @@ Comprehensive searchable index of all available steering documents:
 | Document | Description | Tags |
 |----------|-------------|------|
 | [Security Best Practices](practices/security/security-best-practices.md) | Secure code with input validation and vulnerability prevention | `security`, `validation`, `best-practices`, `vulnerabilities` |
+
+### Semantic Anchors
+
+| Document | Description | Tags |
+|----------|-------------|------|
+| [Using Semantic Anchors](semantic-anchors/using-semantic-anchors.md) | Name established methods instead of describing them, spelling out only the delta | `semantic-anchors`, `steering`, `prompt-engineering`, `token-efficiency` |
 
 ### Testing
 

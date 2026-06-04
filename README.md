@@ -102,12 +102,6 @@ Comprehensive searchable index of all available steering documents:
 |----------|-------------|------|
 | [Security Best Practices](practices/security/security-best-practices.md) | Secure code with input validation and vulnerability prevention | `security`, `validation`, `best-practices`, `vulnerabilities` |
 
-### Semantic Anchors
-
-| Document | Description | Tags |
-|----------|-------------|------|
-| [Using Semantic Anchors](semantic-anchors/using-semantic-anchors.md) | Name established methods instead of describing them, spelling out only the delta | `semantic-anchors`, `steering`, `prompt-engineering`, `token-efficiency` |
-
 ### Testing
 
 | Document | Description | Tags |
@@ -127,6 +121,7 @@ Comprehensive searchable index of all available steering documents:
 
 | Document | Description | Tags |
 |----------|-------------|------|
+| [Using Semantic Anchors](semantic-anchors/using-semantic-anchors.md) | Name established methods instead of describing them, spelling out only the delta | `semantic-anchors`, `steering`, `prompt-engineering`, `token-efficiency` |
 | [Semantic Contracts for Kiro](semantic-anchors/semantic-contracts-for-kiro.md) | Three reusable, Kiro-scoped semantic contracts for the Requirements and Design spec phases | `semantic-anchors`, `semantic-contracts`, `kiro`, `specs`, `steering` |
 
 ### Tag Reference

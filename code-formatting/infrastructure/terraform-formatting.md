@@ -76,21 +76,21 @@ module/
 # Kiro will write:
 resource "aws_instance" "web_server" {
   count = var.enable_web ? 1 : 0
-  
+
   ami           = var.ami_id
   instance_type = var.instance_type
   subnet_id     = aws_subnet.public.id
-  
+
   vpc_security_group_ids = [
     aws_security_group.web_server_sg.id
   ]
-  
+
   tags = {
     Name        = "${var.environment}-web-server"
     Environment = var.environment
     ManagedBy   = "terraform"
   }
-  
+
   lifecycle {
     create_before_destroy = true
   }
@@ -137,7 +137,7 @@ variable "instanceType" {}                       # camelCase
 variable "environment" {
   type        = string
   description = "Deployment environment (dev, staging, prod)"
-  
+
   validation {
     condition     = contains(["dev", "staging", "prod"], var.environment)
     error_message = "Environment must be dev, staging, or prod."
@@ -201,7 +201,7 @@ output "id" {
 # count for conditional resources or identical copies
 resource "aws_nat_gateway" "main" {
   count = var.enable_nat ? 1 : 0
-  
+
   allocation_id = aws_eip.nat[count.index].id
   subnet_id     = aws_subnet.public[count.index].id
 }
@@ -209,7 +209,7 @@ resource "aws_nat_gateway" "main" {
 # for_each for distinct values
 resource "aws_subnet" "private" {
   for_each = toset(var.availability_zones)
-  
+
   vpc_id            = aws_vpc.main.id
   availability_zone = each.value
   cidr_block        = cidrsubnet(var.vpc_cidr, 8, index(var.availability_zones, each.value))
@@ -227,7 +227,7 @@ resource "aws_subnet" "private" {
 # Kiro will write:
 terraform {
   required_version = ">= 1.0"
-  
+
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -293,7 +293,7 @@ locals {
     ManagedBy   = "terraform"
     Project     = var.project_name
   }
-  
+
   name_prefix = "${var.environment}-${var.project_name}"
 }
 
@@ -319,17 +319,17 @@ resource "aws_instance" "web_server" {
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "~> 5.1"
-  
+
   name = "${var.environment}-vpc"
   cidr = var.vpc_cidr
-  
+
   azs             = var.availability_zones
   private_subnets = var.private_subnet_cidrs
   public_subnets  = var.public_subnet_cidrs
-  
+
   enable_nat_gateway = true
   single_nat_gateway = var.environment != "prod"
-  
+
   tags = local.common_tags
 }
 

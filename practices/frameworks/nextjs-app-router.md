@@ -54,7 +54,7 @@ async function getPosts() {
 
 export default async function Page() {
   const posts = await getPosts();
-  
+
   return (
     <ul>
       {posts.map((post) => (
@@ -70,13 +70,13 @@ import { useEffect, useState } from 'react';
 
 export default function Page() {
   const [posts, setPosts] = useState([]);
-  
+
   useEffect(() => {
     fetch('https://api.example.com/posts')
       .then(res => res.json())
       .then(setPosts);
   }, []);
-  
+
   return <ul>...</ul>;
 }
 
@@ -91,15 +91,15 @@ export default function Page() {
 export default async function Page() {
   // Static (cached until manually invalidated)
   const staticData = await fetch('https://...', { cache: 'force-cache' });
-  
+
   // Dynamic (refetched on every request)
   const dynamicData = await fetch('https://...', { cache: 'no-store' });
-  
+
   // Revalidated (cached with 10 second lifetime)
   const revalidatedData = await fetch('https://...', {
     next: { revalidate: 10 },
   });
-  
+
   return <div>...</div>;
 }
 
@@ -123,7 +123,7 @@ export default function InteractiveComponent() {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  
+
   return (
     <button onClick={() => setCount(count + 1)}>
       Count: {count}
@@ -160,7 +160,7 @@ export default async function Page() {
 
 export default function ClientComponent({ data }) {
   const [selected, setSelected] = useState(null);
-  
+
   return (
     <div>
       {data.map(item => (
@@ -225,14 +225,14 @@ export default function DashboardLayout({ children }) {
 export default async function PostPage({ params }) {
   const { id } = await params;
   const post = await getPost(id);
-  
+
   return <article>{post.content}</article>;
 }
 
 // Generate static params for static generation
 export async function generateStaticParams() {
   const posts = await getPosts();
-  
+
   return posts.map((post) => ({
     id: post.id,
   }));
@@ -250,9 +250,9 @@ import { connection } from 'next/server';
 
 export default async function Component() {
   await connection();
-  
+
   const apiKey = process.env.API_KEY;
-  
+
   return <div>...</div>;
 }
 

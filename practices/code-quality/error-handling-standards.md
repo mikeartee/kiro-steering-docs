@@ -183,7 +183,7 @@ function getUserFriendlyMessage(error) {
 // API response:
 app.use((error, req, res, next) => {
   const statusCode = error.statusCode || 500;
-  
+
   res.status(statusCode).json({
     success: false,
     error: {
@@ -219,13 +219,13 @@ class UserNotFoundError(Exception):
 def get_user(user_id: int) -> User:
     """
     Retrieve user by ID.
-    
+
     Args:
         user_id: The ID of the user to retrieve
-        
+
     Returns:
         User object
-        
+
     Raises:
         UserNotFoundError: If user does not exist
         DatabaseError: If database connection fails
@@ -264,7 +264,7 @@ async function getUserWithFallback(userId) {
     return await primaryDatabase.getUser(userId);
   } catch (primaryError) {
     logger.warn('Primary database failed, trying cache', { userId, error: primaryError });
-    
+
     try {
       // Fallback to cache
       const cachedUser = await cache.get(`user:${userId}`);
@@ -274,7 +274,7 @@ async function getUserWithFallback(userId) {
     } catch (cacheError) {
       logger.error('Cache also failed', { userId, error: cacheError });
     }
-    
+
     // If all else fails, throw error
     throw new ServiceUnavailableError('Unable to retrieve user data');
   }
@@ -295,13 +295,13 @@ async function getUser(userId) {
 // Kiro will write:
 async function retryOperation(operation, maxRetries = 3, delayMs = 1000) {
   let lastError;
-  
+
   for (let attempt = 1; attempt <= maxRetries; attempt++) {
     try {
       return await operation();
     } catch (error) {
       lastError = error;
-      
+
       if (attempt < maxRetries && isRetryableError(error)) {
         logger.warn(`Operation failed, retrying (${attempt}/${maxRetries})`, {
           error: error.message,
@@ -313,7 +313,7 @@ async function retryOperation(operation, maxRetries = 3, delayMs = 1000) {
       }
     }
   }
-  
+
   throw new RetryExhaustedError(
     `Operation failed after ${maxRetries} attempts`,
     lastError
@@ -418,9 +418,9 @@ app.post('/api/orders', async (req, res) => {
 app.post('/api/orders', async (req, res) => {
   try {
     validateOrderData(req.body);
-    
+
     const order = await createOrder(req.body);
-    
+
     res.status(201).json({
       success: true,
       data: order
@@ -436,7 +436,7 @@ app.post('/api/orders', async (req, res) => {
         }
       });
     }
-    
+
     if (error instanceof NotFoundError) {
       return res.status(404).json({
         success: false,
@@ -446,13 +446,13 @@ app.post('/api/orders', async (req, res) => {
         }
       });
     }
-    
+
     logger.error('Failed to create order', {
       error: error.message,
       stack: error.stack,
       body: req.body
     });
-    
+
     res.status(500).json({
       success: false,
       error: {
@@ -477,13 +477,13 @@ def get_user_orders(user_id):
 def get_user_orders(user_id: int) -> List[Order]:
     """
     Retrieve all orders for a specific user.
-    
+
     Args:
         user_id: The ID of the user
-        
+
     Returns:
         List of Order objects
-        
+
     Raises:
         UserNotFoundError: If user does not exist
         DatabaseError: If database operation fails
@@ -493,11 +493,11 @@ def get_user_orders(user_id: int) -> List[Order]:
         user = db.query(User).filter_by(id=user_id).first()
         if not user:
             raise UserNotFoundError(user_id)
-        
+
         # Retrieve orders
         orders = db.query(Order).filter_by(user_id=user_id).all()
         return orders
-        
+
     except SQLAlchemyError as e:
         logger.error(f"Database error retrieving orders for user {user_id}: {e}")
         raise DatabaseError("Failed to retrieve orders") from e

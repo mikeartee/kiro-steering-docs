@@ -70,7 +70,7 @@ def process_order(order_id, user_id):
             'action': 'process_order'
         }
     )
-    
+
     try:
         result = payment_service.charge(order_id)
         logger.info(
@@ -194,7 +194,7 @@ class OrderService {
 
   async createOrder(userId: string, items: OrderItem[]): Promise<Order> {
     const correlationId = generateId();
-    
+
     this.logger.info('Creating order', {
       correlationId,
       userId,
@@ -262,10 +262,10 @@ app.use((req, res, next) => {
 // After:
 app.use((req, res, next) => {
   const startTime = Date.now();
-  
+
   res.on('finish', () => {
     const duration = Date.now() - startTime;
-    
+
     logger.info('HTTP request', {
       method: req.method,
       path: req.path,
@@ -275,7 +275,7 @@ app.use((req, res, next) => {
       ip: req.ip
     });
   });
-  
+
   next();
 });
 
@@ -338,14 +338,14 @@ function processPayment(orderId, amount, userId) {
 
   try {
     const result = paymentGateway.charge(amount);
-    
+
     logger.info('Payment processed successfully', {
       orderId,
       transactionId: result.id,
       amount,
       userId
     });
-    
+
     return result;
   } catch (error) {
     logger.error('Payment processing failed', {

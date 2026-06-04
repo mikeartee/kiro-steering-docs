@@ -186,7 +186,7 @@ res.status(500).json({ message: 'Invalid input' }); // Wrong status for client e
 // Kiro will write:
 app.post('/api/users', async (req, res) => {
   const { error, value } = validateUserInput(req.body);
-  
+
   if (error) {
     return res.status(400).json({
       success: false,
@@ -207,19 +207,19 @@ app.post('/api/users', async (req, res) => {
 
 function validateUserInput(data) {
   const errors = [];
-  
+
   if (!data.email || !isValidEmail(data.email)) {
     errors.push({ field: 'email', issue: 'Valid email required' });
   }
-  
+
   if (!data.password || data.password.length < 8) {
     errors.push({ field: 'password', issue: 'Password must be at least 8 characters' });
   }
-  
+
   if (errors.length > 0) {
     return { error: { details: errors } };
   }
-  
+
   return { value: data };
 }
 
@@ -299,11 +299,11 @@ app.get('/api/v2/users', handleGetUsersV2);
 // Or version in header
 app.get('/api/users', (req, res) => {
   const version = req.headers['api-version'] || '1';
-  
+
   if (version === '2') {
     return handleGetUsersV2(req, res);
   }
-  
+
   return handleGetUsersV1(req, res);
 });
 
@@ -397,7 +397,7 @@ app.post('/addUser', (req, res) => {
 app.get('/api/v1/users/:id', async (req, res) => {
   try {
     const user = await getUserById(req.params.id);
-    
+
     if (!user) {
       return res.status(404).json({
         success: false,
@@ -407,7 +407,7 @@ app.get('/api/v1/users/:id', async (req, res) => {
         }
       });
     }
-    
+
     res.json({
       success: true,
       data: user
@@ -425,7 +425,7 @@ app.get('/api/v1/users/:id', async (req, res) => {
 
 app.post('/api/v1/users', async (req, res) => {
   const { error, value } = validateUserInput(req.body);
-  
+
   if (error) {
     return res.status(400).json({
       success: false,
@@ -436,7 +436,7 @@ app.post('/api/v1/users', async (req, res) => {
       }
     });
   }
-  
+
   try {
     const user = await createUser(value);
     res.status(201).json({
@@ -470,7 +470,7 @@ This is a starting point for API development patterns. You can customize by:
 
 ## Related Documents
 
-- [Error Handling Standards](./error-handling-standards.md) - Error handling patterns
+- [Error Handling Standards](../code-quality/error-handling-standards.md) - Error handling patterns
 
 - [Code Review Standards](../code-quality/code-review-standards.md) - Code quality practices
 

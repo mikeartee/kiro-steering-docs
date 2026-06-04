@@ -382,21 +382,21 @@ Acceptance Criteria:
 ```markdown
 ### Requirement 1: Task Creation
 
-**User Story:** As a user, I want to add new tasks to my todo list, 
+**User Story:** As a user, I want to add new tasks to my todo list,
 so that I can capture and organize things I need to accomplish.
 
 #### Acceptance Criteria
 
-1. WHEN a user types a task description and presses Enter, 
+1. WHEN a user types a task description and presses Enter,
    THE System SHALL create a new task and add it to the list
 
-2. WHEN a user attempts to add an empty task, 
+2. WHEN a user attempts to add an empty task,
    THE System SHALL prevent the addition and maintain the current state
 
-3. WHEN a new task is added, 
+3. WHEN a new task is added,
    THE System SHALL clear the input field and focus it for the next entry
 
-4. WHEN a task is added, 
+4. WHEN a task is added,
    THE System SHALL persist the task to local storage immediately
 
 ```
@@ -405,17 +405,17 @@ so that I can capture and organize things I need to accomplish.
 
 ```markdown
 Property 1: Task Creation Increases List Size
-*For any* valid task description and current task list, 
+*For any* valid task description and current task list,
 adding the task should result in the list length increasing by exactly one.
 **Validates: Requirements 1.1**
 
 Property 2: Empty Task Rejection
-*For any* empty or whitespace-only string, 
+*For any* empty or whitespace-only string,
 attempting to create a task should be rejected and the list should remain unchanged.
 **Validates: Requirements 1.2**
 
 Property 3: Task Persistence Round-Trip
-*For any* set of valid tasks, saving to storage and then loading 
+*For any* set of valid tasks, saving to storage and then loading
 should produce an equivalent set of tasks with all properties preserved.
 **Validates: Requirements 1.4**
 

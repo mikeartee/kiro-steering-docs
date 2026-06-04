@@ -109,20 +109,20 @@ async function fetchUserData(userId: string): Promise<User> {
 def process_payment(amount: float, currency: str) -> bool:
     # Convert to cents to avoid floating-point precision issues
     amount_in_cents = int(amount * 100)
-    
+
     # Use idempotency key to prevent duplicate charges on retry
     idempotency_key = generate_idempotency_key()
-    
+
     return payment_gateway.charge(amount_in_cents, currency, idempotency_key)
 
 # Not:
 def process_payment(amount: float, currency: str) -> bool:
     # Convert amount to cents
     amount_in_cents = int(amount * 100)
-    
+
     # Generate key
     idempotency_key = generate_idempotency_key()
-    
+
     # Charge the payment
     return payment_gateway.charge(amount_in_cents, currency, idempotency_key)
 
@@ -164,7 +164,7 @@ function processOrder(order: Order): ProcessedOrder {
   const calculatedOrder = calculateOrderTotals(order);
   const paymentResult = processPayment(calculatedOrder);
   const shippingInfo = scheduleShipping(calculatedOrder);
-  
+
   return createProcessedOrder(calculatedOrder, paymentResult, shippingInfo);
 }
 
@@ -251,15 +251,15 @@ const MIN_PASSWORD_LENGTH = 8;
 app.post('/api/users', async (req, res) => {
   try {
     const userData = req.body;
-    
+
     validateUserData(userData);
-    
+
     const hashedPassword = await hashPassword(userData.password);
     const newUser = await createUser({
       ...userData,
       password: hashedPassword
     });
-    
+
     res.status(201).json({
       id: newUser.id,
       username: newUser.username,
@@ -304,7 +304,7 @@ def process(data):
 def filter_and_double_positive_values(values: List[float]) -> List[float]:
     """
     Filter positive values and double them.
-    
+
     Used for calculating bonus points where only positive scores count
     and are doubled for the final calculation.
     """

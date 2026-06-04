@@ -45,7 +45,7 @@ jobs:
 
       - name: Run validation script
         run: |
-          python tools/validate-steering.py categories
+          python tools/validate-steering.py practices
           python tools/validate-steering.py code-formatting
 
   format-check:
@@ -168,13 +168,26 @@ jobs:
               if [[ "$link" =~ ^https?:// ]]; then
                 continue
               fi
-              
+
+              # Skip pure same-page anchor links (e.g. #section)
+              if [[ "$link" =~ ^# ]]; then
+                continue
+              fi
+
+              # Strip any #fragment from the path before resolving
+              path="${link%%#*}"
+
+              # A link that was only a fragment leaves an empty path
+              if [ -z "$path" ]; then
+                continue
+              fi
+
               # Get directory of current file
               dir=$(dirname "$file")
-              
+
               # Resolve relative path
-              target="$dir/$link"
-              
+              target="$dir/$path"
+
               # Check if file exists
               if [ ! -f "$target" ] && [ ! -d "$target" ]; then
                 echo "ERROR: Broken link in $file -> $link"

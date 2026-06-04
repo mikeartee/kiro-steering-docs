@@ -237,7 +237,7 @@ const authenticateUser = async (email, password) => {
 // After (SECURE):
 const authenticateUser = async (email, passwordHash) => {
   const query = `
-    SELECT 
+    SELECT
       id,
       email,
       name,

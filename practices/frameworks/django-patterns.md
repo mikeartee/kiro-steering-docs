@@ -158,7 +158,7 @@ class Post(models.Model):
     content = models.TextField()
     author_id = models.IntegerField()
     created = models.DateTimeField()
-    
+
     def __str__(self):
         return self.title
 
@@ -349,15 +349,15 @@ class PostForm(forms.ModelForm):
         title = self.cleaned_data.get('title')
         if not title or not title.strip():
             raise ValidationError('Title cannot be empty')
-        
+
         # Check for duplicate titles (excluding current instance)
         qs = Post.objects.filter(title__iexact=title)
         if self.instance.pk:
             qs = qs.exclude(pk=self.instance.pk)
-        
+
         if qs.exists():
             raise ValidationError('A post with this title already exists')
-        
+
         return title.strip()
 
     def clean(self):
@@ -375,7 +375,7 @@ class PostForm(forms.ModelForm):
 class PostForm(forms.Form):
     title = forms.CharField()
     content = forms.CharField(widget=forms.Textarea)
-    
+
     def clean(self):
         # All validation in one method
         pass
@@ -475,18 +475,18 @@ class PostViewSet(viewsets.ModelViewSet):
     def publish(self, request, pk=None):
         """Publish a draft post."""
         post = self.get_object()
-        
+
         if post.status == 'published':
             return Response(
                 {'detail': 'Post is already published'},
                 status=status.HTTP_400_BAD_REQUEST
             )
-        
+
         from django.utils import timezone
         post.status = 'published'
         post.published_at = timezone.now()
         post.save()
-        
+
         serializer = self.get_serializer(post)
         return Response(serializer.data)
 
@@ -587,26 +587,26 @@ from django.db.models import Count, Avg, Q, Prefetch
 
 class PostQuerySet(models.QuerySet):
     """Custom queryset for Post model."""
-    
+
     def published(self):
         """Filter published posts."""
         return self.filter(status='published')
-    
+
     def with_author(self):
         """Include author data."""
         return self.select_related('author')
-    
+
     def with_tags(self):
         """Include tags data."""
         return self.prefetch_related('tags')
-    
+
     def with_stats(self):
         """Annotate with statistics."""
         return self.annotate(
             tag_count=Count('tags'),
             avg_rating=Avg('rating')
         )
-    
+
     def search(self, query):
         """Search posts by title or content."""
         return self.filter(
@@ -615,15 +615,15 @@ class PostQuerySet(models.QuerySet):
 
 class PostManager(models.Manager):
     """Custom manager for Post model."""
-    
+
     def get_queryset(self):
         """Return custom queryset."""
         return PostQuerySet(self.model, using=self._db)
-    
+
     def published(self):
         """Get published posts."""
         return self.get_queryset().published()
-    
+
     def popular(self, limit=10):
         """Get most viewed posts."""
         return self.published().order_by('-views')[:limit]
@@ -631,7 +631,7 @@ class PostManager(models.Manager):
 # In models.py
 class Post(models.Model):
     # ... fields ...
-    
+
     objects = PostManager()
 
 # Usage in views:
@@ -704,7 +704,7 @@ This is a starting point for Django patterns. You can customize by:
 
 - [Python Formatting](../../code-formatting/languages/python-formatting.md) - Python conventions
 
-- [Database Query Patterns](../../code-quality/database-query-patterns.md) - Query optimization
+- [Database Query Patterns](../code-quality/database-query-patterns.md) - Query optimization
 
 ## Optional: Validation with External Tools
 

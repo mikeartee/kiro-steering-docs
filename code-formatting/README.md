@@ -6,7 +6,7 @@ Steering documents focused on code formatting standards and quality enforcement.
 
 - [Browse All Practices](../practices/)
 
-- [Search by Tag](../#search-by-tag)
+- [Search by Tag](../TAGS.md)
 
 - [Main README](../)
 

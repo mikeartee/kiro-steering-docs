@@ -32,6 +32,8 @@ Explore steering documents organized by functional area:
 
 - **[Workflows](practices/workflows/)** - CI/CD, Git hooks, and automation
 
+- **[Semantic Anchors](semantic-anchors/)** - Name established methods instead of describing them
+
 ## Search by Tag
 
 Find documents by technology, purpose, or use case. See [TAGS.md](TAGS.md) for the complete tag taxonomy.
@@ -114,6 +116,13 @@ Comprehensive searchable index of all available steering documents:
 | [Environment Config](practices/workflows/environment-config.md) | Environment configuration management | `config`, `environment`, `deployment` |
 | [Git Commit Standards](practices/workflows/git-commit-standards.md) | Git commit message conventions | `git`, `version-control`, `commits` |
 | [Logging Standards](practices/workflows/logging-standards.md) | Application logging patterns | `logging`, `debugging`, `observability` |
+
+### Semantic Anchors
+
+| Document | Description | Tags |
+|----------|-------------|------|
+| [Using Semantic Anchors](semantic-anchors/using-semantic-anchors.md) | Name established methods instead of describing them, spelling out only the delta | `semantic-anchors`, `steering`, `prompt-engineering`, `token-efficiency` |
+| [Semantic Contracts for Kiro](semantic-anchors/semantic-contracts-for-kiro.md) | Three reusable, Kiro-scoped semantic contracts for the Requirements and Design spec phases | `semantic-anchors`, `semantic-contracts`, `kiro`, `specs`, `steering` |
 
 ### Tag Reference
 

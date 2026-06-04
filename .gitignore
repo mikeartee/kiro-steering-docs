@@ -19,3 +19,6 @@ _drafts/
 .kiro/settings/
 .kiro/hooks/mcp-server-recommendations.kiro.hook
 .kiro/mcp-servers-reference.json
+
+# Git worktrees used by /tdd-parallel fanout
+.worktrees/

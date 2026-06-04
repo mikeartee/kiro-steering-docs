@@ -48,7 +48,8 @@ class SteeringValidator:
         'testing', 
         'security',
         'frameworks',
-        'workflows'
+        'workflows',
+        'semantic-anchors'
     }
     
     VALID_INCLUSION_VALUES = {

@@ -10,6 +10,7 @@ Security steering documents guide Kiro to write code that follows security best 
 
 | Document | Description | Languages | Tags |
 |----------|-------------|-----------|------|
+| [Repository Pre-Publication Audit](pre-publication-audit.md) | Credentials, machine-specific paths, and author identities — in the history as well as the tree | Multiple | `security`, `secrets`, `git-history` |
 | *Coming soon* | Input validation and sanitization | Multiple | `security`, `validation` |
 | *Coming soon* | Authentication and authorization patterns | Multiple | `security`, `auth` |
 | *Coming soon* | Secure API development | Multiple | `security`, `api` |

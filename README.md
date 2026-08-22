@@ -100,6 +100,7 @@ Comprehensive searchable index of all available steering documents:
 
 | Document | Description | Tags |
 |----------|-------------|------|
+| [Repository Pre-Publication Audit](practices/security/pre-publication-audit.md) | Audit a repository for credentials, machine-specific paths, and author identities before it is made public — including what exists only in the git history | `security`, `secrets`, `git-history`, `open-source`, `publishing` |
 | [Security Best Practices](practices/security/security-best-practices.md) | Secure code with input validation and vulnerability prevention | `security`, `validation`, `best-practices`, `vulnerabilities` |
 
 ### Testing
